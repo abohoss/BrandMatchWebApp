@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 68.59 63.89">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath-4);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-6 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-7 {
+        fill: url(#linear-gradient-5);
+      }
+
+      .cls-8 {
+        clip-path: url(#clippath-5);
+      }
+
+      .cls-9 {
+        clip-path: url(#clippath-3);
+      }
+
+      .cls-10 {
+        fill: url(#linear-gradient-6);
+      }
+
+      .cls-11 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-12 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-13 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <polygon class="cls-3" points="32.73 21.54 32.47 35.82 66.17 20 55.58 10.7 32.73 21.54"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="-759.88" y1="7709.68" x2="-758.88" y2="7709.68" gradientTransform="translate(455368.61 -44806.24) rotate(-90) scale(59.06 -59.06)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#a6a8ab"/>
+    </linearGradient>
+    <clipPath id="clippath-1">
+      <polygon class="cls-3" points="55.72 61.01 68.59 55.27 68.59 16.91 55.72 10.7 55.72 61.01"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-2" x1="-759.88" y1="7709.68" x2="-758.88" y2="7709.68" gradientTransform="translate(452094.58 -44485.25) rotate(-90) scale(58.63 -58.63)" xlink:href="#linear-gradient"/>
+    <clipPath id="clippath-2">
+      <polygon class="cls-3" points="0 63.89 12.87 58.14 12.87 6.2 0 0 0 63.89"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-3" x1="-759.88" y1="7709.73" x2="-758.88" y2="7709.73" gradientTransform="translate(-118117 -1199157.49) rotate(-180) scale(155.54 -155.54)" xlink:href="#linear-gradient"/>
+    <clipPath id="clippath-3">
+      <polygon class="cls-3" points="7.81 20.94 7.54 35.23 39.72 19.69 27.33 11.93 7.81 20.94"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-4" x1="-759.88" y1="7709.73" x2="-758.88" y2="7709.73" gradientTransform="translate(-113205.44 -1149292.32) rotate(180) scale(149.07 -149.07)" xlink:href="#linear-gradient"/>
+    <clipPath id="clippath-4">
+      <polygon class="cls-3" points="20.74 46.64 20.47 60.92 40.2 51.35 29.61 42.05 20.74 46.64"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-5" x1="-759.88" y1="7709.73" x2="-758.88" y2="7709.73" gradientTransform="translate(-118082.31 -1199137.69) rotate(-180) scale(155.54 -155.54)" xlink:href="#linear-gradient"/>
+    <clipPath id="clippath-5">
+      <polygon class="cls-3" points="27.33 57.22 40.2 51.48 40.2 18.13 27.33 11.93 27.33 57.22"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-6" x1="-759.88" y1="7709.73" x2="-758.88" y2="7709.73" gradientTransform="translate(-115677.9 -1174604.63) rotate(-180) scale(152.36 -152.36)" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Layer_4">
+    <g class="cls-13">
+      <rect class="cls-12" x="30.31" y="2.48" width="38.02" height="41.56" transform="translate(5.6 55.85) rotate(-61.95)"/>
+    </g>
+    <g class="cls-6">
+      <rect class="cls-2" x="36.92" y="18.35" width="50.45" height="35.01" transform="translate(1.28 73.85) rotate(-61.95)"/>
+    </g>
+    <g class="cls-11">
+      <rect class="cls-5" x="-25.88" y="15.55" width="64.62" height="32.8" transform="translate(-25.88 27.73) rotate(-71.18)"/>
+    </g>
+    <g class="cls-9">
+      <rect class="cls-4" x="7.41" y="4.59" width="32.44" height="37.98" transform="translate(-6.31 38.34) rotate(-71.18)"/>
+    </g>
+    <g class="cls-1">
+      <rect class="cls-7" x="18.23" y="39.11" width="24.22" height="24.76" transform="translate(-28.18 63.59) rotate(-71.18)"/>
+    </g>
+    <g class="cls-8">
+      <rect class="cls-10" x="10.26" y="21.18" width="47.03" height="26.8" transform="translate(-9.85 55.38) rotate(-71.18)"/>
+    </g>
+  </g>
+</svg>
