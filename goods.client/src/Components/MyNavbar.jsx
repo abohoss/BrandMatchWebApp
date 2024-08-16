@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 const MyNavbar = () => {
     return (
         <>
-            <Navbar style={{
+            <Navbar sticky="top" style={{
                 backgroundColor: '#D12026'
             }} data-bs-theme="dark">
                 <Container>
