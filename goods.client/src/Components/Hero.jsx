@@ -1,7 +1,8 @@
 import React from 'react'
 import { MDBBtn } from 'mdb-react-ui-kit'
+import WithFadeIn from './WithFadeIn'
 
-const hero = () => {
+const Hero = () => {
   return (
     <>
       <div
@@ -24,4 +25,4 @@ const hero = () => {
   )
 }
 
-export default hero
+export default Hero
