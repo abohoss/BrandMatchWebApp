@@ -14,7 +14,7 @@ const Hero = () => {
             <div className='text-white'>
               <h1 className='mb-3'>BrandMatch</h1>
               <h4 className='mb-3'>Maximize Your Brand's Potential with BrandMatch </h4>
-              <MDBBtn href="#footer" tag="a" outline size="lg" color='light' rippleColor='dark'>
+              <MDBBtn href="#aboutUs" tag="a" outline size="lg" color='light' rippleColor='dark'>
                 Get Started Today
               </MDBBtn>
             </div>
