@@ -4,7 +4,7 @@ import Myfooter from './Components/Myfooter'
 import Hero from './Components/Hero'
 import WithFadeIn from './Components/WithFadeIn'
 import AboutUs from './Components/AboutUs'
-import HowToStart from './Components/Marquee/HowToStart'
+import HowToStart from './Components/HowToStart'
 
 const FadedHero = WithFadeIn(Hero);
 
@@ -13,7 +13,7 @@ const App = () => {
     return (
         <>
             <MyNavbar />
-            <FadedHero />
+            <Hero />
             <AboutUs />
             <HowToStart />
             <Myfooter />

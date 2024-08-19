@@ -38,11 +38,11 @@ const Myfooter = () => {
                         <MDBRow className='mt-3'>
                             <MDBCol md='3' lg='4' xl='3' className='mx-auto mb-4'>
                                 <MDBRow>
-                                    <MDBCol md='1' lg='1' xl='1.5' className='mx-auto mb-4'>
+                                    <MDBCol md='3' lg='2' xl='2' className='mx-auto mb-4'>
                                         <img src='src/assets/images/Logo.svg' width="50" height="20" className="d-inline-block align-top"
                                             alt="Logo"></img>
                                     </MDBCol>
-                                    <MDBCol md='10' lg='10' xl='10' className='mx-auto mb-4'>
+                                    <MDBCol md='9' lg='10' xl='10' className='mx-auto mt-1 mb-4'>
                                         <h6 className='text-uppercase fw-bold mb-4'>
                                             BrandMatch
                                         </h6>
