@@ -1,8 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MDBBtn } from 'mdb-react-ui-kit';
+import { useInView } from 'react-intersection-observer';
 
 function HowToStart() {
+    const { ref, inView } = useInView({
+        triggerOnce: true,  // Trigger the animation only once
+        threshold: 0.2,     // Trigger when 20% of the component is visible
+    });
+
+    const fadeInUpVariants = {
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0 },
+    };
     return (
         <section id='howTo' class="py-10 bg-white sm:py-16 lg:py-24">
             <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -11,16 +20,16 @@ function HowToStart() {
 
                 </div>
 
-                <div class="relative mt-12 lg:mt-20">
+                <div ref={ref} class="relative mt-12 lg:mt-20">
                     <div class="absolute inset-x-0 hidden xl:px-44 top-2 md:block md:px-20 lg:px-28">
                         <img class="w-full" src="https://cdn.rareblocks.xyz/collection/celebration/images/steps/2/curved-dotted-line.svg" alt="" />
                     </div>
 
                     <div class="relative grid grid-cols-1 text-center gap-y-12 md:grid-cols-3 gap-x-12">
                         <motion.div
-                            
-                            initial={{ opacity: 0, y: 40 }}
-                            animate={{ opacity: 1, y: 0 }}
+                            variants={fadeInUpVariants}
+                            initial="hidden"
+                            animate={inView ? "visible" : "hidden"}
                             transition={{ duration: 1, delay: 0.5 }}
                         >
                             <div>
@@ -32,9 +41,9 @@ function HowToStart() {
                             </div>
                         </motion.div>
                         <motion.div
-                            
-                            initial={{ opacity: 0, y: 40 }}
-                            animate={{ opacity: 1, y: 0 }}
+                            variants={fadeInUpVariants}
+                            initial="hidden"
+                            animate={inView ? "visible" : "hidden"}
                             transition={{ duration: 1, delay: 1 }}
                         >
                             <div>
@@ -46,9 +55,9 @@ function HowToStart() {
                             </div>
                         </motion.div>
                         <motion.div
-                            
-                            initial={{ opacity: 0, y: 40 }}
-                            animate={{ opacity: 1, y: 0 }}
+                            variants={fadeInUpVariants}
+                            initial="hidden"
+                            animate={inView ? "visible" : "hidden"}
                             transition={{ duration: 1, delay: 1.5 }}
                         >
                             <div>
@@ -63,9 +72,9 @@ function HowToStart() {
                 </div>
                 <div class="max-w-2xl mx-auto text-center">
                     <motion.div
-                
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        variants={fadeInUpVariants}
+                        initial="hidden"
+                        animate={inView ? "visible" : "hidden"}
                         transition={{ duration: 1, delay: 2 }}
                     >
                         <a href="https://example.com" className="inline-block">

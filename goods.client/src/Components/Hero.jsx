@@ -1,6 +1,5 @@
 import React from 'react'
 import { MDBBtn } from 'mdb-react-ui-kit'
-import WithFadeIn from './WithFadeIn'
 
 const Hero = () => {
   return (
