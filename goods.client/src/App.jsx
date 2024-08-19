@@ -6,14 +6,14 @@ import WithFadeIn from './Components/WithFadeIn'
 import AboutUs from './Components/AboutUs'
 import HowToStart from './Components/Marquee/HowToStart'
 const FadedHero = WithFadeIn(Hero);
-const FadedAboutUs = WithFadeIn(AboutUs);
+//const FadedAboutUs = WithFadeIn(AboutUs);
 
 const App = () => {
     return (
         <>
             <MyNavbar />
-            <Hero />
-            <FadedAboutUs />
+            <FadedHero />
+            <AboutUs />
             <HowToStart />
             <Myfooter />
         </>

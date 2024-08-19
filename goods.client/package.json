@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
+    "autoprefixer": "^10.4.20",
     "bootstrap": "^5.3.3",
     "framer-motion": "^11.3.28",
     "mdb-react-ui-kit": "^8.0.0",
@@ -31,6 +32,7 @@
     "globals": "^15.9.0",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",
+    "tailwindcss": "^3.4.10",
     "vite": "^5.4.0"
   }
 }

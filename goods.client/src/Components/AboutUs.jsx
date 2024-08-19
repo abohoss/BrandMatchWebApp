@@ -4,7 +4,7 @@ const AboutUs = () => {
   return (
     <>
           <div id="aboutUs" 
-        className='p-5 m-0 text-left bg-image rounded'
+        className='p-5 m-0 text-left bg-image '
         style={{ backgroundImage: "url(src/assets/images/burnOut.jpg)", height: '500px'}}
       >
         <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
