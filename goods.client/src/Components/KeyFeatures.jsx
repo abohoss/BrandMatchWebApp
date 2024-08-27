@@ -46,10 +46,10 @@ const KeyFeatures = () => {
   ];
 
   return (
-    <section className="flex flex-col items-center">
+    <section className="m-8 flex flex-col items-center">
       <h2>Key Features</h2>
 
-      <div id="featuresBG" className="m-16">
+      <div id="featuresBG" className="m-8">
         <div className="grid max-w-7xl grid-cols-2 gap-0.5 sm:grid-cols-3">
           {features.map((feature, index) => (
             <div
