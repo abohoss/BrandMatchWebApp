@@ -4,8 +4,23 @@ import Handshake from "../assets/icons/features/handshake.svg";
 import Crowdfunding from "../assets/icons/features/crowdfunding.svg";
 import Process from "../assets/icons/features/process.svg";
 import Experience from "../assets/icons/features/experience.svg";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+
+
 
 const KeyFeatures = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,  // Trigger the animation only once
+    threshold: 0.4,     // Trigger when 20% of the component is visible
+  });
+
+  const fadeInUpVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+  };
   const features = [
     {
       icon: Design,
@@ -46,29 +61,36 @@ const KeyFeatures = () => {
   ];
 
   return (
-    <section className="m-8 flex flex-col items-center">
+    <section ref={ref} className="m-8 flex flex-col items-center">
       <h2>Key Features</h2>
+      <motion.div
+        variants={fadeInUpVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
+        <div id="featuresBG" className="m-8">
+          <div className="grid max-w-7xl grid-cols-2 gap-0.5 sm:grid-cols-3">
+            {features.map((feature, index) => (
 
-      <div id="featuresBG" className="m-8">
-        <div className="grid max-w-7xl grid-cols-2 gap-0.5 sm:grid-cols-3">
-          {features.map((feature, index) => (
-            <div
-              className="flex flex-col items-center gap-2 bg-white p-8"
-              key={index}
-            >
-              <img
-                src={feature.icon}
-                alt={`${feature.icon == null ? null : feature.icon.split("/").pop()} icon`}
-                width="75"
-                // height="10"
-                className="mb-4"
-              />
-              <h3 className="text-center">{feature.title}</h3>
-              <p className="text-center">{feature.description}</p>
-            </div>
-          ))}
+              <div
+                className="flex flex-col items-center gap-2 bg-white p-8"
+                key={index}
+              >
+                <img
+                  src={feature.icon}
+                  alt={`${feature.icon == null ? null : feature.icon.split("/").pop()} icon`}
+                  width="75"
+                  // height="10"
+                  className="mb-4"
+                />
+                <h3 className="text-center">{feature.title}</h3>
+                <p className="text-center">{feature.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
