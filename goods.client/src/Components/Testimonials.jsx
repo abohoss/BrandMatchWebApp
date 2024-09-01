@@ -1,57 +1,107 @@
-import Autoplay from "embla-carousel-autoplay"
-import useEmblaCarousel from "embla-carousel-react"
-import "../styles/testimonials.css"
+import Quotation from "../assets/icons/quotation.svg";
 
 const Testimonials = () => {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()])
-
   return (
-    <section className="embla">
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
-          <div className="embla__slide" key={1}>
-            <div className="embla_slide_content">
-              <blockquote cite="">
-                <p>
-                  BrandMatch took the stress out of building my personal brand.
+    <section className="bg-gray-100 py-10 sm:py-16 lg:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-bold leading-tight text-gray-800 sm:text-4xl lg:text-5xl">
+            Our Clients <span className="text-bright-red">Testimonials</span>
+          </h2>
+        </div>
+
+        <div className="mx-auto mt-8 grid max-w-xl grid-cols-1 gap-x-6 gap-y-6 text-center sm:mt-12 lg:mt-20 lg:max-w-full lg:grid-cols-3 xl:gap-x-12">
+          <div className="overflow-hidden rounded-md bg-white shadow">
+            <div className="px-8 py-12">
+              <div className="relative mx-auto h-24 w-24">
+                <img
+                  className="relative mx-auto h-24 w-24 rounded-full object-cover"
+                  src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/1/avatar-1.jpg"
+                  alt=""
+                />
+                <div className="bg-dark-red absolute right-0 top-0 flex h-7 w-7 items-center justify-center rounded-full">
+                  <img
+                    src={Quotation}
+                    alt="quotation mark"
+                    width="15"
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+              <blockquote className="mt-7">
+                <p className="text-lg text-black">
+                  “BrandMatch took the stress out of building my personal brand.
                   Their team handled everything, allowing me to focus on my
-                  career transition.
+                  career transition.”
                 </p>
               </blockquote>
-              <p>—Alex R.</p>
+              <p className="mt-9 text-base font-semibold text-black">Alex R.</p>
             </div>
           </div>
 
-          <div className="embla__slide" key={2}>
-            <div className="embla_slide_content">
-              <blockquote cite="">
-                <p>
-                  The partnership and funding support were game-changers.
+          <div className="overflow-hidden rounded-md bg-white shadow">
+            <div className="px-8 py-12">
+              <div className="relative mx-auto h-24 w-24">
+                <img
+                  className="relative mx-auto h-24 w-24 rounded-full object-cover"
+                  src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/1/avatar-2.jpg"
+                  alt=""
+                />
+                <div className="bg-dark-red absolute right-0 top-0 flex h-7 w-7 items-center justify-center rounded-full">
+                  <img
+                    src={Quotation}
+                    alt="quotation mark"
+                    width="15"
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+              <blockquote className="mt-7">
+                <p className="text-lg text-black">
+                  “The partnership and funding support were game-changers.
                   BrandMatch helped me turn my burnout into a successful
-                  personal brand.
+                  personal brand.”
                 </p>
               </blockquote>
-              <p>—Jamie K.</p>
+              <p className="mt-9 text-base font-semibold text-black">
+                Jamie K.
+              </p>
             </div>
           </div>
 
-          <div className="embla__slide" key={3}>
-            <div className="embla_slide_content">
-              <blockquote cite="">
-                <p>
-                  Words can be like X-rays, if you use them properly—they’ll go
-                  through anything. You read and you’re pierced.
+          <div className="overflow-hidden rounded-md bg-white shadow">
+            <div className="px-8 py-12">
+              <div className="relative mx-auto h-24 w-24">
+                <img
+                  className="relative mx-auto h-24 w-24 rounded-full object-cover"
+                  src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/1/avatar-3.jpg"
+                  alt=""
+                />
+                <div className="bg-dark-red absolute right-0 top-0 flex h-7 w-7 items-center justify-center rounded-full">
+                  <img
+                    src={Quotation}
+                    alt="quotation mark"
+                    width="15"
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+              <blockquote className="mt-7">
+                <p className="text-lg text-black">
+                  “Amet minim mollit non deserunt ullam co est sit aliqua dolor
+                  do amet sint. Velit officia consequat duis enim velit mollit.
+                  Exercitation veniam consequat”
                 </p>
               </blockquote>
-              <p>
-                —Aldous Huxley, <cite>Brave New World</cite>
+              <p className="mt-9 text-base font-semibold text-black">
+                Kristin Watson
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Testimonials
+export default Testimonials;

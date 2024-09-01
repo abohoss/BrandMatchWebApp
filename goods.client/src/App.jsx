@@ -5,6 +5,7 @@ import AboutUs from "./Components/AboutUs";
 import HowToStart from "./Components/HowToStart";
 import KeyFeatures from "./Components/KeyFeatures";
 import SuppliersPartnersMarque from "./Components/Marquee/SuppliersPartnersMarquee";
+import Testimonials from "./Components/Testimonials";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <KeyFeatures />
       <SuppliersPartnersMarque />
       <AboutUs />
+      <Testimonials />
       <HowToStart />
       <Myfooter />
     </>
