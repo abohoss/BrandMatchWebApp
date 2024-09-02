@@ -2,7 +2,7 @@ import ImageMarquee from "./ImageMarquee";
 // Import Success Partners images
 import Spinneys from "../../assets/images/Success Partners/spinneys.png";
 import Seoudi from "../../assets/images/Success Partners/seoudi.png";
-import Carrefour from "../../assets/images/Success Partners/Carrefour.png";
+import Carrefour from "../../assets/images/Success Partners/carrefour.png";
 import Mahmoud from "../../assets/images/Success Partners/mahmoud.jpg";
 import Flamingo from "../../assets/images/Success Partners/flamingo.jpg";
 import Alrayah from "../../assets/images/Success Partners/alrayah.png";
