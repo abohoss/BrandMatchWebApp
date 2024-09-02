@@ -2,7 +2,7 @@ const Hero = () => {
   return (
     <section className="relative mb-16 flex flex-col items-center gap-2">
       <h1
-        style={{ "font-size": "12vw", "line-height": "1" }}
+        style={{ "fontSize": "12vw", "lineHeight": "1" }}
         className="block self-stretch px-4"
       >
         <span className="block text-right text-dark-red">Maximize</span>
