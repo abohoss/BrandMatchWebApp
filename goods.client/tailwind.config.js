@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 import colors from "tailwindcss/colors";
+import plugin from "tailwindcss/plugin";
 
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -14,5 +15,9 @@ export default {
       gray: colors.gray,
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addVariant }) {
+      addVariant("hocus", ["&:hover", "&:focus"]);
+    }),
+  ],
 };

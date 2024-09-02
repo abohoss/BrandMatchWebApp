@@ -1,27 +1,27 @@
-import React from 'react'
-import { MDBBtn } from 'mdb-react-ui-kit'
-
 const Hero = () => {
   return (
-    <>
-      <div
-        className='p-5 text-center bg-image'
-        style={{ backgroundImage: "url(src/assets/images/hero.jpg)", height: '500px' }}
+    <section className="relative mb-16 flex flex-col items-center gap-2">
+      <h1
+        style={{ "font-size": "12vw", "line-height": "1" }}
+        className="block self-stretch px-4"
       >
-        <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
-          <div className='d-flex justify-content-center align-items-center h-100'>
-            <div className='text-white'>
-              <h1 className='mb-3'>BrandMatch</h1>
-              <h4 className='mb-3'>Maximize Your Brand's Potential with BrandMatch </h4>
-              <MDBBtn href="#howTo" tag="a" outline size="lg" color='light' rippleColor='dark'>
-                Get Started Today
-              </MDBBtn>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  )
-}
+        <span className="block text-right text-dark-red">Maximize</span>
+        <span className="block text-left">Your Brand&apos;s</span>
+        <span className="block text-right">Potential</span>
+      </h1>
+      <p className="max-w-md text-center">
+        A Holistic Solution Offering Comprehensive Sales, Marketing, and
+        Logistics Services Tailored to Your Business
+      </p>
+      <a
+        href="#"
+        className="inline-flex items-center justify-center rounded-full border-2 border-bright-red bg-bright-red px-5 py-2.5 text-base font-semibold text-white/100 no-underline transition-all duration-200 hocus:bg-white hocus:text-bright-red"
+        role="button"
+      >
+        Start Now
+      </a>
+    </section>
+  );
+};
 
-export default Hero
+export default Hero;
