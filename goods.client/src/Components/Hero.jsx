@@ -1,25 +1,62 @@
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import React from 'react'
+
+
+
+
 const Hero = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,  // Trigger the animation only once
+    threshold: 0.2,     // Trigger when 20% of the component is visible
+  });
+
+  const fadeInDownVariants = {
+    hidden: { opacity: 0, y: -40 },
+    visible: { opacity: 1, y: 0 },
+  };
   return (
-    <section className="relative mb-16 flex flex-col items-center gap-2">
-      <h1
-        style={{ "fontSize": "12vw", "lineHeight": "1" }}
-        className="block self-stretch px-4"
+    <section ref={ref} className="relative mb-16 flex flex-col items-center gap-2">
+      <motion.div
+        variants={fadeInDownVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        transition={{ duration: 1, delay: 0.5 }}
       >
-        <span className="block text-right text-dark-red">Maximize</span>
-        <span className="block text-left">Your Brand&apos;s</span>
-        <span className="block text-right">Potential</span>
-      </h1>
-      <p className="max-w-md text-center">
-        A Holistic Solution Offering Comprehensive Sales, Marketing, and
-        Logistics Services Tailored to Your Business
-      </p>
-      <a
-        href="#"
-        className="inline-flex items-center justify-center rounded-full border-2 border-bright-red bg-bright-red px-5 py-2.5 text-base font-semibold text-white/100 no-underline transition-all duration-200 hocus:bg-white hocus:text-bright-red"
-        role="button"
+        <h1
+          style={{ "fontSize": "12vw", "lineHeight": "1" }}
+          className="block self-stretch px-4"
+        >
+          <span className="block text-right text-dark-red">Maximize</span>
+          <span className="block text-left">Your Brand&apos;s</span>
+          <span className="block text-right">Potential</span>
+        </h1>
+      </motion.div>
+      <motion.div
+        variants={fadeInDownVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        transition={{ duration: 1, delay: 1 }}
       >
-        Start Now
-      </a>
+        <p className="max-w-md text-center">
+          A Holistic Solution Offering Comprehensive Sales, Marketing, and
+          Logistics Services Tailored to Your Business
+        </p>
+      </motion.div>
+      <motion.div
+        variants={fadeInDownVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        transition={{ duration: 1, delay: 2 }}
+      >
+        <a
+          href="#"
+          className="inline-flex items-center justify-center rounded-full border-2 border-bright-red bg-bright-red px-5 py-2.5 text-base font-semibold text-white/100 no-underline transition-all duration-200 hocus:bg-white hocus:text-bright-red"
+          role="button"
+        >
+          Start Now
+        </a>
+      </motion.div>
     </section>
   );
 };
