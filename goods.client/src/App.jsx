@@ -6,7 +6,7 @@ import HowToStart from "./Components/HowToStart";
 import KeyFeatures from "./Components/KeyFeatures";
 import SuppliersPartnersMarque from "./Components/Marquee/SuppliersPartnersMarquee";
 import Testimonials from "./Components/Testimonials";
-
+import Challenges from "./Components/challenges";
 const App = () => {
   return (
     <>
@@ -17,6 +17,7 @@ const App = () => {
       <AboutUs />
       <Testimonials />
       <HowToStart />
+      <Challenges />
       <Myfooter />
     </>
   );
