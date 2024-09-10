@@ -81,7 +81,7 @@ const Myfooter = () => {
                             </MDBCol>
 
                             <MDBCol md='4' lg='3' xl='3' className='mx-auto mb-md-0 mb-4'>
-                                <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
+                                <h6 className='text-uppercase fw-bold mb-4'>Contact Us</h6>
                                 <p>
                                     <MDBIcon color='secondary' icon='home' className='me-2' />
                                     41 Zaker Hussien St. - Nasr City, Cairo - Egypt
