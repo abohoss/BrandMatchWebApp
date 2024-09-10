@@ -50,7 +50,7 @@ const Hero = () => {
         transition={{ duration: 1, delay: 2 }}
       >
         <a
-          href="#"
+          href="#howTo"
           className="inline-flex items-center justify-center rounded-full border-2 border-bright-red bg-bright-red px-5 py-2.5 text-base font-semibold text-white/100 no-underline transition-all duration-200 hocus:bg-white hocus:text-bright-red"
           role="button"
         >

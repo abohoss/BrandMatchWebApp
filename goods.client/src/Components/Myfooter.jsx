@@ -51,7 +51,7 @@ const Myfooter = () => {
                                 </p>
                                 <p>
                                     <a href='#!' className='text-reset'>
-                                        lesa hn3rf
+                                        Logistics and Warehousing
                                     </a>
                                 </p>
                             </MDBCol>
@@ -84,25 +84,23 @@ const Myfooter = () => {
                                 <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
                                 <p>
                                     <MDBIcon color='secondary' icon='home' className='me-2' />
-                                    New Cairo, Cairo, Egypt
+                                    41 Zaker Hussien St. - Nasr City, Cairo - Egypt
                                 </p>
                                 <p>
                                     <MDBIcon color='secondary' icon='envelope' className='me-3' />
-                                    info@example.com
+                                    Info@brandmatch-eg.com
                                 </p>
                                 <p>
-                                    <MDBIcon color='secondary' icon='phone' className='me-3' /> + 01 234 567 88
+                                    <MDBIcon color='secondary' icon='phone' className='me-3' />  +2010 1888 1991
                                 </p>
-                                <p>
-                                    <MDBIcon color='secondary' icon='print' className='me-3' /> + 01 234 567 89
-                                </p>
+
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>
                 </section>
 
                 <MDBRow className=' p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-                    <MDBCol className='text-left'>© 2024 Copyright: BrandMatch.com</MDBCol>
+                    <MDBCol className='text-left'>© 2024 Copyright: BrandMatch.org</MDBCol>
                     <MDBCol className='text-right'>
                         <a href='' className='me-4 text-reset'>
                             <MDBIcon color='secondary' fab icon='facebook-f' />
