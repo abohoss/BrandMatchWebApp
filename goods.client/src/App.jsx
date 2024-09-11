@@ -7,11 +7,14 @@ import KeyFeatures from "./Components/KeyFeatures";
 import SuppliersPartnersMarque from "./Components/Marquee/SuppliersPartnersMarquee";
 import Testimonials from "./Components/Testimonials";
 import Challenges from "./Components/challenges";
+import Services from "./Components/Services";
+
 const App = () => {
   return (
     <>
       <MyNavbar />
       <Hero />
+      <Services />
       <KeyFeatures />
       <SuppliersPartnersMarque />
       <AboutUs />
