@@ -1,0 +1,25 @@
+.hover-link {
+    text-decoration: none;
+    /* Remove default underline */
+    position: relative;
+    /* Required for absolute positioning of the line */
+}
+
+.hover-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    /* Set the thickness of the underline */
+    background-color: black;
+    /* Set the color of the underline */
+    bottom: -2px;
+    /* Adjust the position of the underline */
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.hover-link:hover::after {
+    width: 100%;
+    /* Extend the underline on hover */
+}
