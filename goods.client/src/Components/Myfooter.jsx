@@ -1,5 +1,6 @@
 import React from 'react'
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
+import '../styles/footer.css';
 const styles = {
     fontFamily: 'Montserrat',
     color: 'white',
@@ -35,22 +36,22 @@ const Myfooter = () => {
                             <MDBCol md='2' lg='2' xl='2' className='mx-auto mb-4'>
                                 <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
                                 <p>
-                                    <a href='#!' className='text-reset'>
+                                    <a href='#!' className='text-reset no-underline hover-link'>
                                         Marketing
                                     </a>
                                 </p>
                                 <p>
-                                    <a href='#!' className='text-reset'>
+                                    <a href='#!' className='text-reset no-underline hover-link'>
                                         Media Planning
                                     </a>
                                 </p>
                                 <p>
-                                    <a href='#!' className='text-reset'>
+                                    <a href='#!' className='text-reset no-underline hover-link'>
                                         Campaign Ideas
                                     </a>
                                 </p>
                                 <p>
-                                    <a href='#!' className='text-reset'>
+                                    <a href='#!' className='text-reset no-underline hover-link'>
                                         Logistics and Warehousing
                                     </a>
                                 </p>
@@ -59,22 +60,22 @@ const Myfooter = () => {
                             <MDBCol md='3' lg='2' xl='2' className='mx-auto mb-4'>
                                 <h6 className='text-uppercase fw-bold mb-4'>Useful links</h6>
                                 <p>
-                                    <a href='#!' className='text-reset'>
+                                    <a href='#!' className='text-reset no-underline hover-link'>
                                         Pricing
                                     </a>
                                 </p>
                                 <p>
-                                    <a href='#!' className='text-reset'>
+                                    <a href='#!' className='text-reset no-underline hover-link'>
                                         Settings
                                     </a>
                                 </p>
                                 <p>
-                                    <a href='#!' className='text-reset'>
+                                    <a href='#!' className='text-reset no-underline hover-link'>
                                         Orders
                                     </a>
                                 </p>
                                 <p>
-                                    <a href='#!' className='text-reset'>
+                                    <a href='#!' className='text-reset no-underline hover-link'>
                                         Help
                                     </a>
                                 </p>
