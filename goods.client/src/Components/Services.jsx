@@ -3,6 +3,8 @@ import Market from "../assets/images/Services/supermarket.jpg";
 import Report from "../assets/images/Services/report.jpg";
 import Export from "../assets/images/Services/export.jpg";
 import Warehouse from "../assets/images/Services/warehouse.jpg";
+import { useSpring, animated } from "@react-spring/web";
+import { useEffect, useState } from "react";
 
 const Services = () => {
   const categroies = [
@@ -104,23 +106,23 @@ const Services = () => {
   const images = [
     {
       src: Market,
-      top: "30rem",
-      left: "15vw",
+      top: "0rem",
+      left: "0vw",
     },
     {
       src: Report,
-      top: "68rem",
-      left: "85vw",
+      top: "50rem",
+      left: "70vw",
     },
     {
       src: Export,
-      top: "110rem",
-      left: "20vw",
+      top: "90rem",
+      left: "8vw",
     },
     {
       src: Warehouse,
-      top: "135rem",
-      left: "50vw",
+      top: "110rem",
+      left: "35vw",
     },
   ];
 
@@ -133,43 +135,72 @@ const Services = () => {
   };
 
   const leftValues = ["0", "1/4", "1/3", "1/2", "2/3", "3/4"];
-  const generator = randomSeed(5);
+  const leftValGenerator = randomSeed(5);
+  const speedGenerator = randomSeed(2);
   let lastPositionIdx = 0;
 
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const parallaxEffect = (offset) =>
+    useSpring({
+      transform: `translateY(${scrollY * offset}px)`,
+    });
+
   return (
-    <section id="services" className="relative px-4">
-      {images.map((image, index) => (
-        <img
-          src={image.src}
-          alt="supermarket"
-          className="absolute w-1/4 max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-lg"
-          style={{ top: image.top, left: image.left }}
-          key={index}
-        />
-      ))}
+    <section
+      id="services"
+      className="relative px-4"
+      style={{ height: `${10 * services.length}rem` }}
+    >
+      <div className="relative">
+        {images.map((image, index) => (
+          <animated.img
+            src={image.src}
+            alt="supermarket"
+            className="absolute w-1/4 max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-lg"
+            style={{
+              top: image.top,
+              left: image.left,
+              ...parallaxEffect((speedGenerator() % 10) / 100),
+            }}
+            key={index}
+          />
+        ))}
+      </div>
 
-      {services.map((service, index) => {
-        const leftValuesCopy = [...leftValues];
-        const noOfItemsToRemove =
-          lastPositionIdx == 0 || lastPositionIdx == 5 ? 2 : 3;
-        lastPositionIdx = lastPositionIdx == 0 ? 1 : lastPositionIdx;
-        leftValuesCopy.splice(lastPositionIdx - 1, noOfItemsToRemove);
-        const generatedLeftValue =
-          leftValuesCopy[generator() % leftValuesCopy.length];
-        lastPositionIdx = leftValues.indexOf(generatedLeftValue);
-
-        return (
-          <div key={index} className="h-40 w-full">
-            <Service
-              no={2}
-              name={service.name}
-              description={service.description}
-              category={categroies[service.category]}
-              leftValue={generatedLeftValue}
-            />
-          </div>
-        );
-      })}
+      <div className="relative">
+        {services.map((service, index) => {
+          const leftValuesCopy = [...leftValues];
+          const noOfItemsToRemove =
+            lastPositionIdx == 0 || lastPositionIdx == 5 ? 2 : 3;
+          lastPositionIdx = lastPositionIdx == 0 ? 1 : lastPositionIdx;
+          leftValuesCopy.splice(lastPositionIdx - 1, noOfItemsToRemove);
+          const generatedLeftValue =
+            leftValuesCopy[leftValGenerator() % leftValuesCopy.length];
+          lastPositionIdx = leftValues.indexOf(generatedLeftValue);
+          return (
+            <animated.div
+              key={index}
+              className="h-40 w-full"
+              style={parallaxEffect(0.01)}
+            >
+              <Service
+                no={2}
+                name={service.name}
+                description={service.description}
+                category={categroies[service.category]}
+                leftValue={generatedLeftValue}
+              />
+            </animated.div>
+          );
+        })}
+      </div>
     </section>
   );
 };
