@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const Service = ({ no, name, description, category, leftValue }) => {
   return (
-    <div className={`absolute left-${leftValue} w-1/4 p-4`}>
+    <div className={`absolute w-1/4 p-4`} style={{ left: `${leftValue}%` }}>
       <span className="mb-4 block text-sm" aria-hidden="true">
         0{no}
       </span>

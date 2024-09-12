@@ -121,7 +121,7 @@ const Services = () => {
     },
     {
       src: Warehouse,
-      top: "110rem",
+      top: "115rem",
       left: "35vw",
     },
   ];
@@ -134,7 +134,8 @@ const Services = () => {
     };
   };
 
-  const leftValues = ["0", "1/4", "1/3", "1/2", "2/3", "3/4"];
+  // const leftValues = ["0", "1/4", "1/3", "1/2", "2/3", "3/4"];
+  const leftValues = ["0", "25", "33.3", "50", "66.6", "75"];
   const leftValGenerator = randomSeed(5);
   const speedGenerator = randomSeed(2);
   let lastPositionIdx = 0;
