@@ -83,18 +83,28 @@ const Myfooter = () => {
 
                             <MDBCol md='4' lg='3' xl='3' className='mx-auto mb-md-0 mb-4'>
                                 <h6 className='text-uppercase fw-bold mb-4'>Contact Us</h6>
-                                <p>
-                                    <MDBIcon color='secondary' icon='home' className='me-2' />
-                                    41 Zaker Hussien St. - Nasr City, Cairo - Egypt
-                                </p>
-                                <p>
-                                    <MDBIcon color='secondary' icon='envelope' className='me-3' />
-                                    Info@brandmatch-eg.com
-                                </p>
-                                <p>
-                                    <MDBIcon color='secondary' icon='phone' className='me-3' />  +2010 1888 1991
-                                </p>
+                                <a href="https://www.google.com/maps/search/+41+Zaker+Hussein+St.+/@30.0437078,31.3347338,19.25z?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3DE"
+                                    target="_blank" className='text-reset no-underline hover-link'>
+                                    <p>
+                                        <MDBIcon color='secondary' icon='home' className='me-2' />
+                                        41 Zaker Hussien St. - Nasr City, Cairo - Egypt
+                                    </p>
+                                </a>
 
+                                <a href="mailto:Info@brandmatch-eg.com" className='text-reset no-underline hover-link'>
+
+                                    <p>
+                                        <MDBIcon color='secondary' icon='envelope' className='me-3' />
+                                        Info@brandmatch-eg.com
+                                    </p>
+                                </a>
+
+                                <a href="tel:+201018881991" className='text-reset no-underline hover-link'>
+
+                                    <p>
+                                        <MDBIcon color='secondary' icon='phone' className='me-3' />  +2010 1888 1991
+                                    </p>
+                                </a>
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>

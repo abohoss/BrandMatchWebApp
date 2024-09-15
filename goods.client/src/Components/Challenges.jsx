@@ -26,7 +26,7 @@ function Challenges() {
                                 <div class="icon">
                                     <i class="fa fa-chart-simple"></i>
                                 </div>
-                                <div class="feature-content">
+                                <div className="feature-content">
                                     <h5>Ineffective Marketing Campaigns</h5>
                                     <p>Struggling to reach the right audience? Our targeted marketing strategies ensure your brand stands out.</p>
                                 </div>

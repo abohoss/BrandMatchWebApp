@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Montserrat;
-  background-color: black;
-  overflow-x: hidden;
+
+
+html {
+  scroll-behavior: smooth !important;
+  
 }
