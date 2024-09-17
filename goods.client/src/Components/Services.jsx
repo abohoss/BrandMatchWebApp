@@ -7,12 +7,7 @@ import { useSpring, animated } from "@react-spring/web";
 import { useEffect, useState } from "react";
 
 const Services = () => {
-  const categroies = [
-    "Marketing",
-    "Sales",
-    "Growth Opportunities",
-    "Logistics & Warehousing",
-  ];
+  const categroies = ["Marketing", "Sales", "Business Growth", "Logistics"];
   const services = [
     {
       name: "Online and Offline Marketing Activities",
@@ -158,6 +153,7 @@ const Services = () => {
       id="services"
       className="relative px-4"
       style={{ height: `${10 * services.length}rem` }}
+      data-scroll-section
     >
       <div className="relative">
         {images.map((image, index) => (
@@ -192,7 +188,7 @@ const Services = () => {
               style={parallaxEffect(0.01)}
             >
               <Service
-                no={2}
+                no={service.category + 1}
                 name={service.name}
                 description={service.description}
                 category={categroies[service.category]}

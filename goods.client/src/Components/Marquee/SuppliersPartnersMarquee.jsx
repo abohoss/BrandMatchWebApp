@@ -43,7 +43,7 @@ const SuppliersPartnersMarquee = () => {
   ];
 
   return (
-    <section className="m-4">
+    <section className="m-4" data-scroll-section>
       <h2 className="m-4">Our Success Partners & Suppliers</h2>
       <ImageMarquee images={successPartnersImages} direction={"left"} />
       <ImageMarquee images={suppliersImages} direction={"right"} />

@@ -4,17 +4,13 @@ import Handshake from "../assets/icons/features/handshake.svg";
 import Crowdfunding from "../assets/icons/features/crowdfunding.svg";
 import Process from "../assets/icons/features/process.svg";
 import Experience from "../assets/icons/features/experience.svg";
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-
-
-
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const KeyFeatures = () => {
   const { ref, inView } = useInView({
-    triggerOnce: true,  // Trigger the animation only once
-    threshold: 0.4,     // Trigger when 20% of the component is visible
+    triggerOnce: true, // Trigger the animation only once
+    threshold: 0.4, // Trigger when 20% of the component is visible
   });
 
   const fadeInUpVariants = {
@@ -61,7 +57,11 @@ const KeyFeatures = () => {
   ];
 
   return (
-    <section ref={ref} className="m-8 flex flex-col items-center">
+    <section
+      ref={ref}
+      className="m-8 flex flex-col items-center"
+      data-scroll-section
+    >
       <h2>Key Features</h2>
       <motion.div
         variants={fadeInUpVariants}
@@ -72,7 +72,6 @@ const KeyFeatures = () => {
         <div id="featuresBG" className="m-8">
           <div className="grid max-w-7xl grid-cols-2 gap-0.5 sm:grid-cols-3">
             {features.map((feature, index) => (
-
               <div
                 className="flex flex-col items-center gap-2 bg-white p-8"
                 key={index}

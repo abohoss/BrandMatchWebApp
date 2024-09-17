@@ -1,14 +1,11 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import React from 'react'
-
-
-
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import React from "react";
 
 const Hero = () => {
   const { ref, inView } = useInView({
-    triggerOnce: true,  // Trigger the animation only once
-    threshold: 0.2,     // Trigger when 20% of the component is visible
+    triggerOnce: true, // Trigger the animation only once
+    threshold: 0.2, // Trigger when 20% of the component is visible
   });
 
   const fadeInDownVariants = {
@@ -16,7 +13,11 @@ const Hero = () => {
     visible: { opacity: 1, y: 0 },
   };
   return (
-    <section ref={ref} className="relative mb-16 flex flex-col items-center gap-2">
+    <section
+      ref={ref}
+      className="relative mb-16 flex flex-col items-center gap-2"
+      data-scroll-section
+    >
       <motion.div
         variants={fadeInDownVariants}
         initial="hidden"
@@ -24,7 +25,7 @@ const Hero = () => {
         transition={{ duration: 1, delay: 0.5 }}
       >
         <h1
-          style={{ "fontSize": "12vw", "lineHeight": "1" }}
+          style={{ fontSize: "12vw", lineHeight: "1" }}
           className="block self-stretch px-4"
         >
           <span className="block text-right text-dark-red">Maximize</span>

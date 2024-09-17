@@ -2,8 +2,7 @@ import LogoNameRed from "../assets/images/LogoNameRed.svg";
 
 const MyNavbar = () => {
   return (
-
-    <nav className="mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="mx-auto px-4 sm:px-6 lg:px-8" data-scroll-section>
       <div className="flex h-16 items-center justify-between lg:h-20">
         <div className="flex-shrink-0">
           <a href="#" className="flex">
@@ -19,7 +18,9 @@ const MyNavbar = () => {
           <button
             type="button"
             className="inline-flex items-center justify-center rounded-md p-2 text-black transition-all duration-200 hover:bg-gray-100 focus:bg-gray-100"
-            onClick={() => document.getElementById('navList').classList.toggle('hidden')}
+            onClick={() =>
+              document.getElementById("navList").classList.toggle("hidden")
+            }
           >
             <svg
               className="block h-6 w-6"
@@ -74,8 +75,6 @@ const MyNavbar = () => {
           >
             How to start
           </a>
-
-
         </div>
         <a
           href="#"
@@ -87,32 +86,35 @@ const MyNavbar = () => {
       </div>
 
       {/* Collapsible Menu for mobile ya 3am mark */}
-      <div className="lg:hidden hidden" id="navList">
+      <div className="hidden lg:hidden" id="navList">
         <ul className="space-y-4">
           <li>
-            <a href="#about" className="block w-full text-black no-underline text-left px-2 py-2 transition-all duration-200 hover:text-opacity-80">
+            <a
+              href="#about"
+              className="block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
+            >
               About
             </a>
           </li>
           <li>
-            <a href="#services" className="block w-full text-black no-underline text-left px-2 py-2 transition-all duration-200 hover:text-opacity-80">
+            <a
+              href="#services"
+              className="block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
+            >
               Services
             </a>
           </li>
           <li>
-            <a href="#howTo" className="block w-full text-black no-underline text-left px-2 py-2 transition-all duration-200 hover:text-opacity-80">
+            <a
+              href="#howTo"
+              className="block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
+            >
               How to start
             </a>
           </li>
-
         </ul>
       </div>
     </nav>
-
-
-
-
-
   );
 };
 
