@@ -3,8 +3,6 @@ import Market from "../assets/images/Services/supermarket.jpg";
 import Report from "../assets/images/Services/report.jpg";
 import Export from "../assets/images/Services/export.jpg";
 import Warehouse from "../assets/images/Services/warehouse.jpg";
-import { useSpring, animated } from "@react-spring/web";
-import { useEffect, useState } from "react";
 
 const Services = () => {
   const categroies = ["Marketing", "Sales", "Business Growth", "Logistics"];
@@ -102,22 +100,22 @@ const Services = () => {
     {
       src: Market,
       top: "0rem",
-      left: "0vw",
+      left: "1vw",
     },
     {
       src: Report,
-      top: "50rem",
-      left: "70vw",
+      top: "55rem",
+      left: "73vw",
     },
     {
       src: Export,
-      top: "90rem",
+      top: "100rem",
       left: "8vw",
     },
     {
       src: Warehouse,
-      top: "115rem",
-      left: "35vw",
+      top: "120rem",
+      left: "40vw",
     },
   ];
 
@@ -131,73 +129,50 @@ const Services = () => {
 
   // const leftValues = ["0", "1/4", "1/3", "1/2", "2/3", "3/4"];
   const leftValues = ["0", "25", "33.3", "50", "66.6", "75"];
-  const leftValGenerator = randomSeed(5);
-  const speedGenerator = randomSeed(2);
+  const generator = randomSeed(5);
   let lastPositionIdx = 0;
 
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const parallaxEffect = (offset) =>
-    useSpring({
-      transform: `translateY(${scrollY * offset}px)`,
-    });
-
   return (
-    <section
-      id="services"
-      className="relative px-4"
-      style={{ height: `${10 * services.length}rem` }}
-      data-scroll-section
-    >
-      <div className="relative">
-        {images.map((image, index) => (
-          <animated.img
-            src={image.src}
-            alt="supermarket"
-            className="absolute w-1/4 max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-lg"
-            style={{
-              top: image.top,
-              left: image.left,
-              ...parallaxEffect((speedGenerator() % 10) / 100),
-            }}
-            key={index}
-          />
-        ))}
-      </div>
+    <section id="services" className="relative px-4" data-scroll-section>
+      {images.map((image, index) => (
+        <img
+          src={image.src}
+          alt="supermarket"
+          className="absolute w-1/4 max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-lg"
+          style={{ top: image.top, left: image.left }}
+          key={index}
+          data-scroll
+          data-scroll-speed="2"
+        />
+      ))}
 
-      <div className="relative">
-        {services.map((service, index) => {
-          const leftValuesCopy = [...leftValues];
-          const noOfItemsToRemove =
-            lastPositionIdx == 0 || lastPositionIdx == 5 ? 2 : 3;
-          lastPositionIdx = lastPositionIdx == 0 ? 1 : lastPositionIdx;
-          leftValuesCopy.splice(lastPositionIdx - 1, noOfItemsToRemove);
-          const generatedLeftValue =
-            leftValuesCopy[leftValGenerator() % leftValuesCopy.length];
-          lastPositionIdx = leftValues.indexOf(generatedLeftValue);
-          return (
-            <animated.div
-              key={index}
-              className="h-40 w-full"
-              style={parallaxEffect(0.01)}
-            >
-              <Service
-                no={service.category + 1}
-                name={service.name}
-                description={service.description}
-                category={categroies[service.category]}
-                leftValue={generatedLeftValue}
-              />
-            </animated.div>
-          );
-        })}
-      </div>
+      {services.map((service, index) => {
+        const leftValuesCopy = [...leftValues];
+        const noOfItemsToRemove =
+          lastPositionIdx == 0 || lastPositionIdx == 5 ? 2 : 3;
+        lastPositionIdx = lastPositionIdx == 0 ? 1 : lastPositionIdx;
+        leftValuesCopy.splice(lastPositionIdx - 1, noOfItemsToRemove);
+        const generatedLeftValue =
+          leftValuesCopy[generator() % leftValuesCopy.length];
+        lastPositionIdx = leftValues.indexOf(generatedLeftValue);
+
+        return (
+          <div
+            key={index}
+            className="h-40 w-full"
+            data-scroll
+            data-scroll-speed="3"
+          >
+            <Service
+              no={service.category + 1}
+              name={service.name}
+              description={service.description}
+              category={categroies[service.category]}
+              leftValue={generatedLeftValue}
+            />
+          </div>
+        );
+      })}
     </section>
   );
 };

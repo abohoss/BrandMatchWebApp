@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 const Service = ({ no, name, description, category, leftValue }) => {
   return (
     <div className={`absolute w-1/4 p-4`} style={{ left: `${leftValue}%` }}>
-      <span className="mb-4 block text-sm" aria-hidden="true">
+      <span className="mb-4 block text-xs" aria-hidden="true">
         0{no}
       </span>
       <h3 className="text-lg">{name}</h3>
       <hr></hr>
       <p className="text-justify text-sm">{description}</p>
       <p
-        className="inline rounded-full border border-black/25 px-3 py-1 text-sm"
+        className="inline rounded-full border px-1 py-1 text-xs"
         aria-hidden="true"
       >
         {category}

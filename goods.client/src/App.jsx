@@ -17,6 +17,8 @@ const App = () => {
 
   const options = {
     smooth: true,
+    lerp: 0.06,
+    multiplier: 0.5,
   };
 
   return (
