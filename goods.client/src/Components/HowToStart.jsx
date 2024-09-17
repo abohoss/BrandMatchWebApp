@@ -109,7 +109,10 @@ function HowToStart() {
             transition={{ duration: 1, delay: 2 }}
           >
             <a href="https://example.com" className="inline-block">
-              <button type="button" className="btn btn-danger btn-lg">
+              <button
+                type="button"
+                className="inline-flex items-center justify-center rounded-full border-2 border-bright-red bg-bright-red px-5 py-2.5 text-base font-semibold text-white/100 no-underline transition-all duration-200 hocus:bg-white hocus:text-bright-red"
+              >
                 Start Now
               </button>
             </a>
