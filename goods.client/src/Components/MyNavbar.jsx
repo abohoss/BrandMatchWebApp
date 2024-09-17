@@ -1,6 +1,15 @@
 import LogoNameRed from "../assets/images/LogoNameRed.svg";
+import { useLocomotiveScroll } from "react-locomotive-scroll";
+import "../styles/footer.css";
 
 const MyNavbar = () => {
+  const { scroll } = useLocomotiveScroll();
+
+  const scrollToSection = (id) => {
+    const target = document.querySelector(`#${id}`);
+    scroll.scrollTo(target);
+  };
+
   return (
     <nav className="mx-auto px-4 sm:px-6 lg:px-8" data-scroll-section>
       <div className="flex h-16 items-center justify-between lg:h-20">
@@ -56,22 +65,22 @@ const MyNavbar = () => {
 
         <div className="hidden lg:flex lg:items-center lg:justify-center lg:space-x-10">
           <a
-            href="#about"
-            className="text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
+            onClick={() => scrollToSection("about")}
+            className="hover-link text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
           >
             About
           </a>
 
           <a
-            href="#services"
-            className="text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
+            onClick={() => scrollToSection("services")}
+            className="hover-link text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
           >
             Services
           </a>
 
           <a
-            href="#howTo"
-            className="text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
+            onClick={() => scrollToSection("howTo")}
+            className="hover-link text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
           >
             How to start
           </a>
