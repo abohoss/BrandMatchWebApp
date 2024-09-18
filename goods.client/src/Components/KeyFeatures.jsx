@@ -59,17 +59,21 @@ const KeyFeatures = () => {
   return (
     <section
       ref={ref}
-      className="m-8 flex flex-col items-center"
+      className="mx-auto flex max-w-7xl flex-col items-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
       data-scroll-section
     >
-      <h2>Key Features</h2>
+      <div className="mx-auto max-w-3xl text-center">
+        <h2 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl">
+          Key Features
+        </h2>
+      </div>
       <motion.div
         variants={fadeInUpVariants}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        <div id="featuresBG" className="m-8">
+        <div id="featuresBG" className="m-8 sm:mt-12 lg:mt-20">
           <div className="grid max-w-7xl grid-cols-2 gap-0.5 sm:grid-cols-3">
             {features.map((feature, index) => (
               <div

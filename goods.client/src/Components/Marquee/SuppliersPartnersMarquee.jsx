@@ -43,10 +43,16 @@ const SuppliersPartnersMarquee = () => {
   ];
 
   return (
-    <section className="m-4" data-scroll-section>
-      <h2 className="m-4">Our Success Partners & Suppliers</h2>
-      <ImageMarquee images={successPartnersImages} direction={"left"} />
-      <ImageMarquee images={suppliersImages} direction={"right"} />
+    <section className="py-10 sm:py-16 lg:py-24" data-scroll-section>
+      <div className="mx-auto max-w-3xl text-center">
+        <h2 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl">
+          Our Success Partners & Suppliers
+        </h2>
+      </div>
+      <div className="mt-8 sm:mt-12 lg:mt-20">
+        <ImageMarquee images={successPartnersImages} direction={"left"} />
+        <ImageMarquee images={suppliersImages} direction={"right"} />
+      </div>
     </section>
   );
 };
