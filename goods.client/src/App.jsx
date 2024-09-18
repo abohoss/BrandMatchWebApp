@@ -10,10 +10,20 @@ import Challenges from "./Components/challenges";
 import Services from "./Components/Services";
 
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const App = () => {
   const ref = useRef(null);
+
+  // const leftValues = ["0", "1/4", "1/3", "1/2", "2/3", "3/4"];
+  const [leftValues, setLeftValues] = useState([
+    "0",
+    "25",
+    "33.3",
+    "50",
+    "66.6",
+    "75",
+  ]);
 
   const options = {
     smooth: true,
@@ -22,18 +32,22 @@ const App = () => {
   };
 
   return (
-    <LocomotiveScrollProvider options={options} containerRef={ref}>
+    <LocomotiveScrollProvider
+      options={options}
+      containerRef={ref}
+      watch={[leftValues]}
+    >
       <div data-scroll-container ref={ref}>
         <MyNavbar />
         <main>
           <Hero />
-          <Services />
+          <Services leftValues={leftValues} setLeftValues={setLeftValues} />
+          <Challenges />
           <KeyFeatures />
           <SuppliersPartnersMarque />
           <AboutUs />
           <Testimonials />
           <HowToStart />
-          <Challenges />
         </main>
         <Myfooter />
       </div>

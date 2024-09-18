@@ -3,8 +3,9 @@ import Market from "../assets/images/Services/supermarket.jpg";
 import Report from "../assets/images/Services/report.jpg";
 import Export from "../assets/images/Services/export.jpg";
 import Warehouse from "../assets/images/Services/warehouse.jpg";
+import { useEffect } from "react";
 
-const Services = () => {
+const Services = ({ leftValues, setLeftValues }) => {
   const categroies = ["Marketing", "Sales", "Business Growth", "Logistics"];
   const services = [
     {
@@ -109,13 +110,13 @@ const Services = () => {
     },
     {
       src: Export,
-      top: "100rem",
+      top: "105rem",
       left: "8vw",
     },
     {
       src: Warehouse,
-      top: "120rem",
-      left: "40vw",
+      top: "125rem",
+      left: "25vw",
     },
   ];
 
@@ -127,13 +128,34 @@ const Services = () => {
     };
   };
 
-  // const leftValues = ["0", "1/4", "1/3", "1/2", "2/3", "3/4"];
-  const leftValues = ["0", "25", "33.3", "50", "66.6", "75"];
+  useEffect(() => {
+    const updateLeftValues = () => {
+      if (window.innerWidth < 768) {
+        setLeftValues(["0", "25", "33.3", "50"]);
+      } else {
+        setLeftValues(["0", "25", "33.3", "50", "66.6", "75"]);
+      }
+    };
+
+    // Initial check
+    updateLeftValues();
+
+    // Add event listener
+    window.addEventListener("resize", updateLeftValues);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener("resize", updateLeftValues);
+  }, []);
+
   const generator = randomSeed(5);
   let lastPositionIdx = 0;
 
   return (
-    <section id="services" className="relative px-4" data-scroll-section>
+    <section
+      id="services"
+      className="relative px-1 md:px-4"
+      data-scroll-section
+    >
       {images.map((image, index) => (
         <img
           src={image.src}
@@ -149,7 +171,9 @@ const Services = () => {
       {services.map((service, index) => {
         const leftValuesCopy = [...leftValues];
         const noOfItemsToRemove =
-          lastPositionIdx == 0 || lastPositionIdx == 5 ? 2 : 3;
+          lastPositionIdx == 0 || lastPositionIdx == leftValues.length - 1
+            ? 2
+            : 3;
         lastPositionIdx = lastPositionIdx == 0 ? 1 : lastPositionIdx;
         leftValuesCopy.splice(lastPositionIdx - 1, noOfItemsToRemove);
         const generatedLeftValue =
