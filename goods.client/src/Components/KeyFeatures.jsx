@@ -4,6 +4,7 @@ import Handshake from "../assets/icons/features/handshake.svg";
 import Crowdfunding from "../assets/icons/features/crowdfunding.svg";
 import Process from "../assets/icons/features/process.svg";
 import Experience from "../assets/icons/features/experience.svg";
+import Burnout from "../assets/icons/features/burndown-svgrepo-com.svg";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -49,11 +50,12 @@ const KeyFeatures = () => {
         "Focus on what matters most to you while we manage the entire branding process, from concept to execution.",
     },
     {
-      icon: null,
-      title: "title",
+      icon: Burnout,
+      title: "Survive career burnout",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quisquam ullam sunt perferendis,",
+        "We help you overcome career burnout by creating a powerful personal brand for you.",
     },
+
   ];
 
   return (
