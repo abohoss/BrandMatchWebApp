@@ -6,7 +6,7 @@ import HowToStart from "./Components/HowToStart";
 import KeyFeatures from "./Components/KeyFeatures";
 import SuppliersPartnersMarque from "./Components/Marquee/SuppliersPartnersMarquee";
 import Testimonials from "./Components/Testimonials";
-import Challenges from "./Components/challenges";
+import Challenges from "./Components/Challenges";
 import Services from "./Components/Services";
 
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
