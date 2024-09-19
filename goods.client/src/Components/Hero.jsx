@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useLocomotiveScroll } from "react-locomotive-scroll";
 import React from "react";
 
 const Hero = () => {
@@ -11,6 +12,12 @@ const Hero = () => {
   const fadeInDownVariants = {
     hidden: { opacity: 0, y: -40 },
     visible: { opacity: 1, y: 0 },
+  };
+  const { scroll } = useLocomotiveScroll();
+
+  const scrollToSection = (id) => {
+    const target = document.querySelector(`#${id}`);
+    scroll.scrollTo(target);
   };
   return (
     <section
@@ -51,7 +58,7 @@ const Hero = () => {
         transition={{ duration: 1, delay: 2 }}
       >
         <a
-          href="#howTo"
+          onClick={() => scrollToSection("howTo")}
           className="inline-flex items-center justify-center rounded-full border-2 border-bright-red bg-bright-red px-5 py-2.5 text-base font-semibold text-white/100 no-underline transition-all duration-200 hocus:bg-white hocus:text-bright-red"
           role="button"
         >
