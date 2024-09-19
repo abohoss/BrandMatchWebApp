@@ -65,17 +65,17 @@ const MyNavbar = () => {
 
         <div className="hidden lg:flex lg:items-center lg:justify-center lg:space-x-10">
           <a
-            onClick={() => scrollToSection("about")}
-            className="hover-link text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
-          >
-            About
-          </a>
-
-          <a
             onClick={() => scrollToSection("services")}
             className="hover-link text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
           >
             Services
+          </a>
+
+          <a
+            onClick={() => scrollToSection("about")}
+            className="hover-link text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
+          >
+            About
           </a>
 
           <a
