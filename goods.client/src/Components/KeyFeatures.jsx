@@ -53,7 +53,7 @@ const KeyFeatures = () => {
       icon: Burnout,
       title: "Survive career burnout",
       description:
-        "We help you overcome career burnout by creating a powerful personal brand for you.",
+        "We help you overcome career burnout by creating a powerful personal brand for you. ",
     },
 
   ];
