@@ -32,10 +32,14 @@ const App = () => {
     mobile: {
       breakpoint: 0,
       smooth: true,
+      lerp: 0.1,
+      multiplier: 2,
     },
     tablet: {
       breakpoint: 0,
       smooth: true,
+      lerp: 0.1,
+      multiplier: 2,
     },
   };
 
