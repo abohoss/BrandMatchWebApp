@@ -1,12 +1,13 @@
 import LogoNameRed from "../assets/images/LogoNameRed.svg";
+import LogoRed from "../assets/images/LogoRed.svg";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
 import "../styles/footer.css";
 
 const MyNavbar = () => {
   const { scroll } = useLocomotiveScroll();
 
-  const scrollToSection = (id) => {
-    const target = document.querySelector(`#${id}`);
+  const handleClick = (e) => {
+    const target = document.querySelector(`#${e.target.name}`);
     scroll.scrollTo(target);
   };
 
@@ -17,7 +18,7 @@ const MyNavbar = () => {
           <a href="#" className="flex">
             <img
               className="h-8 w-auto"
-              src={LogoNameRed}
+              src={window.innerWidth >= 640 ? LogoNameRed : LogoRed}
               alt="Brandmatch logo"
             />
           </a>
@@ -58,22 +59,25 @@ const MyNavbar = () => {
 
         <div className="hidden lg:flex lg:items-center lg:justify-center lg:space-x-10">
           <a
-            onClick={() => scrollToSection("services")}
-            className="hover-link text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
+            onClick={handleClick}
+            name="services"
+            className="hover-link cursor-pointer text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
           >
             Services
           </a>
 
           <a
-            onClick={() => scrollToSection("about")}
-            className="hover-link text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
+            onClick={handleClick}
+            name="about"
+            className="hover-link cursor-pointer text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
           >
             About
           </a>
 
           <a
-            onClick={() => scrollToSection("howTo")}
-            className="hover-link text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
+            onClick={handleClick}
+            name="howTo"
+            className="hover-link cursor-pointer text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
           >
             How to start
           </a>
@@ -92,15 +96,8 @@ const MyNavbar = () => {
         <ul className="hidden transition-all duration-900 ease-in-out opacity-0 transform -translate-y-5" id="navList">
           <li>
             <a
-              onClick={() => scrollToSection("about")}
-              className=" block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
-            >
-              About
-            </a>
-          </li>
-          <li>
-            <a
-              onClick={() => scrollToSection("services")}
+              onClick={handleClick}
+              name="services"
               className="block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
             >
               Services
@@ -108,7 +105,17 @@ const MyNavbar = () => {
           </li>
           <li>
             <a
-                 onClick={() => scrollToSection("howTo")}
+              onClick={handleClick}
+              name="about"
+              className="block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              onClick={handleClick}
+              name="howTo"
               className="block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
             >
               How to start
