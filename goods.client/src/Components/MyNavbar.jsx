@@ -48,10 +48,10 @@ const MyNavbar = () => {
             id="menuButton"
           >
             {/* Burger Icon */}
-            <img src="src/assets/icons/burger-menu-svgrepo-com.svg" alt="" className="menu-icon block h-6 w-6 transition-transform duration-300 " />
+            <img src="assets/images/burger-menu-svgrepo-com.svg" alt="" className="menu-icon block h-6 w-6 transition-transform duration-300 " />
 
             {/* X Icon */}
-            <img src="src/assets/icons/close-svgrepo-com.svg" alt="" className="x-icon block h-6 w-6 transition-transform duration-300" />
+            <img src="assets/images/close-svgrepo-com.svg" alt="" className="x-icon block h-6 w-6 transition-transform duration-300" />
           </button>
 
 
@@ -128,3 +128,5 @@ const MyNavbar = () => {
 };
 
 export default MyNavbar;
+
+
