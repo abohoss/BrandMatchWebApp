@@ -1,4 +1,5 @@
 import LogoNameRed from "../assets/images/LogoNameRed.svg";
+import LogoRed from "../assets/images/LogoRed.svg";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
 import "../styles/footer.css";
 
@@ -17,7 +18,7 @@ const MyNavbar = () => {
           <a href="#" className="flex">
             <img
               className="h-8 w-auto"
-              src={LogoNameRed}
+              src={window.innerWidth >= 640 ? LogoNameRed : LogoRed}
               alt="Brandmatch logo"
             />
           </a>
