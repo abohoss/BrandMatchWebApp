@@ -26,41 +26,34 @@ const MyNavbar = () => {
         <div className="lg:hidden">
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md p-2 text-black transition-all duration-200 hover:bg-gray-100 focus:bg-gray-100"
-            onClick={() =>
-              document.getElementById("navList").classList.toggle("hidden")
-            }
-          >
-            <svg
-              className="block h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 8h16M4 16h16"
-              />
-            </svg>
+            className="inline-flex items-center justify-center rounded-md p-2 
+            text-black transition-all duration-200 hover:bg-gray-100focus:outline-none focus:ring-0"
+            onClick={() => {
+              const navList = document.getElementById("navList");
+              const button = document.getElementById("menuButton");
+              navList.classList.toggle("hidden");
+              button.classList.toggle("open");
+              if (navList.classList.contains("hidden")) {
+                // If hidden, reset the styles to hide smoothly
+                setTimeout(() => {
+                  navList.classList.add("opacity-0", "transform", "-translate-y-5");
+                }, 10);
+              } else {
+                // Show with smooth transition
+                navList.classList.remove("opacity-0", "transform", "-translate-y-5");
+              }
 
-            <svg
-              className="hidden h-6 w-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
+            }}
+            id="menuButton"
+          >
+            {/* Burger Icon */}
+            <img src="src/assets/icons/burger-menu-svgrepo-com.svg" alt="" className="menu-icon block h-6 w-6 transition-transform duration-300 " />
+
+            {/* X Icon */}
+            <img src="src/assets/icons/close-svgrepo-com.svg" alt="" className="x-icon block h-6 w-6 transition-transform duration-300" />
           </button>
+
+
         </div>
 
         <div className="hidden lg:flex lg:items-center lg:justify-center lg:space-x-10">
@@ -95,19 +88,19 @@ const MyNavbar = () => {
       </div>
 
       {/* Collapsible Menu for mobile ya 3am mark */}
-      <div className="hidden lg:hidden" id="navList">
-        <ul className="space-y-4">
+      <div className="" >
+        <ul className="hidden transition-all duration-900 ease-in-out opacity-0 transform -translate-y-5" id="navList">
           <li>
             <a
-              href="#about"
-              className="block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
+              onClick={() => scrollToSection("about")}
+              className=" block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
             >
               About
             </a>
           </li>
           <li>
             <a
-              href="#services"
+              onClick={() => scrollToSection("services")}
               className="block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
             >
               Services
@@ -115,7 +108,7 @@ const MyNavbar = () => {
           </li>
           <li>
             <a
-              href="#howTo"
+                 onClick={() => scrollToSection("howTo")}
               className="block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
             >
               How to start
@@ -123,7 +116,7 @@ const MyNavbar = () => {
           </li>
         </ul>
       </div>
-    </nav>
+    </nav >
   );
 };
 
