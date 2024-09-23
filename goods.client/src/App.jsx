@@ -33,13 +33,13 @@ const App = () => {
       breakpoint: 0,
       smooth: true,
       lerp: 0.1,
-      multiplier: 2,
+      multiplier: 100,
     },
     tablet: {
       breakpoint: 0,
       smooth: true,
       lerp: 0.1,
-      multiplier: 2,
+      multiplier: 100,
     },
   };
 
