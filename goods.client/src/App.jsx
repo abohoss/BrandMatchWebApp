@@ -8,6 +8,7 @@ import SuppliersPartnersMarque from "./Components/Marquee/SuppliersPartnersMarqu
 import Testimonials from "./Components/Testimonials";
 import Challenges from "./Components/Challenges";
 import Services from "./Components/Services";
+import BackToTopBtn from "./Components/BackToTopBtn";
 
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { useRef, useState } from "react";
@@ -51,6 +52,7 @@ const App = () => {
     >
       <div data-scroll-container ref={ref}>
         <MyNavbar />
+        <BackToTopBtn />
         <main>
           <Hero />
           <Services leftValues={leftValues} setLeftValues={setLeftValues} />
