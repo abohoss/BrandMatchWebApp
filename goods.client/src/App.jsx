@@ -29,18 +29,14 @@ const App = () => {
   const options = {
     smooth: true,
     lerp: 0.06,
-    multiplier: 0.5,
+    multiplier: 1,
     mobile: {
       breakpoint: 0,
       smooth: true,
-      lerp: 0.1,
-      multiplier: 100,
     },
     tablet: {
       breakpoint: 0,
       smooth: true,
-      lerp: 0.1,
-      multiplier: 100,
     },
   };
 
