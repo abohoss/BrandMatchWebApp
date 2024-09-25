@@ -6,42 +6,42 @@ import Warehouse from "../assets/images/Services/warehouse.jpg";
 import { useEffect } from "react";
 
 const Services = ({ leftValues, setLeftValues }) => {
-  const categroies = ["Marketing", "Sales", "Business Growth", "Logistics"];
+  const categroies = ["Sales", "Marketing", "Business Growth", "Logistics"];
   const services = [
-    {
-      name: "Online and Offline Marketing Activities",
-      description:
-        "We handle all aspects of marketing, both digital and traditional, to boost your brand’s visibility.",
-      category: 0,
-    },
-    {
-      name: "Market Research",
-      description:
-        "We conduct thorough research on competitors, prices, channels, and more to inform your strategy.",
-      category: 0,
-    },
-    {
-      name: "Shelf Organization",
-      description:
-        "Ensure your products have the best shelf view in hypermarkets.",
-      category: 0,
-    },
     {
       name: "Sales Channels",
       description:
         "We offer access to over 2,000 sales channels to maximize your product reach.",
-      category: 1,
+      category: 0,
     },
     {
       name: "Broad Store Access",
       description:
         "Access to all hyper markets, large grocery stores, retail markets, small groceries and different channels in Egypt",
-      category: 1,
+      category: 0,
     },
     {
       name: "Monthly Sales Reports",
       description:
         "Stay informed with detailed sales reports and market overviews.",
+      category: 0,
+    },
+    {
+      name: "Online and Offline Marketing Activities",
+      description:
+        "We handle all aspects of marketing, both digital and traditional, to boost your brand’s visibility.",
+      category: 1,
+    },
+    {
+      name: "Market Research",
+      description:
+        "We conduct thorough research on competitors, prices, channels, and more to inform your strategy.",
+      category: 1,
+    },
+    {
+      name: "Shelf Organization",
+      description:
+        "Ensure your products have the best shelf view in hypermarkets.",
       category: 1,
     },
     {
@@ -99,12 +99,12 @@ const Services = ({ leftValues, setLeftValues }) => {
 
   const images = [
     {
-      src: Market,
+      src: Report,
       top: "0rem",
       left: "1vw",
     },
     {
-      src: Report,
+      src: Market,
       top: "55rem",
       left: "73vw",
     },
