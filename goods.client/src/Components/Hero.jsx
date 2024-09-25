@@ -25,7 +25,7 @@ const Hero = () => {
       >
         <h1
           style={{ fontSize: "12vw", lineHeight: "1" }}
-          className="block self-stretch px-4"
+          className="self-stretch truncate px-4"
         >
           <span className="block text-right text-dark-red">Maximize</span>
           <span className="block text-left">Your Brand&apos;s</span>
@@ -38,10 +38,7 @@ const Hero = () => {
         animate={inView ? "visible" : "hidden"}
         transition={{ duration: 1, delay: 1 }}
       >
-        <p className="max-w-md text-center">
-          A Holistic Solution Offering Comprehensive Sales, Marketing, and
-          Logistics Services Tailored to Your Business
-        </p>
+        <p className="max-w-md text-center">Your partner in market success</p>
       </motion.div>
       <motion.div
         variants={fadeInDownVariants}
