@@ -64,7 +64,7 @@ const KeyFeatures = () => {
       className="mx-auto flex max-w-7xl flex-col items-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24"
       data-scroll-section
     >
-      <div       ref={ref} className="mx-auto max-w-3xl text-center">
+      <div ref={ref} className="mx-auto max-w-3xl text-center">
         <h2 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl">
           Key Features
         </h2>
@@ -76,25 +76,25 @@ const KeyFeatures = () => {
         transition={{ duration: 1, delay: 0.5 }}
       >
         <div id="featuresBG" className="m-8 sm:mt-12 lg:mt-20">
-          <div className="grid max-w-7xl grid-cols-2 gap-0.5 sm:grid-cols-3">
+          <div className="grid max-w-7xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0.5">
             {features.map((feature, index) => (
               <div
-                className="flex flex-col items-center gap-2 bg-white p-8"
+                className="flex flex-col items-center gap-2 bg-white p-6"
                 key={index}
               >
                 <img
                   src={feature.icon}
                   alt={`${feature.icon == null ? null : feature.icon.split("/").pop()} icon`}
                   width="75"
-                  // height="10"
                   className="mb-4"
                 />
-                <h3 className="text-center">{feature.title}</h3>
+                <h3 className="text-center ">{feature.title}</h3>
                 <p className="text-center">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
+
       </motion.div>
     </section>
   );
