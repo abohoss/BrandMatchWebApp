@@ -1,8 +1,8 @@
 import LogoNameRed from "../assets/images/LogoNameRed.svg";
 import LogoRed from "../assets/images/LogoRed.svg";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
-import "../styles/footer.css";
-
+import "../styles/nav.css";
+import { useState } from "react";
 const MyNavbar = () => {
   const { scroll } = useLocomotiveScroll();
 
@@ -10,9 +10,17 @@ const MyNavbar = () => {
     const target = document.querySelector(`#${e.target.name}`);
     scroll.scrollTo(target);
   };
+  const [showNavbar, setShowNavbar] = useState(false)
+
+  const handleShowNavbar = () => {
+    setShowNavbar(!showNavbar)
+    const button = document.getElementById('menuButton');
+    button.classList.toggle("open");
+  }
+
 
   return (
-    <nav className="mx-auto px-4 sm:px-6 lg:px-8" data-scroll-section>
+    <nav className="mx-auto px-4 sm:px-6 lg:px-8 " data-scroll-section>
       <div className="flex h-16 items-center justify-between lg:h-20">
         <div className="flex-shrink-0">
           <a href="#" className="flex">
@@ -24,36 +32,11 @@ const MyNavbar = () => {
           </a>
         </div>
 
-        <div className="lg:hidden">
-          <button
-            type="button"
-            className="inline-flex items-center justify-center rounded-md p-2 
-            text-black transition-all duration-200 hover:bg-gray-100focus:outline-none focus:ring-0"
-            onClick={() => {
-              const navList = document.getElementById("navList");
-              const button = document.getElementById("menuButton");
-              navList.classList.toggle("hidden");
-              button.classList.toggle("open");
-              if (navList.classList.contains("hidden")) {
-                // If hidden, reset the styles to hide smoothly
-                setTimeout(() => {
-                  navList.classList.add("opacity-0", "transform", "-translate-y-5");
-                }, 10);
-              } else {
-                // Show with smooth transition
-                navList.classList.remove("opacity-0", "transform", "-translate-y-5");
-              }
-
-            }}
-            id="menuButton"
-          >
-            {/* Burger Icon */}
-            <img src="assets/images/burger-menu-svgrepo-com.svg" alt="" className="menu-icon block h-6 w-6 transition-transform duration-300 " />
-
-            {/* X Icon */}
-            <img src="assets/images/close-svgrepo-com.svg" alt="" className="x-icon block h-6 w-6 transition-transform duration-300" />
-          </button>
-
+        <div className="menu-icon" onClick={handleShowNavbar} id="menuButton">
+          {/* Burger Icon */}
+          <img src="assets/images/burger-menu-svgrepo-com.svg" alt="" className="menu-burger block h-6 w-6 transition-transform duration-300 " />
+          {/* X Icon */}
+          <img src="assets/images/close-svgrepo-com.svg" alt="" className="x-icon block h-6 w-6 transition-transform duration-300" />
 
         </div>
 
@@ -92,8 +75,8 @@ const MyNavbar = () => {
       </div>
 
       {/* Collapsible Menu for mobile ya 3am mark */}
-      <div className="" >
-        <ul className="hidden transition-all duration-900 ease-in-out opacity-0 transform -translate-y-5" id="navList">
+      <div className={`nav-elements  ${showNavbar && 'active'}`}>
+        <ul className=" " id="navList">
           <li>
             <a
               onClick={handleClick}
@@ -128,5 +111,6 @@ const MyNavbar = () => {
 };
 
 export default MyNavbar;
+
 
 
