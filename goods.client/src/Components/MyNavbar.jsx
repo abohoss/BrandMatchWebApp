@@ -17,7 +17,11 @@ const MyNavbar = () => {
     const button = document.getElementById('menuButton');
     button.classList.toggle("open");
   }
-
+  const handleClickMobile = (e) => {
+    handleShowNavbar();
+    const target = document.querySelector(`#${e.target.name}`);
+    scroll.scrollTo(target);
+  };
 
   return (
     <nav className="mx-auto px-4 sm:px-6 lg:px-8 " data-scroll-section>
@@ -79,7 +83,7 @@ const MyNavbar = () => {
         <ul className=" " id="navList">
           <li>
             <a
-              onClick={handleClick}
+              onClick={handleClickMobile}
               name="services"
               className="block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
             >
@@ -88,7 +92,7 @@ const MyNavbar = () => {
           </li>
           <li>
             <a
-              onClick={handleClick}
+              onClick={handleClickMobile}
               name="about"
               className="block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
             >
@@ -97,7 +101,7 @@ const MyNavbar = () => {
           </li>
           <li>
             <a
-              onClick={handleClick}
+              onClick={handleClickMobile}
               name="howTo"
               className="block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
             >

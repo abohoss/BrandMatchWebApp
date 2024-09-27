@@ -27,7 +27,9 @@
 .menu-icon {
     display: none;
 }
-
+.nav-elements{
+    display: none;
+}
 
 @media (max-width: 768px) {
     .nav-elements ul li:not(:last-child) {
@@ -43,6 +45,7 @@
 
     .nav-elements {
         position: absolute;
+        display: block;
         right: 0;
         top: 60px;
         background-color: #ffffff;
