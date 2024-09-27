@@ -3,13 +3,13 @@ import Marquee from "react-fast-marquee";
 
 const ImageMarquee = ({ images, direction }) => {
   return (
-    <Marquee pauseOnClick={true} speed={5} direction={direction}>
+    <Marquee pauseOnClick={true} speed={100} direction={direction}>
       {images.map((image, index) => (
         <div key={index} className="m-1 rounded border border-black/50 p-4">
           <img
             src={image}
             alt={`${image} logo`}
-            className="max-h-16"
+            className="max-h-8 md:max-h-16"
             draggable="false"
           />
         </div>
