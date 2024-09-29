@@ -9,6 +9,7 @@ import Testimonials from "./Components/Testimonials";
 import Challenges from "./Components/Challenges";
 import Services from "./Components/Services";
 import BackToTopBtn from "./Components/BackToTopBtn";
+import Intro from "./Components/Intro";
 
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { useRef, useState } from "react";
@@ -51,6 +52,7 @@ const App = () => {
         <BackToTopBtn />
         <main>
           <Hero />
+          <Intro />
           <Services leftValues={leftValues} setLeftValues={setLeftValues} />
           <Challenges />
           <KeyFeatures />
