@@ -16,6 +16,7 @@ import { useRef, useState } from "react";
 
 const App = () => {
   const ref = useRef(null);
+  const [isIntro, setIsIntro] = useState(true);
 
   // const leftValues = ["0", "1/4", "1/3", "1/2", "2/3", "3/4"];
   const [leftValues, setLeftValues] = useState([
@@ -48,11 +49,11 @@ const App = () => {
       watch={[leftValues]}
     >
       <div data-scroll-container ref={ref}>
-        <MyNavbar />
+        <MyNavbar isIntroComplete={!isIntro} />
         <BackToTopBtn />
         <main>
-          <Hero />
-          <Intro />
+          <Hero isIntroComplete={!isIntro} />
+          <Intro isIntro={isIntro} setIsIntro={setIsIntro} />
           <Services leftValues={leftValues} setLeftValues={setLeftValues} />
           <Challenges />
           <KeyFeatures />

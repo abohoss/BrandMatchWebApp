@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import { useEffect } from "react";
 import { useAnimate, motion } from "framer-motion";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 import AgdadnaAd from "../assets/videos/agdadna ad.mp4";
 
-const Intro = () => {
+const Intro = ({ isIntro, setIsIntro }) => {
   const { scroll } = useLocomotiveScroll();
   const [scope, animate] = useAnimate();
-  const [isIntro, setIsIntro] = useState(true);
 
   useEffect(() => {
     const introTimeline = [
@@ -37,7 +37,7 @@ const Intro = () => {
         setIsIntro(false);
       });
     }
-  }, [scope, animate, scroll]);
+  }, [scope, animate, scroll, setIsIntro]);
 
   return (
     <motion.div
@@ -80,6 +80,11 @@ const Intro = () => {
       </div>
     </motion.div>
   );
+};
+
+Intro.propTypes = {
+  isIntro: PropTypes.bool,
+  setIsIntro: PropTypes.func,
 };
 
 export default Intro;
