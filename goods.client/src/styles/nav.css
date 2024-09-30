@@ -27,7 +27,9 @@
 .menu-icon {
     display: none;
 }
-
+.nav-elements{
+    display: none;
+}
 
 @media (max-width: 768px) {
     .nav-elements ul li:not(:last-child) {
@@ -35,26 +37,29 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1023px) {
     .menu-icon {
         display: block;
         cursor: pointer;
+        
     }
 
     .nav-elements {
-        position: absolute;
+        position: fixed;
+        display: block;
         right: 0;
         top: 60px;
         background-color: #ffffff;
-        width: 0px;
-        height: calc(100vh - 60px);
+        width: 0;
+        height: 100vh;
         transition: all 0.3s ease-in;
         overflow: hidden;
-        z-index: 10;
+        z-index: 50;
+        
     }
 
     .nav-elements.active {
-        width: 270px;
+        width: 100vw;
     }
 
     .nav-elements ul {
@@ -69,6 +74,7 @@
 
     #menuButton {
         position: relative;
+       
     }
 
     #menuButton.open .menu-burger {
