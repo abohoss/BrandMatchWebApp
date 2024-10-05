@@ -1,7 +1,7 @@
 import Service from "./Service";
 import Market from "../assets/images/Services/supermarket.jpg";
 import Report from "../assets/images/Services/report.jpg";
-import Export from "../assets/images/Services/export.jpg";
+// import Export from "../assets/images/Services/export.jpg";
 import Warehouse from "../assets/images/Services/warehouse.jpg";
 import Delivery from "../assets/images/Services/delivery.jpeg";
 import Crush from "../assets/images/Services/crush.jpg";
@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 const Services = ({ leftValues, setLeftValues }) => {
-  const categroies = ["Sales", "Marketing", "Business Growth", "Logistics"];
+  const categroies = ["Sales", "Marketing", "Logistics"];
   const services = [
     {
       name: "Sales Channels",
@@ -29,6 +29,12 @@ const Services = ({ leftValues, setLeftValues }) => {
       name: "Monthly Sales Reports",
       description:
         "Stay informed with detailed sales reports and market overviews.",
+      category: 0,
+    },
+    {
+      name: "Product Availability",
+      description:
+        "Ensure your products are widely available at competitive prices across all hypermarkets.",
       category: 0,
     },
     {
@@ -50,55 +56,26 @@ const Services = ({ leftValues, setLeftValues }) => {
       category: 1,
     },
     {
-      name: "Product Availability",
-      description:
-        "Ensure your products are widely available at competitive prices across all hypermarkets.",
-      category: 2,
-    },
-    {
-      name: "Market Surveys and Reports",
-      description:
-        "Conduct initial market surveys and provide weekly reports comparing your products with competitors.",
-      category: 2,
-    },
-    {
-      name: "SWOT Analysis",
-      description:
-        "Identify strengths, weaknesses, opportunities, and threats with our detailed analysis.",
-      category: 2,
-    },
-    {
-      name: "Marketing Activities",
-      description:
-        "Conduct offline and online marketing activities, including shows, exhibitions, and events.",
-      category: 2,
-    },
-    {
-      name: "Export Opportunities",
-      description: "Expand your market reach with our export services.",
-      category: 2,
-    },
-    {
       name: "Co-Promotion",
       description:
         "Partner with complementary products to enhance your market presence.",
-      category: 2,
+      category: 1,
     },
     {
       name: "Warehousing",
       description: "Provide warehousing per pallet to meet your storage needs.",
-      category: 3,
+      category: 2,
     },
     {
       name: "Product Delivery",
       description: "Deliver your products to the desired location efficiently.",
-      category: 3,
+      category: 2,
     },
     {
       name: "Order Processing",
       description:
         "Handle labeling and invoicing to streamline your order process.",
-      category: 3,
+      category: 2,
     },
   ];
 
@@ -128,19 +105,19 @@ const Services = ({ leftValues, setLeftValues }) => {
       top: "90rem",
       left: "20vw",
     },
-    {
-      src: Export,
-      top: "170rem",
-      left: "5vw",
-    },
+    // {
+    //   src: Export,
+    //   top: "110rem",
+    //   left: "5vw",
+    // },
     {
       src: Warehouse,
-      top: "190rem",
+      top: "125rem",
       left: "48vw",
     },
     {
       src: Delivery,
-      top: "205rem",
+      top: "140rem",
       left: "1vw",
     },
   ];
