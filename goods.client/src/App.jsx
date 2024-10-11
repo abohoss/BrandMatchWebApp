@@ -10,7 +10,7 @@ import Challenges from "./Components/Challenges";
 import Services from "./Components/Services";
 import BackToTopBtn from "./Components/BackToTopBtn";
 import Intro from "./Components/Intro";
-
+import ServicesSection from "./Components/ServicesSection";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { useRef, useState } from "react";
 
@@ -54,17 +54,20 @@ const App = () => {
         <main>
           <Hero isIntroComplete={!isIntro} />
           <Intro isIntro={isIntro} setIsIntro={setIsIntro} />
-          <Services leftValues={leftValues} setLeftValues={setLeftValues} />
+          {/* <Services leftValues={leftValues} setLeftValues={setLeftValues} /> */}
+          <ServicesSection />
           <Challenges />
           <KeyFeatures />
           <SuppliersPartnersMarque />
           <AboutUs />
           <Testimonials />
           <HowToStart />
+     
         </main>
         <Myfooter />
       </div>
     </LocomotiveScrollProvider>
+
   );
 };
 
