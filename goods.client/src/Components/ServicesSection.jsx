@@ -19,6 +19,23 @@ const ServiceCard = ({ bgColor, category, title, description, icon }) => (
   </div>
 );
 
+const ServiceCardMobile = ({ bgColor, category, title, description, icon }) => (
+  <div className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-3`}>
+    <div className={`h-full ${bgColor === 'dark' ? 'bg-[#231f20] text-white' : 'bg-white text-[#231f20]'} rounded-xl shadow flex flex-col justify-between`}>
+      <div className="p-6 flex justify-between items-center">
+        <div className="w-[50px] flex justify-center items-center">
+          <img src={icon} />
+        </div>
+
+      </div>
+      <div className="p-6 flex-grow flex flex-col justify-center">
+        <h3 className="text-xl sm:text-2xl  mb-2 leading-relaxed">{title}</h3>
+        <p className="text-sm leading-tight">{description}</p>
+      </div>
+    </div>
+  </div>
+);
+
 const ServicesSection = () => {
   const customItemStyle = {
     border: 'none',
@@ -123,7 +140,7 @@ const ServicesSection = () => {
 
   return (
     <div data-scroll-section>
-      <section className="relative mt-5 ">
+      <section className="relative lg:mt-5">
         <div className="overflow-y-auto min-h-screen">
           <div className="py-12 md:py-24 container mx-auto px-4">
             <h2 className="text-4xl md:text-7xl text-center mb-8 md:mb-20">Services</h2>
@@ -144,7 +161,7 @@ const ServicesSection = () => {
                   <Accordion.Header style={accordionHeaderStyle}>Sales</Accordion.Header>
                   <Accordion.Body>
                     {sales.map((service, index) => (
-                      <ServiceCard key={index} {...service} />
+                      <ServiceCardMobile key={index} {...service} />
                     ))}
                   </Accordion.Body>
                 </Accordion.Item>
@@ -152,7 +169,7 @@ const ServicesSection = () => {
                   <Accordion.Header style={accordionHeaderStyle}>Marketing</Accordion.Header>
                   <Accordion.Body>
                     {marketing.map((service, index) => (
-                      <ServiceCard key={index} {...service} />
+                      <ServiceCardMobile key={index} {...service} />
                     ))}
                   </Accordion.Body>
                 </Accordion.Item>
@@ -160,7 +177,7 @@ const ServicesSection = () => {
                   <Accordion.Header style={accordionHeaderStyle}>Logistics</Accordion.Header>
                   <Accordion.Body>
                     {logisitcs.map((service, index) => (
-                      <ServiceCard key={index} {...service} />
+                      <ServiceCardMobile key={index} {...service} />
                     ))}
                   </Accordion.Body>
                 </Accordion.Item>
