@@ -1,12 +1,16 @@
 import PropTypes from "prop-types";
 import { useState, useEffect, useCallback } from "react";
+import { useScreenSize } from "../Hooks/useScreenSize";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
 import { LazyMotion, domAnimation, m } from "framer-motion";
 import "../styles/nav.css";
 import LogoNameRed from "../assets/images/LogoNameRed.svg";
 import LogoRed from "../assets/images/LogoRed.svg";
+import BurgerIcon from "../assets/icons/navbar/burger.svg";
+import CloseIcon from "../assets/icons/navbar/close.svg";
 
 const MyNavbar = ({ isIntroComplete }) => {
+  const screenSize = useScreenSize();
   const { scroll } = useLocomotiveScroll();
   const [windowHeight, setWindowHeight] = useState("100vh");
   const [showNavbar, setShowNavbar] = useState(false);
@@ -80,18 +84,18 @@ const MyNavbar = ({ isIntroComplete }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    if (showNavbar) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "visible";
-    }
+  // useEffect(() => {
+  //   if (showNavbar) {
+  //     document.body.style.overflow = "hidden";
+  //   } else {
+  //     document.body.style.overflow = "visible";
+  //   }
 
-    // Cleanup function to ensure scroll is re-enabled when component unmounts
-    return () => {
-      document.body.style.overflow = "visible";
-    };
-  }, [showNavbar]);
+  //   // Cleanup function to ensure scroll is re-enabled when component unmounts
+  //   return () => {
+  //     document.body.style.overflow = "visible";
+  //   };
+  // }, [showNavbar]);
 
   return (
     <div className="relative">
@@ -99,8 +103,8 @@ const MyNavbar = ({ isIntroComplete }) => {
         <LazyMotion features={domAnimation} strict>
           <m.div
             className="flex h-16 items-center justify-between lg:h-20"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isIntroComplete ? 1 : 0 }}
+            initial={{ opacity: 1 }}
+            // animate={{ opacity: isIntroComplete ? 1 : 0 }}
             transition={{ duration: 2, delay: 1 }}
           >
             <div className="flex-shrink-0">
@@ -112,24 +116,26 @@ const MyNavbar = ({ isIntroComplete }) => {
                 />
               </a>
             </div>
-            <div
-              className="menu-icon"
-              onClick={handleShowNavbar}
-              id="menuButton"
-            >
-              {/* Burger Icon */}
-              <img
-                src="assets/images/burger-menu-svgrepo-com.svg"
-                alt=""
-                className="menu-burger block h-6 w-6 transition-transform duration-300"
-              />
-              {/* X Icon */}
-              <img
-                src="assets/images/close-svgrepo-com.svg"
-                alt=""
-                className="x-icon block h-6 w-6 transition-transform duration-300"
-              />
-            </div>
+            {["xs", "sm", "md"].includes(screenSize) && (
+              <div
+                className="menu-icon"
+                onClick={handleShowNavbar}
+                id="menuButton"
+              >
+                {/* Burger Icon */}
+                <img
+                  src={BurgerIcon}
+                  alt=""
+                  className="menu-burger block h-6 w-6 transition-transform duration-300"
+                />
+                {/* X Icon */}
+                <img
+                  src={CloseIcon}
+                  alt=""
+                  className="x-icon block h-6 w-6 transition-transform duration-300"
+                />
+              </div>
+            )}
             <div className="hidden lg:flex lg:items-center lg:justify-center lg:space-x-10">
               <a
                 onClick={handleClick}

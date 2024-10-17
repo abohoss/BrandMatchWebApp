@@ -30,7 +30,9 @@ function HowToStart() {
             <img
               className="w-full"
               src="https://cdn.rareblocks.xyz/collection/celebration/images/steps/2/curved-dotted-line.svg"
-              alt=""
+              alt="Picture of dotted Track"
+              loading="lazy"
+              aria-hidden
             />
           </div>
 

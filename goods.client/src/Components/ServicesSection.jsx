@@ -1,18 +1,34 @@
-import React from 'react';
-import Accordion from 'react-bootstrap/Accordion';
+import Accordion from "react-bootstrap/Accordion";
+
+import Channels from "../assets/icons/services/channels.svg";
+import Store from "../assets/icons/services/store.svg";
+import Report from "../assets/icons/services/report.svg";
+import Availability from "../assets/icons/services/av.svg";
+import Activities from "../assets/icons/services/marketingActivities.svg";
+import Research from "../assets/icons/services/research.svg";
+import Shelf from "../assets/icons/services/shelf.svg";
+import Promotion from "../assets/icons/services/promotion.svg";
+import Warehouse from "../assets/icons/services/warehouse.svg";
+import Delivery from "../assets/icons/services/delivery.svg";
+import Process from "../assets/icons/services/process.svg";
+
 const ServiceCard = ({ bgColor, category, title, description, icon }) => (
-  <div className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-3`}>
-    <div className={`h-full ${bgColor === 'dark' ? 'bg-[#231f20] text-white' : 'bg-white text-[#231f20]'} rounded-xl shadow flex flex-col justify-between`}>
-      <div className="p-6 flex justify-between items-center">
-        <div className="w-[50px] flex justify-center items-center">
+  <div className={`w-full p-3 sm:w-1/2 md:w-1/3 lg:w-1/4`}>
+    <div
+      className={`h-full ${bgColor === "dark" ? "bg-[#231f20] text-white" : "bg-white text-[#231f20]"} flex flex-col justify-between rounded-xl shadow`}
+    >
+      <div className="flex items-center justify-between p-6">
+        <div className="flex w-[50px] items-center justify-center">
           <img src={icon} />
         </div>
-        <div className={`px-4 py-2 rounded-[32px] border ${bgColor === 'dark' ? 'border-white' : 'border-[#231f20]'}`}>
-          <div className="text-xs ">{category}</div>
+        <div
+          className={`rounded-[32px] border px-4 py-2 ${bgColor === "dark" ? "border-white" : "border-[#231f20]"}`}
+        >
+          <div className="text-xs">{category}</div>
         </div>
       </div>
-      <div className="p-6 flex-grow flex flex-col justify-center">
-        <h3 className="text-xl sm:text-2xl  mb-2 leading-relaxed">{title}</h3>
+      <div className="flex flex-grow flex-col justify-center p-6">
+        <h3 className="mb-2 text-xl leading-relaxed sm:text-2xl">{title}</h3>
         <p className="text-sm leading-tight">{description}</p>
       </div>
     </div>
@@ -20,16 +36,17 @@ const ServiceCard = ({ bgColor, category, title, description, icon }) => (
 );
 
 const ServiceCardMobile = ({ bgColor, category, title, description, icon }) => (
-  <div className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-3`}>
-    <div className={`h-full ${bgColor === 'dark' ? 'bg-[#231f20] text-white' : 'bg-white text-[#231f20]'} rounded-xl shadow flex flex-col justify-between`}>
-      <div className="p-6 flex justify-between items-center">
-        <div className="w-[50px] flex justify-center items-center">
+  <div className={`w-full p-3 sm:w-1/2 md:w-1/3 lg:w-1/4`}>
+    <div
+      className={`h-full ${bgColor === "dark" ? "bg-[#231f20] text-white" : "bg-white text-[#231f20]"} flex flex-col justify-between rounded-xl shadow`}
+    >
+      <div className="flex items-center justify-between p-6">
+        <div className="flex w-[50px] items-center justify-center">
           <img src={icon} />
         </div>
-
       </div>
-      <div className="p-6 flex-grow flex flex-col justify-center">
-        <h3 className="text-xl sm:text-2xl  mb-2 leading-relaxed">{title}</h3>
+      <div className="flex flex-grow flex-col justify-center p-6">
+        <h3 className="mb-2 text-xl leading-relaxed sm:text-2xl">{title}</h3>
         <p className="text-sm leading-tight">{description}</p>
       </div>
     </div>
@@ -38,113 +55,124 @@ const ServiceCardMobile = ({ bgColor, category, title, description, icon }) => (
 
 const ServicesSection = () => {
   const customItemStyle = {
-    border: 'none',
+    border: "none",
   };
 
   const noFocusStyle = {
-    outline: 'none',
-    boxShadow: 'none',
+    outline: "none",
+    boxShadow: "none",
   };
 
   const accordionHeaderStyle = {
     ...noFocusStyle,
-    '&:focus': noFocusStyle,
-    '&:not(.collapsed)': noFocusStyle,
+    "&:focus": noFocusStyle,
+    "&:not(.collapsed)": noFocusStyle,
   };
   const sales = [
     {
-      bgColor: 'dark',
-      category: 'Sales',
-      title: 'Sales Channels',
-      description: 'We offer access to over 2,000 sales channels to maximize your product reach.',
-      icon: "/assets/images/channels.svg"
+      bgColor: "dark",
+      category: "Sales",
+      title: "Sales Channels",
+      description:
+        "We offer access to over 2,000 sales channels to maximize your product reach.",
+      icon: Channels,
     },
     {
-      bgColor: 'light',
-      category: 'Sales',
-      title: 'Broad Store Access',
-      description: 'Access to all hyper markets, large grocery stores, retail markets, small groceries and different channels in Egypt',
-      icon: '/assets/images/house.svg'
+      bgColor: "light",
+      category: "Sales",
+      title: "Broad Store Access",
+      description:
+        "Access to all hyper markets, large grocery stores, retail markets, small groceries and different channels in Egypt",
+      icon: Store,
     },
     {
-      bgColor: 'dark',
-      category: 'Sales',
-      title: 'Monthly Sales Reports',
-      description: 'Stay informed with detailed sales reports and market overviews.',
-      icon: '/assets/images/chart.svg'
+      bgColor: "dark",
+      category: "Sales",
+      title: "Monthly Sales Reports",
+      description:
+        "Stay informed with detailed sales reports and market overviews.",
+      icon: Report,
     },
     {
-      bgColor: 'light',
-      category: 'Sales',
-      title: 'Product Availability',
-      description: 'Ensure your products are widely available at competitive prices across all hypermarkets.',
-      icon: '/assets/images/av.svg'
-    }
+      bgColor: "light",
+      category: "Sales",
+      title: "Product Availability",
+      description:
+        "Ensure your products are widely available at competitive prices across all hypermarkets.",
+      icon: Availability,
+    },
   ];
 
   const marketing = [
     {
-      bgColor: 'light',
-      category: 'Marketing',
-      title: 'Online and Offline Marketing Activities',
-      description: 'We handle all aspects of marketing, both digital and traditional, to boost your brand\'s visibility.',
-      icon: '/assets/images/marketingActivities.svg'
+      bgColor: "light",
+      category: "Marketing",
+      title: "Online and Offline Marketing Activities",
+      description:
+        "We handle all aspects of marketing, both digital and traditional, to boost your brand's visibility.",
+      icon: Activities,
     },
     {
-      bgColor: 'dark',
-      category: 'Marketing',
-      title: 'Market Research',
-      description: 'We conduct thorough research on competitors, prices, channels, and more to inform your strategy.',
-      icon: '/assets/images/market.svg'
+      bgColor: "dark",
+      category: "Marketing",
+      title: "Market Research",
+      description:
+        "We conduct thorough research on competitors, prices, channels, and more to inform your strategy.",
+      icon: Research,
     },
     {
-      bgColor: 'light',
-      category: 'Marketing',
-      title: 'Shelf Organization',
-      description: 'Ensure your products have the best shelf view in hypermarkets.',
-      icon: '/assets/images/shelf.svg'
+      bgColor: "light",
+      category: "Marketing",
+      title: "Shelf Organization",
+      description:
+        "Ensure your products have the best shelf view in hypermarkets.",
+      icon: Shelf,
     },
 
     {
-      bgColor: 'dark',
-      category: 'Marketing',
-      title: 'Co-Promotion',
-      description: 'Partner with complementary products to enhance your market presence.',
-      icon: '/assets/images/promotion.svg'
-    }
-  ]
+      bgColor: "dark",
+      category: "Marketing",
+      title: "Co-Promotion",
+      description:
+        "Partner with complementary products to enhance your market presence.",
+      icon: Promotion,
+    },
+  ];
 
   const logisitcs = [
     {
-      bgColor: 'dark',
-      category: 'Logistics',
-      title: 'Warehousing',
-      description: 'Provide warehousing per pallet to meet your storage needs.',
-      icon: '/assets/images/warehouse.svg'
+      bgColor: "dark",
+      category: "Logistics",
+      title: "Warehousing",
+      description: "Provide warehousing per pallet to meet your storage needs.",
+      icon: Warehouse,
     },
     {
-      bgColor: 'light',
-      category: 'Logistics',
-      title: 'Product Delivery',
-      description: 'Deliver your products to the desired location efficiently.',
-      icon: '/assets/images/delivery.svg'
+      bgColor: "light",
+      category: "Logistics",
+      title: "Product Delivery",
+      description: "Deliver your products to the desired location efficiently.",
+      icon: Delivery,
     },
     {
-      bgColor: 'dark',
-      category: 'Logistics',
-      title: 'Order Processing',
-      description: 'Handle labeling and invoicing to streamline your order process.',
-      icon: '/assets/images/process.svg'
-    }
-  ]
+      bgColor: "dark",
+      category: "Logistics",
+      title: "Order Processing",
+      description:
+        "Handle labeling and invoicing to streamline your order process.",
+      icon: Process,
+    },
+  ];
 
   return (
     <div data-scroll-section>
       <section className="relative lg:mt-5">
-        <div className="overflow-y-auto min-h-screen">
-          <div className="py-12 md:py-24 container mx-auto px-4">
-            <h2 className="text-4xl md:text-7xl text-center mb-8 md:mb-20">Services</h2>
-            <div className="flex flex-wrap -mx-3 hidden sm:flex ">
+        <div className="min-h-screen overflow-y-auto">
+          <div className="container mx-auto px-4 py-12 md:py-24">
+            <h2 className="mb-8 text-center text-4xl md:mb-20 md:text-7xl">
+              Services
+            </h2>
+            <div className="-mx-3 flex hidden flex-wrap sm:flex">
               {sales.map((service, index) => (
                 <ServiceCard key={index} {...service} />
               ))}
@@ -158,7 +186,9 @@ const ServicesSection = () => {
             <div className="block sm:hidden">
               <Accordion>
                 <Accordion.Item eventKey="0" style={customItemStyle}>
-                  <Accordion.Header style={accordionHeaderStyle}>Sales</Accordion.Header>
+                  <Accordion.Header style={accordionHeaderStyle}>
+                    Sales
+                  </Accordion.Header>
                   <Accordion.Body>
                     {sales.map((service, index) => (
                       <ServiceCardMobile key={index} {...service} />
@@ -166,7 +196,9 @@ const ServicesSection = () => {
                   </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="1" style={customItemStyle}>
-                  <Accordion.Header style={accordionHeaderStyle}>Marketing</Accordion.Header>
+                  <Accordion.Header style={accordionHeaderStyle}>
+                    Marketing
+                  </Accordion.Header>
                   <Accordion.Body>
                     {marketing.map((service, index) => (
                       <ServiceCardMobile key={index} {...service} />
@@ -174,7 +206,9 @@ const ServicesSection = () => {
                   </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="2" style={customItemStyle}>
-                  <Accordion.Header style={accordionHeaderStyle}>Logistics</Accordion.Header>
+                  <Accordion.Header style={accordionHeaderStyle}>
+                    Logistics
+                  </Accordion.Header>
                   <Accordion.Body>
                     {logisitcs.map((service, index) => (
                       <ServiceCardMobile key={index} {...service} />
@@ -191,4 +225,3 @@ const ServicesSection = () => {
 };
 
 export default ServicesSection;
-
