@@ -130,6 +130,7 @@ const ServicesDesktop = ({ scrollYProgress, services }) => {
                 initial={{
                   clipPath: `polygon(0% ${offset}%, 100% ${offset}%, 100% 100%, 0% 100%)`,
                 }}
+                loading="lazy"
               />
             );
           })}

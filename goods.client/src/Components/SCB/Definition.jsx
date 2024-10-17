@@ -1,4 +1,4 @@
-import SCB from "../../assets/images/Services/SCB.jpg";
+import SCB from "../../assets/images/Services/SCB.webp";
 
 const Definition = () => {
   return (
@@ -6,6 +6,7 @@ const Definition = () => {
       <img
         className="flex-1 self-stretch rounded-xl object-cover shadow sm:w-1/2"
         src={SCB}
+        loading="lazy"
       />
       <div className="flex basis-1/2 flex-col items-center justify-center gap-6">
         <div className="inline-flex h-10 items-center justify-center self-stretch sm:justify-start">

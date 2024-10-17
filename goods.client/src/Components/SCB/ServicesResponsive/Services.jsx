@@ -2,11 +2,11 @@ import { useScreenSize } from "../../../Hooks/useScreenSize";
 import ServicesDesktop from "./ServicesDesktop";
 import ServicesMobile from "./ServicesMobile";
 
-import Branding from "../../../assets/images/Services/branding.png";
-import Partnership from "../../../assets/images/Services/partnership.png";
-import Crowdfunding from "../../../assets/images/Services/crowdfunding.jpg";
-import Expert from "../../../assets/images/Services/expert.jpg";
-import Experience from "../../../assets/images/Services/experience.jpeg";
+import Branding from "../../../assets/images/Services/branding.webp";
+import Partnership from "../../../assets/images/Services/partnership.webp";
+import Crowdfunding from "../../../assets/images/Services/crowdfunding.webp";
+import Expert from "../../../assets/images/Services/expert.webp";
+import Experience from "../../../assets/images/Services/experience.webp";
 
 import PropTypes from "prop-types";
 import { MotionValue } from "framer-motion";

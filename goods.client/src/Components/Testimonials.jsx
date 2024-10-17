@@ -40,12 +40,14 @@ const Testimonials = () => {
               <div className="px-8 py-12">
                 <div className="relative mx-auto h-24 w-24">
                   <img
+                    loading="lazy"
                     className="relative mx-auto h-24 w-24 rounded-full object-cover"
                     src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/1/avatar-1.jpg"
                     alt=""
                   />
                   <div className="absolute right-0 top-0 flex h-7 w-7 items-center justify-center rounded-full bg-dark-red">
                     <img
+                      loading="lazy"
                       src={Quotation}
                       alt="quotation mark"
                       width="15"
@@ -77,12 +79,14 @@ const Testimonials = () => {
               <div className="px-8 py-12">
                 <div className="relative mx-auto h-24 w-24">
                   <img
+                    loading="lazy"
                     className="relative mx-auto h-24 w-24 rounded-full object-cover"
                     src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/1/avatar-2.jpg"
                     alt=""
                   />
                   <div className="absolute right-0 top-0 flex h-7 w-7 items-center justify-center rounded-full bg-dark-red">
                     <img
+                      loading="lazy"
                       src={Quotation}
                       alt="quotation mark"
                       width="15"
@@ -113,12 +117,14 @@ const Testimonials = () => {
               <div className="px-8 py-12">
                 <div className="relative mx-auto h-24 w-24">
                   <img
+                    loading="lazy"
                     className="relative mx-auto h-24 w-24 rounded-full object-cover"
                     src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/1/avatar-3.jpg"
                     alt=""
                   />
                   <div className="absolute right-0 top-0 flex h-7 w-7 items-center justify-center rounded-full bg-dark-red">
                     <img
+                      loading="lazy"
                       src={Quotation}
                       alt="quotation mark"
                       width="15"

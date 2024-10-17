@@ -9,8 +9,9 @@ const ImageMarquee = ({ images, direction }) => {
           <img
             src={image}
             alt={`${image} logo`}
-            className="max-h-8 md:max-h-16"
+            className="h-8 md:h-16"
             draggable="false"
+            loading="lazy"
           />
         </div>
       ))}

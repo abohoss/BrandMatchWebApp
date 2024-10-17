@@ -10,7 +10,8 @@ const ServicesMobile = ({ services }) => {
         >
           <img
             src={service.image}
-            className="aspect-square self-stretch rounded-xl object-cover"
+            loading="lazy"
+            className="aspect-square rounded-xl object-cover"
           />
           <div className="self-stretch font-['Montserrat'] text-3xl font-medium leading-9 text-white">
             {service.title}

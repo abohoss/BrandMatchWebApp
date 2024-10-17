@@ -1,23 +1,23 @@
 import ImageMarquee from "./ImageMarquee";
 // Import Success Partners images
-import Spinneys from "../../assets/images/Success Partners/spinneys.png";
-import Seoudi from "../../assets/images/Success Partners/seoudi.png";
+import Spinneys from "../../assets/images/Success Partners/spinneys.webp";
+import Seoudi from "../../assets/images/Success Partners/seoudi.webp";
 import Carrefour from "../../assets/images/Success Partners/carrefour.png";
-import Mahmoud from "../../assets/images/Success Partners/mahmoud.jpg";
-import Flamingo from "../../assets/images/Success Partners/flamingo.jpg";
-import Alrayah from "../../assets/images/Success Partners/alrayah.png";
+import Mahmoud from "../../assets/images/Success Partners/mahmoud.webp";
+import Flamingo from "../../assets/images/Success Partners/flamingo.webp";
+import Alrayah from "../../assets/images/Success Partners/alrayah.webp";
 import Oscar from "../../assets/images/Success Partners/oscar.png";
-import Bestway from "../../assets/images/Success Partners/bestway.jpg";
-import Abdullah from "../../assets/images/Success Partners/abdullah.png";
+import Bestway from "../../assets/images/Success Partners/bestway.webp";
+import Abdullah from "../../assets/images/Success Partners/abdullah.webp";
 // Import Suppliers images
-import Valle from "../../assets/images/Suppliers/valle.jpg";
-import Orouba from "../../assets/images/Suppliers/orouba.jpg";
-import Exclusive from "../../assets/images/Suppliers/exclusive.jpg";
-import Esc from "../../assets/images/Suppliers/esc.jpg";
-import Dolce from "../../assets/images/Suppliers/dolce.jpg";
-import Bloom from "../../assets/images/Suppliers/bloom.jpg";
-import Altona from "../../assets/images/Suppliers/altona.jpg";
-import Agdadna from "../../assets/images/Suppliers/agdadna.jpg";
+import Valle from "../../assets/images/Suppliers/valle.webp";
+import Orouba from "../../assets/images/Suppliers/orouba.webp";
+import Exclusive from "../../assets/images/Suppliers/exclusive.webp";
+import Esc from "../../assets/images/Suppliers/esc.webp";
+import Dolce from "../../assets/images/Suppliers/dolce.webp";
+import Bloom from "../../assets/images/Suppliers/bloom.webp";
+import Altona from "../../assets/images/Suppliers/altona.webp";
+import Agdadna from "../../assets/images/Suppliers/agdadna.webp";
 
 const SuppliersPartnersMarquee = () => {
   const successPartnersImages = [
