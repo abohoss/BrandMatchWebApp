@@ -9,7 +9,6 @@ import Testimonials from "./Components/Testimonials";
 import Challenges from "./Components/Challenges";
 import Services from "./Components/Services";
 import BackToTopBtn from "./Components/BackToTopBtn";
-import Intro from "./Components/Intro";
 import ServicesSection from "./Components/ServicesSection";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { useRef, useState } from "react";
@@ -52,22 +51,18 @@ const App = () => {
         <MyNavbar isIntroComplete={!isIntro} />
         <BackToTopBtn />
         <main>
-          <Hero isIntroComplete={!isIntro} />
-          <Intro isIntro={isIntro} setIsIntro={setIsIntro} />
-          {/* <Services leftValues={leftValues} setLeftValues={setLeftValues} /> */}
-          <ServicesSection />
+          <Hero />
+          <Services leftValues={leftValues} setLeftValues={setLeftValues} />
           <Challenges />
           <KeyFeatures />
           <SuppliersPartnersMarque />
           <AboutUs />
           <Testimonials />
           <HowToStart />
-     
         </main>
         <Myfooter />
       </div>
     </LocomotiveScrollProvider>
-
   );
 };
 
