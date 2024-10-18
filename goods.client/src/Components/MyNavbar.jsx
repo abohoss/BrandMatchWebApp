@@ -1,15 +1,13 @@
-import PropTypes from "prop-types";
 import { useState, useEffect, useCallback } from "react";
 import { useScreenSize } from "../Hooks/useScreenSize";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
-import { LazyMotion, domAnimation, m } from "framer-motion";
 import "../styles/nav.css";
 import LogoNameRed from "../assets/images/LogoNameRed.svg";
 import LogoRed from "../assets/images/LogoRed.svg";
 import BurgerIcon from "../assets/icons/navbar/burger.svg";
 import CloseIcon from "../assets/icons/navbar/close.svg";
-
-const MyNavbar = ({ isIntroComplete }) => {
+import "../styles/nav.css";
+const MyNavbar = () => {
   const screenSize = useScreenSize();
   const { scroll } = useLocomotiveScroll();
   const [windowHeight, setWindowHeight] = useState("100vh");
@@ -100,76 +98,63 @@ const MyNavbar = ({ isIntroComplete }) => {
   return (
     <div className="relative">
       <nav className="mx-auto px-4 sm:px-6 lg:px-8" data-scroll-section>
-        <LazyMotion features={domAnimation} strict>
-          <m.div
-            className="flex h-16 items-center justify-between lg:h-20"
-            initial={{ opacity: 1 }}
-            // animate={{ opacity: isIntroComplete ? 1 : 0 }}
-            transition={{ duration: 2, delay: 1 }}
+        <div className="flex-shrink-0">
+          <a href="#" className="flex">
+            <img
+              className="h-8 w-auto"
+              src={window.innerWidth >= 640 ? LogoNameRed : LogoRed}
+              alt="Brandmatch logo"
+            />
+          </a>
+        </div>
+        {["xs", "sm", "md"].includes(screenSize) && (
+          <div className="menu-icon" onClick={handleShowNavbar} id="menuButton">
+            {/* Burger Icon */}
+            <img
+              src={BurgerIcon}
+              alt=""
+              className="menu-burger block h-6 w-6 transition-transform duration-300"
+            />
+            {/* X Icon */}
+            <img
+              src={CloseIcon}
+              alt=""
+              className="x-icon block h-6 w-6 transition-transform duration-300"
+            />
+          </div>
+        )}
+        <div className="hidden lg:flex lg:items-center lg:justify-center lg:space-x-10">
+          <a
+            onClick={handleClick}
+            name="services"
+            className="hover-link cursor-pointer text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
           >
-            <div className="flex-shrink-0">
-              <a href="#" className="flex">
-                <img
-                  className="h-8 w-auto"
-                  src={window.innerWidth >= 640 ? LogoNameRed : LogoRed}
-                  alt="Brandmatch logo"
-                />
-              </a>
-            </div>
-            {["xs", "sm", "md"].includes(screenSize) && (
-              <div
-                className="menu-icon"
-                onClick={handleShowNavbar}
-                id="menuButton"
-              >
-                {/* Burger Icon */}
-                <img
-                  src={BurgerIcon}
-                  alt=""
-                  className="menu-burger block h-6 w-6 transition-transform duration-300"
-                />
-                {/* X Icon */}
-                <img
-                  src={CloseIcon}
-                  alt=""
-                  className="x-icon block h-6 w-6 transition-transform duration-300"
-                />
-              </div>
-            )}
-            <div className="hidden lg:flex lg:items-center lg:justify-center lg:space-x-10">
-              <a
-                onClick={handleClick}
-                name="services"
-                className="hover-link cursor-pointer text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
-              >
-                Services
-              </a>
+            Services
+          </a>
 
-              <a
-                onClick={handleClick}
-                name="about"
-                className="hover-link cursor-pointer text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
-              >
-                About
-              </a>
+          <a
+            onClick={handleClick}
+            name="about"
+            className="hover-link cursor-pointer text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
+          >
+            About
+          </a>
 
-              <a
-                onClick={handleClick}
-                name="howTo"
-                className="hover-link cursor-pointer text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
-              >
-                How to start
-              </a>
-            </div>
-            <a
-              href="#"
-              className="hidden items-center justify-center rounded-full border-2 border-bright-red bg-bright-red px-5 py-2.5 text-base font-semibold text-white/100 no-underline transition-all duration-200 hocus:bg-white hocus:text-bright-red lg:inline-flex"
-              role="button"
-            >
-              Start Now
-            </a>
-          </m.div>
-        </LazyMotion>
+          <a
+            onClick={handleClick}
+            name="howTo"
+            className="hover-link cursor-pointer text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
+          >
+            How to start
+          </a>
+        </div>
+        <a
+          href="#"
+          className="hidden items-center justify-center rounded-full border-2 border-bright-red bg-bright-red px-5 py-2.5 text-base font-semibold text-white/100 no-underline transition-all duration-200 hocus:bg-white hocus:text-bright-red lg:inline-flex"
+          role="button"
+        >
+          Start Now
+        </a>
       </nav>
       {showNavbar && (
         <div
@@ -209,10 +194,6 @@ const MyNavbar = ({ isIntroComplete }) => {
       )}
     </div>
   );
-};
-
-MyNavbar.propTypes = {
-  isIntroComplete: PropTypes.bool,
 };
 
 export default MyNavbar;
