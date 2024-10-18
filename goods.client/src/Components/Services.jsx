@@ -166,7 +166,7 @@ const Services = () => {
 
   return (
     <section className="relative lg:mt-5" id="services">
-      <div className="min-h-screen overflow-y-auto">
+      <div>
         <div className="container mx-auto px-4 py-12 md:py-24">
           <h2 className="mb-8 text-center text-4xl md:mb-20 md:text-7xl">
             Services
