@@ -1,30 +1,27 @@
-import { useEffect, useState } from "react";
-import { useLocomotiveScroll } from "react-locomotive-scroll";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { useLenis } from "lenis/react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 
 const BackToTopBtn = () => {
-  // const controls = useAnimation();
-  const { scroll } = useLocomotiveScroll();
-  const [scrollY, setScrollY] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const lenis = useLenis();
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latestValue) => {
+    if (latestValue >= 200) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  });
 
   const fadeInDownVariants = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0 },
   };
-  useEffect(() => {
-    if (scroll) {
-      scroll.on("scroll", (args) => {
-        setScrollY(args.scroll.y);
-      });
-
-      return () => {
-        scroll.destroy();
-      };
-    }
-  }, [scroll]);
 
   const handleClick = () => {
-    scroll.scrollTo("top");
+    lenis.scrollTo("top");
   };
 
   return (
@@ -33,7 +30,7 @@ const BackToTopBtn = () => {
       onClick={handleClick}
       variants={fadeInDownVariants}
       initial="hidden"
-      animate={scrollY >= 200 ? "visible" : "hidden"}
+      animate={isVisible ? "visible" : "hidden"}
       transition={{ duration: 1 }}
     >
       <svg className="w-3" viewBox="0 0 384 512">

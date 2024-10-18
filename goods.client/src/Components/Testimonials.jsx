@@ -1,7 +1,6 @@
 import Quotation from "../assets/icons/quotation.svg";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import React from "react";
 
 const Testimonials = () => {
   const { ref, inView } = useInView({
@@ -15,10 +14,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section
-      className="bg-gray-100 py-10 sm:py-16 lg:py-24"
-      data-scroll-section
-    >
+    <section className="bg-gray-100 py-10 sm:py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold leading-tight text-gray-800 sm:text-4xl lg:text-5xl">

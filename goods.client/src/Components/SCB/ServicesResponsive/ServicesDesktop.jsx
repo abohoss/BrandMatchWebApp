@@ -81,7 +81,6 @@ const ServicesDesktop = ({ scrollYProgress, services }) => {
     <LazyMotion features={domAnimation}>
       <div
         ref={scope}
-        id="services"
         className="flex h-screen w-full items-center justify-between"
       >
         <div className="relative mx-6 mb-24 mt-6 flex w-1/2 flex-col items-start justify-end gap-6 self-stretch">

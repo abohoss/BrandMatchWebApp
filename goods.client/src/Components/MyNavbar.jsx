@@ -1,15 +1,16 @@
-import { useState, useEffect, useCallback } from "react";
-import { useScreenSize } from "../Hooks/useScreenSize";
-import { useLocomotiveScroll } from "react-locomotive-scroll";
-import "../styles/nav.css";
 import LogoNameRed from "../assets/images/LogoNameRed.svg";
 import LogoRed from "../assets/images/LogoRed.svg";
 import BurgerIcon from "../assets/icons/navbar/burger.svg";
 import CloseIcon from "../assets/icons/navbar/close.svg";
+
+import { useState, useEffect, useCallback } from "react";
+import { useScreenSize } from "../Hooks/useScreenSize";
+import { useLenis } from "lenis/react";
 import "../styles/nav.css";
+
 const MyNavbar = () => {
   const screenSize = useScreenSize();
-  const { scroll } = useLocomotiveScroll();
+  const lenis = useLenis();
   const [windowHeight, setWindowHeight] = useState("100vh");
   const [showNavbar, setShowNavbar] = useState(false);
   const lockScroll = useCallback(() => {
@@ -21,10 +22,10 @@ const MyNavbar = () => {
     // Store the current scroll position
     document.body.style.top = `-${window.scrollY}px`;
 
-    if (scroll) {
-      scroll.stop();
+    if (lenis) {
+      lenis.stop();
     }
-  }, [scroll]);
+  }, [lenis]);
 
   const unlockScroll = useCallback(() => {
     document.body.style.overflow = "";
@@ -37,10 +38,10 @@ const MyNavbar = () => {
     document.body.style.top = "";
     window.scrollTo(0, parseInt(scrollY || "0") * -1);
 
-    if (scroll) {
-      scroll.start();
+    if (lenis) {
+      lenis.start();
     }
-  }, [scroll]);
+  }, [lenis]);
 
   useEffect(() => {
     if (showNavbar) {
@@ -56,7 +57,7 @@ const MyNavbar = () => {
 
   const handleClick = (e) => {
     const target = document.querySelector(`#${e.target.name}`);
-    scroll.scrollTo(target);
+    lenis.scrollTo(target);
   };
 
   const handleShowNavbar = () => {
@@ -68,7 +69,7 @@ const MyNavbar = () => {
   const handleClickMobile = (e) => {
     handleShowNavbar();
     const target = document.querySelector(`#${e.target.name}`);
-    scroll.scrollTo(target);
+    lenis.scrollTo(target);
   };
 
   useEffect(() => {
@@ -82,22 +83,9 @@ const MyNavbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // useEffect(() => {
-  //   if (showNavbar) {
-  //     document.body.style.overflow = "hidden";
-  //   } else {
-  //     document.body.style.overflow = "visible";
-  //   }
-
-  //   // Cleanup function to ensure scroll is re-enabled when component unmounts
-  //   return () => {
-  //     document.body.style.overflow = "visible";
-  //   };
-  // }, [showNavbar]);
-
   return (
     <div className="relative">
-      <nav className="mx-auto px-4 sm:px-6 lg:px-8" data-scroll-section>
+      <nav className="mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:h-20 lg:px-8">
         <div className="flex-shrink-0">
           <a href="#" className="flex">
             <img

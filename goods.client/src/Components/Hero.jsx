@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import "../styles/heroo.css"
+import "../styles/heroo.css";
 const Hero = () => {
   const { ref, inView } = useInView({
     triggerOnce: true, // Trigger the animation only once
@@ -14,8 +14,7 @@ const Hero = () => {
   return (
     <section
       ref={ref}
-      className="relative mb-16 flex flex-col items-center gap-2 hero"
-      data-scroll-section
+      className="hero relative mb-16 flex flex-col items-center gap-2"
     >
       <motion.div
         variants={fadeInDownVariants}

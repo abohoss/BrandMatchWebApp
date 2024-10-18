@@ -1,235 +1,222 @@
-import Service from "./Service";
-import Market from "../assets/images/Services/supermarket.jpg";
-import Report from "../assets/images/Services/report.jpg";
-// import Export from "../assets/images/Services/export.jpg";
-import Warehouse from "../assets/images/Services/warehouse.jpg";
-import Delivery from "../assets/images/Services/delivery.jpeg";
-import Crush from "../assets/images/Services/crush.jpg";
-import Agdadna from "../assets/images/Services/agdadna.jpeg";
-import CrushStores from "../assets/images/Services/crush-stores.jpeg";
-import { useEffect, useState } from "react";
-import { useLocomotiveScroll } from "react-locomotive-scroll";
+import Accordion from "react-bootstrap/Accordion";
 
-const Services = ({ leftValues, setLeftValues }) => {
-  const categroies = ["Sales", "Marketing", "Logistics"];
-  const services = [
-    {
-      name: "Sales Channels",
-      description:
-        "We offer access to over 2,000 sales channels to maximize your product reach.",
-      category: 0,
-    },
-    {
-      name: "Broad Store Access",
-      description:
-        "Access to all hyper markets, large grocery stores, retail markets, small groceries and different channels in Egypt",
-      category: 0,
-    },
-    {
-      name: "Monthly Sales Reports",
-      description:
-        "Stay informed with detailed sales reports and market overviews.",
-      category: 0,
-    },
-    {
-      name: "Product Availability",
-      description:
-        "Ensure your products are widely available at competitive prices across all hypermarkets.",
-      category: 0,
-    },
-    {
-      name: "Online and Offline Marketing Activities",
-      description:
-        "We handle all aspects of marketing, both digital and traditional, to boost your brand’s visibility.",
-      category: 1,
-    },
-    {
-      name: "Market Research",
-      description:
-        "We conduct thorough research on competitors, prices, channels, and more to inform your strategy.",
-      category: 1,
-    },
-    {
-      name: "Shelf Organization",
-      description:
-        "Ensure your products have the best shelf view in hypermarkets.",
-      category: 1,
-    },
-    {
-      name: "Co-Promotion",
-      description:
-        "Partner with complementary products to enhance your market presence.",
-      category: 1,
-    },
-    {
-      name: "Warehousing",
-      description: "Provide warehousing per pallet to meet your storage needs.",
-      category: 2,
-    },
-    {
-      name: "Product Delivery",
-      description: "Deliver your products to the desired location efficiently.",
-      category: 2,
-    },
-    {
-      name: "Order Processing",
-      description:
-        "Handle labeling and invoicing to streamline your order process.",
-      category: 2,
-    },
-  ];
+import Channels from "../assets/icons/services/channels.svg";
+import Store from "../assets/icons/services/store.svg";
+import Report from "../assets/icons/services/report.svg";
+import Availability from "../assets/icons/services/av.svg";
+import Activities from "../assets/icons/services/marketingActivities.svg";
+import Research from "../assets/icons/services/research.svg";
+import Shelf from "../assets/icons/services/shelf.svg";
+import Promotion from "../assets/icons/services/promotion.svg";
+import Warehouse from "../assets/icons/services/warehouse.svg";
+import Delivery from "../assets/icons/services/delivery.svg";
+import Process from "../assets/icons/services/process.svg";
 
-  const images = [
-    {
-      src: CrushStores,
-      top: "10rem",
-      left: "5vw",
-    },
-    {
-      src: Market,
-      top: "25rem",
-      left: "50vw",
-    },
-    {
-      src: Report,
-      top: "40rem",
-      left: "1vw",
-    },
-    {
-      src: Agdadna,
-      top: "65rem",
-      left: "48vw",
-    },
-    {
-      src: Crush,
-      top: "90rem",
-      left: "20vw",
-    },
-    // {
-    //   src: Export,
-    //   top: "110rem",
-    //   left: "5vw",
-    // },
-    {
-      src: Warehouse,
-      top: "125rem",
-      left: "48vw",
-    },
-    {
-      src: Delivery,
-      top: "140rem",
-      left: "1vw",
-    },
-  ];
+const ServiceCard = ({ bgColor, category, title, description, icon }) => (
+  <div className={`w-full p-3 sm:w-1/2 md:w-1/3 lg:w-1/4`}>
+    <div
+      className={`h-full ${bgColor === "dark" ? "bg-[#231f20] text-white" : "bg-white text-[#231f20]"} flex flex-col justify-between rounded-xl shadow`}
+    >
+      <div className="flex items-center justify-between p-6">
+        <div className="flex w-[50px] items-center justify-center">
+          <img src={icon} />
+        </div>
+        <div
+          className={`rounded-[32px] border px-4 py-2 ${bgColor === "dark" ? "border-white" : "border-[#231f20]"}`}
+        >
+          <div className="text-xs">{category}</div>
+        </div>
+      </div>
+      <div className="flex flex-grow flex-col justify-center p-6">
+        <h3 className="mb-2 text-xl leading-relaxed sm:text-2xl">{title}</h3>
+        <p className="text-sm leading-tight">{description}</p>
+      </div>
+    </div>
+  </div>
+);
 
-  const { scroll } = useLocomotiveScroll();
-  const [scrollPercentage, setScrollPercentage] = useState(0);
-  useEffect(() => {
-    if (scroll) {
-      scroll.on("scroll", (args) => {
-        const servicesBoundaries = document
-          .querySelector("#services")
-          .getBoundingClientRect();
-        // const topOffset = servicesBoundaries.top + args.scroll.y;
-        const bottomOffset = servicesBoundaries.bottom + args.scroll.y;
+const ServiceCardMobile = ({ bgColor, title, description, icon }) => (
+  <div className={`w-full p-3 sm:w-1/2 md:w-1/3 lg:w-1/4`}>
+    <div
+      className={`h-full ${bgColor === "dark" ? "bg-[#231f20] text-white" : "bg-white text-[#231f20]"} flex flex-col justify-between rounded-xl shadow`}
+    >
+      <div className="flex items-center justify-between p-6">
+        <div className="flex w-[50px] items-center justify-center">
+          <img src={icon} />
+        </div>
+      </div>
+      <div className="flex flex-grow flex-col justify-center p-6">
+        <h3 className="mb-2 text-xl leading-relaxed sm:text-2xl">{title}</h3>
+        <p className="text-sm leading-tight">{description}</p>
+      </div>
+    </div>
+  </div>
+);
 
-        if (args.scroll.y <= bottomOffset) {
-          // const servicesHeight = bottomOffset - topOffset;
-          const servicesHeight = bottomOffset;
-          // const scrollDelta = args.scroll.y - topOffset;
-          const scrollDelta = args.scroll.y;
-          setScrollPercentage((scrollDelta / servicesHeight) * 100);
-        }
-      });
-    }
-  }, [scroll]);
-
-  const randomSeed = (seed) => {
-    let value = seed;
-    return function () {
-      value = (value * 16807) % 2147483647;
-      return value;
-    };
+const Services = () => {
+  const customItemStyle = {
+    border: "none",
   };
 
-  useEffect(() => {
-    const updateLeftValues = () => {
-      if (window.innerWidth < 768) {
-        setLeftValues(["0", "10", "20", "30", "40", "50"]);
-      } else {
-        setLeftValues(["0", "12", "24", "36", "48", "60"]);
-      }
-    };
+  const noFocusStyle = {
+    outline: "none",
+    boxShadow: "none",
+  };
 
-    // Initial check
-    updateLeftValues();
+  const accordionHeaderStyle = {
+    ...noFocusStyle,
+    "&:focus": noFocusStyle,
+    "&:not(.collapsed)": noFocusStyle,
+  };
+  const sales = [
+    {
+      bgColor: "dark",
+      category: "Sales",
+      title: "Sales Channels",
+      description:
+        "We offer access to over 2,000 sales channels to maximize your product reach.",
+      icon: Channels,
+    },
+    {
+      bgColor: "light",
+      category: "Sales",
+      title: "Broad Store Access",
+      description:
+        "Access to all hyper markets, large grocery stores, retail markets, small groceries and different channels in Egypt",
+      icon: Store,
+    },
+    {
+      bgColor: "dark",
+      category: "Sales",
+      title: "Monthly Sales Reports",
+      description:
+        "Stay informed with detailed sales reports and market overviews.",
+      icon: Report,
+    },
+    {
+      bgColor: "light",
+      category: "Sales",
+      title: "Product Availability",
+      description:
+        "Ensure your products are widely available at competitive prices across all hypermarkets.",
+      icon: Availability,
+    },
+  ];
 
-    // Add event listener
-    window.addEventListener("resize", updateLeftValues);
+  const marketing = [
+    {
+      bgColor: "light",
+      category: "Marketing",
+      title: "Online and Offline Marketing Activities",
+      description:
+        "We handle all aspects of marketing, both digital and traditional, to boost your brand's visibility.",
+      icon: Activities,
+    },
+    {
+      bgColor: "dark",
+      category: "Marketing",
+      title: "Market Research",
+      description:
+        "We conduct thorough research on competitors, prices, channels, and more to inform your strategy.",
+      icon: Research,
+    },
+    {
+      bgColor: "light",
+      category: "Marketing",
+      title: "Shelf Organization",
+      description:
+        "Ensure your products have the best shelf view in hypermarkets.",
+      icon: Shelf,
+    },
 
-    // Cleanup event listener on component unmount
-    return () => window.removeEventListener("resize", updateLeftValues);
-  }, []);
+    {
+      bgColor: "dark",
+      category: "Marketing",
+      title: "Co-Promotion",
+      description:
+        "Partner with complementary products to enhance your market presence.",
+      icon: Promotion,
+    },
+  ];
 
-  const generator = randomSeed(5);
-  let lastPositionIdx = 0;
+  const logisitcs = [
+    {
+      bgColor: "dark",
+      category: "Logistics",
+      title: "Warehousing",
+      description: "Provide warehousing per pallet to meet your storage needs.",
+      icon: Warehouse,
+    },
+    {
+      bgColor: "light",
+      category: "Logistics",
+      title: "Product Delivery",
+      description: "Deliver your products to the desired location efficiently.",
+      icon: Delivery,
+    },
+    {
+      bgColor: "dark",
+      category: "Logistics",
+      title: "Order Processing",
+      description:
+        "Handle labeling and invoicing to streamline your order process.",
+      icon: Process,
+    },
+  ];
 
   return (
-    <section
-      id="services"
-      className="text-white"
-      style={{
-        backgroundImage:
-          "linear-gradient(to bottom, white 1%, #231f20 10%, #231f20 50%, #231f20 90%, white 99%)",
-      }}
-      data-scroll-section
-    >
-      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
-        {images.map((image, index) => (
-          <img
-            src={image.src}
-            alt="supermarket"
-            className="absolute max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-lg object-cover"
-            style={{
-              width: "50vmin",
-              height: "25vmin",
-              top: image.top,
-              left: image.left,
-              objectPosition: `${scrollPercentage}% ${scrollPercentage}%`,
-            }}
-            key={index}
-            data-scroll
-            data-scroll-speed="1"
-          />
-        ))}
-        {services.map((service, index) => {
-          const leftValuesCopy = [...leftValues];
-          const noOfItemsToRemove =
-            lastPositionIdx == 0 || lastPositionIdx == leftValues.length - 1
-              ? 2
-              : 3;
-          lastPositionIdx = lastPositionIdx == 0 ? 1 : lastPositionIdx;
-          leftValuesCopy.splice(lastPositionIdx - 1, noOfItemsToRemove);
-          const generatedLeftValue =
-            leftValuesCopy[generator() % leftValuesCopy.length];
-          lastPositionIdx = leftValues.indexOf(generatedLeftValue);
-          return (
-            <div
-              key={index}
-              className="h-60 w-full"
-              data-scroll
-              data-scroll-speed="1.5"
-            >
-              <Service
-                no={service.category + 1}
-                name={service.name}
-                description={service.description}
-                category={categroies[service.category]}
-                leftValue={generatedLeftValue}
-              />
-            </div>
-          );
-        })}
+    <section className="relative lg:mt-5" id="services">
+      <div className="min-h-screen overflow-y-auto">
+        <div className="container mx-auto px-4 py-12 md:py-24">
+          <h2 className="mb-8 text-center text-4xl md:mb-20 md:text-7xl">
+            Services
+          </h2>
+          <div className="-mx-3 flex hidden flex-wrap sm:flex">
+            {sales.map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
+            {marketing.map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
+            {logisitcs.map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
+          </div>
+          <div className="block sm:hidden">
+            <Accordion>
+              <Accordion.Item eventKey="0" style={customItemStyle}>
+                <Accordion.Header style={accordionHeaderStyle}>
+                  Sales
+                </Accordion.Header>
+                <Accordion.Body>
+                  {sales.map((service, index) => (
+                    <ServiceCardMobile key={index} {...service} />
+                  ))}
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item eventKey="1" style={customItemStyle}>
+                <Accordion.Header style={accordionHeaderStyle}>
+                  Marketing
+                </Accordion.Header>
+                <Accordion.Body>
+                  {marketing.map((service, index) => (
+                    <ServiceCardMobile key={index} {...service} />
+                  ))}
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item eventKey="2" style={customItemStyle}>
+                <Accordion.Header style={accordionHeaderStyle}>
+                  Logistics
+                </Accordion.Header>
+                <Accordion.Body>
+                  {logisitcs.map((service, index) => (
+                    <ServiceCardMobile key={index} {...service} />
+                  ))}
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+          </div>
+        </div>
       </div>
     </section>
   );
