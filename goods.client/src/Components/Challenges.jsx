@@ -2,7 +2,7 @@ import "../styles/challenges.css";
 
 function Challenges() {
   return (
-    <section className="mx-auto flex max-w-7xl flex-col items-center px-4 py-0 sm:px-6 sm:py-16 lg:px-8 lg:py-2">
+    <section className="mx-auto mt-16 flex max-w-7xl flex-col items-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
       <link
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
         rel="stylesheet"
