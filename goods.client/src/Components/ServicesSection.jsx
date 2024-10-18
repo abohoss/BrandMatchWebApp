@@ -141,7 +141,7 @@ const ServicesSection = () => {
   return (
     <div data-scroll-section>
       <section className="relative lg:mt-5">
-        <div className="overflow-y-auto min-h-screen">
+        <div className="">
           <div className="py-12 md:py-24 container mx-auto px-4">
             <h2 className="text-4xl md:text-7xl text-center mb-8 md:mb-20">Services</h2>
             <div className="flex flex-wrap -mx-3 hidden sm:flex ">
