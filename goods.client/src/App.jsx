@@ -7,7 +7,6 @@ import KeyFeatures from "./Components/KeyFeatures";
 import SuppliersPartnersMarque from "./Components/Marquee/SuppliersPartnersMarquee";
 import Testimonials from "./Components/Testimonials";
 import Challenges from "./Components/Challenges";
-import Services from "./Components/Services";
 import BackToTopBtn from "./Components/BackToTopBtn";
 import Intro from "./Components/Intro";
 import ServicesSection from "./Components/ServicesSection";
@@ -54,7 +53,7 @@ const App = () => {
         <main>
           <Hero isIntroComplete={!isIntro} />
           <Intro isIntro={isIntro} setIsIntro={setIsIntro} />
-          {/* <Services leftValues={leftValues} setLeftValues={setLeftValues} /> */}
+          
           <ServicesSection />
           <Challenges />
           <KeyFeatures />
