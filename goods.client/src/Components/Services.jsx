@@ -28,7 +28,7 @@ const ServiceCard = ({ bgColor, category, title, description, icon }) => (
         </div>
       </div>
       <div className="flex flex-grow flex-col justify-center p-6">
-        <h3 className="mb-2 text-xl leading-relaxed sm:text-2xl">{title}</h3>
+        <h3 className="mb-2 text-xl font-semibold leading-relaxed sm:text-2xl">{title}</h3>
         <p className="text-sm leading-tight">{description}</p>
       </div>
     </div>
@@ -46,7 +46,7 @@ const ServiceCardMobile = ({ bgColor, title, description, icon }) => (
         </div>
       </div>
       <div className="flex flex-grow flex-col justify-center p-6">
-        <h3 className="mb-2 text-xl leading-relaxed sm:text-2xl">{title}</h3>
+        <h3 className="mb-2 text-xl font-semibold leading-relaxed sm:text-2xl">{title}</h3>
         <p className="text-sm leading-tight">{description}</p>
       </div>
     </div>
@@ -168,7 +168,7 @@ const Services = () => {
     <section className="relative lg:mt-5" id="services">
       <div>
         <div className="container mx-auto px-4 py-12 md:py-24">
-          <h2 className="mb-8 text-center text-4xl md:mb-20 md:text-7xl">
+          <h2 className="mb-8 text-center font-bold text-4xl md:mb-20 md:text-7xl">
             Services
           </h2>
           <div className="-mx-3 flex hidden flex-wrap sm:flex">
