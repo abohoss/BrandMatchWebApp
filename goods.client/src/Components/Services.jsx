@@ -28,7 +28,9 @@ const ServiceCard = ({ bgColor, category, title, description, icon }) => (
         </div>
       </div>
       <div className="flex flex-grow flex-col justify-center p-6">
-        <h3 className="mb-2 text-xl font-semibold leading-relaxed sm:text-2xl">{title}</h3>
+        <h3 className="mb-2 text-xl font-semibold leading-relaxed sm:text-2xl">
+          {title}
+        </h3>
         <p className="text-sm leading-tight">{description}</p>
       </div>
     </div>
@@ -46,7 +48,9 @@ const ServiceCardMobile = ({ bgColor, title, description, icon }) => (
         </div>
       </div>
       <div className="flex flex-grow flex-col justify-center p-6">
-        <h3 className="mb-2 text-xl font-semibold leading-relaxed sm:text-2xl">{title}</h3>
+        <h3 className="mb-2 text-xl font-semibold leading-relaxed sm:text-2xl">
+          {title}
+        </h3>
         <p className="text-sm leading-tight">{description}</p>
       </div>
     </div>
@@ -168,10 +172,10 @@ const Services = () => {
     <section className="relative lg:mt-5" id="services">
       <div>
         <div className="container mx-auto px-4 py-12 md:py-24">
-          <h2 className="mb-8 text-center font-bold text-4xl md:mb-20 md:text-7xl">
+          <h2 className="text-center text-3xl font-bold md:text-5xl">
             Services
           </h2>
-          <div className="-mx-3 flex hidden flex-wrap sm:flex">
+          <div className="-mx-3 flex hidden flex-wrap sm:mt-12 sm:flex lg:mt-20">
             {sales.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}
@@ -182,7 +186,7 @@ const Services = () => {
               <ServiceCard key={index} {...service} />
             ))}
           </div>
-          <div className="block sm:hidden">
+          <div className="mt-8 block sm:hidden">
             <Accordion>
               <Accordion.Item eventKey="0" style={customItemStyle}>
                 <Accordion.Header style={accordionHeaderStyle}>
