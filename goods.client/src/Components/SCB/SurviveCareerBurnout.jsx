@@ -26,7 +26,7 @@ const SurviveCareerBurnout = () => {
           </div>
         </section>
       ) : (
-        <div ref={targetRef} className="flex h-[500vh] w-full flex-col">
+        <div ref={targetRef} className="flex h-[1000vh] w-full flex-col">
           <div className="flex-1" aria-hidden="true"></div>
           <section
             className="sticky bottom-0 left-0 overflow-hidden rounded-[50px] bg-gradient-to-b from-[#610007] to-[#160001]"
