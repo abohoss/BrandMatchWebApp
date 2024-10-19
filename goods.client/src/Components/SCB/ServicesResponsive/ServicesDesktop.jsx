@@ -28,7 +28,7 @@ const ServicesDesktop = ({ scrollYProgress, services }) => {
   useMotionValueEvent(scrollProgressTransformed, "change", (latestValue) => {
     // Animate Images
     imageIdx.current = parseInt(latestValue / 100) + 1;
-    const offset = 100 - (latestValue % 100);
+    const offset = parseInt(100 - (latestValue % 100));
     if (imageIdx.current < services.length) {
       animate(`#serviceImg${imageIdx.current}`, {
         clipPath: `polygon(0% ${offset}%, 100% ${offset}%, 100% 100%, 0% 100%)`,
