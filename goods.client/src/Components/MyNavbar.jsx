@@ -7,7 +7,6 @@ import { useState, useEffect, useCallback } from "react";
 import { useScreenSize } from "../Hooks/useScreenSize";
 import { useLenis } from "lenis/react";
 import "../styles/nav.css";
-
 const MyNavbar = () => {
   const screenSize = useScreenSize();
   const lenis = useLenis();
@@ -68,8 +67,8 @@ const MyNavbar = () => {
 
   const handleClickMobile = (e) => {
     handleShowNavbar();
-    const target = document.querySelector(`#${e.target.name}`);
-    lenis.scrollTo(target);
+    
+    // lenis.scrollTo(target);
   };
 
   useEffect(() => {
@@ -82,7 +81,18 @@ const MyNavbar = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  useEffect(() => {
+    if (showNavbar) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'visible';
+    }
 
+    // Cleanup function to ensure scroll is re-enabled when component unmounts
+    return () => {
+      document.body.style.overflow = 'visible';
+    };
+  }, [showNavbar]);
   return (
     <div className="relative">
       <nav className="mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:h-20 lg:px-8">
@@ -152,7 +162,8 @@ const MyNavbar = () => {
           <ul className=" " id="navList">
             <li>
               <a
-                onClick={handleClickMobile}
+                onClick={handleShowNavbar}
+                href="#services"
                 name="services"
                 className="block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
               >
@@ -161,7 +172,8 @@ const MyNavbar = () => {
             </li>
             <li>
               <a
-                onClick={handleClickMobile}
+                onClick={handleShowNavbar}
+                href="#about"
                 name="about"
                 className="block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
               >
@@ -170,7 +182,8 @@ const MyNavbar = () => {
             </li>
             <li>
               <a
-                onClick={handleClickMobile}
+                onClick={handleShowNavbar} 
+                href="#howTo"
                 name="howTo"
                 className="block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
               >
@@ -178,7 +191,9 @@ const MyNavbar = () => {
               </a>
             </li>
           </ul>
+          
         </div>
+        
       )}
     </div>
   );
