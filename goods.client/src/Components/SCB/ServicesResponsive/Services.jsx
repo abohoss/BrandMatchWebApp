@@ -5,7 +5,7 @@ import ServicesMobile from "./ServicesMobile";
 import Branding from "../../../assets/images/Services/branding.webp";
 import Partnership from "../../../assets/images/Services/partnership.webp";
 import Crowdfunding from "../../../assets/images/Services/crowdfunding.webp";
-import Expert from "../../../assets/images/Services/expert.webp";
+import Expert from "../../../assets/images/Services/Expert.webp";
 import Experience from "../../../assets/images/Services/experience.webp";
 
 import PropTypes from "prop-types";
