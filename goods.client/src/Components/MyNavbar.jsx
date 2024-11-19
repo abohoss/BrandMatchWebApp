@@ -67,7 +67,7 @@ const MyNavbar = () => {
 
   const handleClickMobile = (e) => {
     handleShowNavbar();
-    
+
     // lenis.scrollTo(target);
   };
 
@@ -182,7 +182,7 @@ const MyNavbar = () => {
             </li>
             <li>
               <a
-                onClick={handleShowNavbar} 
+                onClick={handleShowNavbar}
                 href="#howTo"
                 name="howTo"
                 className="block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
@@ -191,9 +191,9 @@ const MyNavbar = () => {
               </a>
             </li>
           </ul>
-          
+
         </div>
-        
+
       )}
     </div>
   );

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import "../styles/heroo.css";
 const Hero = () => {
   const { ref, inView } = useInView({
     triggerOnce: true, // Trigger the animation only once
@@ -46,11 +45,12 @@ const Hero = () => {
         transition={{ duration: 1, delay: 2 }}
       >
         <a
-          href="#"
-          className="inline-flex items-center justify-center rounded-full border-2 border-bright-red bg-bright-red px-5 py-2.5 text-base font-semibold text-white/100 no-underline transition-all duration-200 hocus:bg-white hocus:text-bright-red"
+          href="https://drive.google.com/uc?export=download&id=1EXGIZc1IBTgZR3lwx2UjHkGo8rXskgIL"
+          className=" items-center justify-center rounded-full border-2 border-bright-red bg-bright-red px-5 py-2.5 text-base font-semibold text-white/100 no-underline transition-all duration-200 hocus:bg-white hocus:text-bright-red lg:inline-flex"
           role="button"
+          download
         >
-          Start Now
+          Learn More
         </a>
       </motion.div>
     </section>
