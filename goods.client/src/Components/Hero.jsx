@@ -15,6 +15,7 @@ const Hero = () => {
     <section
       ref={ref}
       className="hero relative mb-16 flex flex-col items-center gap-2"
+      
     >
       <motion.div
         variants={fadeInDownVariants}
@@ -26,9 +27,9 @@ const Hero = () => {
           style={{ fontSize: "12vw", lineHeight: "1" }}
           className="self-stretch truncate px-4"
         >
-          <span className="block text-right text-dark-red">Maximize</span>
-          <span className="block text-left">Your Brand&apos;s</span>
-          <span className="block text-right">Potential</span>
+          <span className="block text-right text-white">Maximize</span>
+          <span className="block text-left text-white">Your Brand&apos;s</span>
+          <span className="block text-right text-white">Potential</span>
         </h1>
       </motion.div>
       <motion.div
@@ -37,7 +38,7 @@ const Hero = () => {
         animate={inView ? "visible" : "hidden"}
         transition={{ duration: 1, delay: 1 }}
       >
-        <p className="max-w-md text-center">Your partner in market success</p>
+        <p className="max-w-md text-center text-white">Your partner in market success</p>
       </motion.div>
       <motion.div
         variants={fadeInDownVariants}

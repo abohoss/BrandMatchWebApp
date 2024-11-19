@@ -1,3 +1,5 @@
 .hero {
     z-index: -1;
+    background-image: url('assets/images/warehouse.webp');
 }
+
