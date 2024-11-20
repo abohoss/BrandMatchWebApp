@@ -5,12 +5,9 @@ import Store from "../assets/icons/services/store.svg";
 import Report from "../assets/icons/services/report.svg";
 import Availability from "../assets/icons/services/av.svg";
 import Activities from "../assets/icons/services/marketingActivities.svg";
-import Research from "../assets/icons/services/research.svg";
-import Shelf from "../assets/icons/services/shelf.svg";
 import Promotion from "../assets/icons/services/promotion.svg";
 import Warehouse from "../assets/icons/services/warehouse.svg";
 import Delivery from "../assets/icons/services/delivery.svg";
-import Process from "../assets/icons/services/process.svg";
 
 const ServiceCard = ({ bgColor, category, title, description, icon }) => (
   <div className={`w-full p-3 sm:w-1/2 md:w-1/3 lg:w-1/4`}>
@@ -116,22 +113,6 @@ const Services = () => {
         "We handle all aspects of marketing, both digital and traditional, to boost your brand's visibility.",
       icon: Activities,
     },
-    {
-      bgColor: "dark",
-      category: "Marketing",
-      title: "Market Research",
-      description:
-        "We conduct thorough research on competitors, prices, channels, and more to inform your strategy.",
-      icon: Research,
-    },
-    {
-      bgColor: "light",
-      category: "Marketing",
-      title: "Shelf Organization",
-      description:
-        "Ensure your products have the best shelf view in hypermarkets.",
-      icon: Shelf,
-    },
 
     {
       bgColor: "dark",
@@ -145,13 +126,6 @@ const Services = () => {
 
   const logisitcs = [
     {
-      bgColor: "dark",
-      category: "Logistics",
-      title: "Warehousing",
-      description: "Provide warehousing per pallet to meet your storage needs.",
-      icon: Warehouse,
-    },
-    {
       bgColor: "light",
       category: "Logistics",
       title: "Product Delivery",
@@ -161,10 +135,9 @@ const Services = () => {
     {
       bgColor: "dark",
       category: "Logistics",
-      title: "Order Processing",
-      description:
-        "Handle labeling and invoicing to streamline your order process.",
-      icon: Process,
+      title: "Warehousing",
+      description: "Provide warehousing per pallet to meet your storage needs.",
+      icon: Warehouse,
     },
   ];
 
@@ -175,7 +148,7 @@ const Services = () => {
           <h2 className="text-center text-3xl font-bold md:text-5xl">
             Services
           </h2>
-          <div className="-mx-3 flex hidden flex-wrap sm:mt-12 sm:flex lg:mt-20">
+          <div className="-mx-3 hidden flex-wrap sm:mt-12 sm:flex lg:mt-20">
             {sales.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}
