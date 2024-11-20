@@ -3,11 +3,6 @@ import "../styles/challenges.css";
 function Challenges() {
   const challenges = [
     {
-      name: "Ineffective Marketing Campaigns",
-      description:
-        "Struggling to reach the right audience? Our targeted marketing strategies ensure your brand stands out.",
-    },
-    {
       name: "Inefficient Warehousing and Storage",
       description:
         "Overcome logistical inefficiencies with our streamlined warehousing solutions.",
@@ -18,19 +13,9 @@ function Challenges() {
         "Unlock new growth avenues with our comprehensive market insights and strategic planning.",
     },
     {
-      name: "Brand Awareness",
-      description:
-        "In crowded markets, increasing brand visibility is crucial. We help you attract new customers and enhance your market presence.",
-    },
-    {
       name: "Distribution Challenges",
       description:
         "Ensuring your products reach the right stores and customers efficiently can be complex. We simplify this process for you.",
-    },
-    {
-      name: "Limited Access to Distribution Channels",
-      description:
-        "We help FMCG businesses access the right distribution channels to ensure your products are available to consumers.",
     },
     {
       name: "Competition",
