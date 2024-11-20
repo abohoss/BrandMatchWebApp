@@ -1,5 +1,5 @@
-import LogoNameRed from "../assets/images/LogoNameRed.svg";
-import LogoRed from "../assets/images/LogoRed.svg";
+import LogoNameRed from "../assets/images/LogoName.svg";
+import LogoRed from "../assets/images/Logo.svg";
 import BurgerIcon from "../assets/icons/navbar/burger.svg";
 import CloseIcon from "../assets/icons/navbar/close.svg";
 
@@ -83,14 +83,14 @@ const MyNavbar = () => {
   }, []);
   useEffect(() => {
     if (showNavbar) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'visible';
+      document.body.style.overflow = "visible";
     }
 
     // Cleanup function to ensure scroll is re-enabled when component unmounts
     return () => {
-      document.body.style.overflow = 'visible';
+      document.body.style.overflow = "visible";
     };
   }, [showNavbar]);
   return (
@@ -191,9 +191,7 @@ const MyNavbar = () => {
               </a>
             </li>
           </ul>
-
         </div>
-
       )}
     </div>
   );
