@@ -1,6 +1,49 @@
 import "../styles/challenges.css";
 
 function Challenges() {
+  const challenges = [
+    {
+      name: "Ineffective Marketing Campaigns",
+      description:
+        "Struggling to reach the right audience? Our targeted marketing strategies ensure your brand stands out.",
+    },
+    {
+      name: "Inefficient Warehousing and Storage",
+      description:
+        "Overcome logistical inefficiencies with our streamlined warehousing solutions.",
+    },
+    {
+      name: "Limited Growth Opportunities",
+      description:
+        "Unlock new growth avenues with our comprehensive market insights and strategic planning.",
+    },
+    {
+      name: "Brand Awareness",
+      description:
+        "In crowded markets, increasing brand visibility is crucial. We help you attract new customers and enhance your market presence.",
+    },
+    {
+      name: "Distribution Challenges",
+      description:
+        "Ensuring your products reach the right stores and customers efficiently can be complex. We simplify this process for you.",
+    },
+    {
+      name: "Limited Access to Distribution Channels",
+      description:
+        "We help FMCG businesses access the right distribution channels to ensure your products are available to consumers.",
+    },
+    {
+      name: "Competition",
+      description:
+        "Established brands can make it difficult to stand out. Our strategies help you increase your market share and attract customers.",
+    },
+    {
+      name: "Lack of Market Knowledge",
+      description:
+        "Entering a new market? We provide essential insights into market preferences, consumer behavior, distribution channels, and regulations to ensure successful market entry.",
+    },
+  ];
+
   return (
     <section className="mx-auto mt-16 flex max-w-7xl flex-col items-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
       <link
@@ -21,122 +64,19 @@ function Challenges() {
         </div>
         <div className="mt-8 sm:mt-12 lg:mt-20">
           <div className="row">
-            <div className="col-sm-6 col-lg-4">
-              <div className="feature-box-1">
-                <div className="icon">
-                  <i className="fa fa-chart-simple"></i>
-                </div>
-                <div className="feature-content">
-                  <h5>Ineffective Marketing Campaigns</h5>
-                  <p>
-                    Struggling to reach the right audience? Our targeted
-                    marketing strategies ensure your brand stands out.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-lg-4">
-              <div className="feature-box-1">
-                <div className="icon">
-                  <i className="fa fa-warehouse"></i>
-                </div>
-                <div className="feature-content">
-                  <h5>Inefficient Warehousing and Storage</h5>
-                  <p>
-                    Overcome logistical inefficiencies with our streamlined
-                    warehousing solutions.
-                  </p>
+            {challenges.map((challenge, index) => (
+              <div className="col-sm-6 col-lg-4" key={index}>
+                <div className="feature-box-1">
+                  <div className="icon">
+                    <i className="fa fa-book"></i>
+                  </div>
+                  <div className="feature-content">
+                    <h5>{challenge.name}</h5>
+                    <p>{challenge.description}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-sm-6 col-lg-4">
-              <div className="feature-box-1">
-                <div className="icon">
-                  <i className="fa-solid fa-arrow-up-right-dots"></i>
-                </div>
-                <div className="feature-content">
-                  <h5>Limited Growth Opportunities</h5>
-                  <p>
-                    Unlock new growth avenues with our comprehensive market
-                    insights and strategic planning.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-lg-4">
-              <div className="feature-box-1">
-                <div className="icon">
-                  <i className="fa-solid fa-copyright"></i>
-                </div>
-                <div className="feature-content">
-                  <h5>Brand Awareness</h5>
-                  <p>
-                    In crowded markets, increasing brand visibility is crucial.
-                    We help you attract new customers and enhance your market
-                    presence.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-lg-4">
-              <div className="feature-box-1">
-                <div className="icon">
-                  <i className="fa fa-th"></i>
-                </div>
-                <div className="feature-content">
-                  <h5>Distribution Challenges</h5>
-                  <p>
-                    Ensuring your products reach the right stores and customers
-                    efficiently can be complex. We simplify this process for
-                    you.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-lg-4">
-              <div className="feature-box-1">
-                <div className="icon">
-                  <i className="fa-solid fa-universal-access"></i>
-                </div>
-                <div className="feature-content">
-                  <h5>Limited Access to Distribution Channels</h5>
-                  <p>
-                    We help FMCG businesses access the right distribution
-                    channels to ensure your products are available to consumers.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-lg-4">
-              <div className="feature-box-1">
-                <div className="icon">
-                  <i className="fa-solid fa-bolt"></i>
-                </div>
-                <div className="feature-content">
-                  <h5>Competition</h5>
-                  <p>
-                    Established brands can make it difficult to stand out. Our
-                    strategies help you increase your market share and attract
-                    customers.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-lg-4">
-              <div className="feature-box-1">
-                <div className="icon">
-                  <i className="fa fa-book"></i>
-                </div>
-                <div className="feature-content">
-                  <h5>Lack of Market Knowledge</h5>
-                  <p>
-                    Entering a new market? We provide essential insights into
-                    market preferences, consumer behavior, distribution
-                    channels, and regulations to ensure successful market entry.
-                  </p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
