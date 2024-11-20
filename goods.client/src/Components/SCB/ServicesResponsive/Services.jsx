@@ -2,7 +2,6 @@ import { useScreenSize } from "../../../Hooks/useScreenSize";
 import ServicesDesktop from "./ServicesDesktop";
 import ServicesMobile from "./ServicesMobile";
 
-import Branding from "../../../assets/images/Services/branding.webp";
 import Partnership from "../../../assets/images/Services/partnership.webp";
 import Crowdfunding from "../../../assets/images/Services/crowdfunding.webp";
 import Expert from "../../../assets/images/Services/Expert.webp";
@@ -12,12 +11,6 @@ import PropTypes from "prop-types";
 import { MotionValue } from "framer-motion";
 
 const services = [
-  {
-    title: "Branding Solutions",
-    description:
-      "We handle everything from logo design and social media strategy to content creation and marketing.",
-    image: Branding,
-  },
   {
     title: "Partnership Matching",
     description:
