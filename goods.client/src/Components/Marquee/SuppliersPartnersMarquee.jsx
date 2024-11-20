@@ -18,6 +18,11 @@ import Dolce from "../../assets/images/Suppliers/dolce.webp";
 import Bloom from "../../assets/images/Suppliers/bloom.webp";
 import Altona from "../../assets/images/Suppliers/altona.webp";
 import Agdadna from "../../assets/images/Suppliers/agdadna.webp";
+import Boom from "../../assets/images/Suppliers/boom.webp";
+import London from "../../assets/images/Suppliers/london.webp";
+import Yupi from "../../assets/images/Suppliers/yupi.webp";
+import Talabat from "../../assets/images/Suppliers/talabat.svg";
+import Mayora from "../../assets/images/Suppliers/mayora.svg";
 
 const SuppliersPartnersMarquee = () => {
   const successPartnersImages = [
@@ -32,6 +37,7 @@ const SuppliersPartnersMarquee = () => {
     Abdullah,
   ];
   const suppliersImages = [
+    Talabat,
     Valle,
     Orouba,
     Exclusive,
@@ -40,6 +46,10 @@ const SuppliersPartnersMarquee = () => {
     Bloom,
     Altona,
     Agdadna,
+    Yupi,
+    Mayora,
+    London,
+    Boom,
   ];
 
   return (
