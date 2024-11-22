@@ -104,7 +104,7 @@ const ServicesDesktop = ({ scrollYProgress, services }) => {
                   {title}
                 </m.h4>
                 <m.p
-                  className="font-['Montserrat'] text-3xl font-semibold leading-9 text-gray-500"
+                  className="font-['Montserrat'] text-3xl font-semibold leading-9 text-white"
                   initial={{ opacity: 0 }}
                 >
                   {description}

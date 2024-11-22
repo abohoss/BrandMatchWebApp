@@ -1,4 +1,3 @@
-import "../styles/aboutUs.css";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -16,10 +15,10 @@ const AboutUs = () => {
     <section className="bg-gray-100 py-10 sm:py-16 lg:py-24" id="about">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
             Why Choose Us
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-gray-900">
+          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed">
             Explore the common questions and answers about BrandMatch
           </p>
         </div>
@@ -39,10 +38,8 @@ const AboutUs = () => {
                 <span className="text-lg font-semibold text-white">?</span>
               </div>
               <div className="ml-4">
-                <p className="text-xl font-semibold text-gray-900">
-                  Who are you?
-                </p>
-                <p className="mt-4 text-base text-gray-800">
+                <p className="text-xl font-semibold">Who are you?</p>
+                <p className="mt-4 text-base">
                   BrandMatch is a highly regarded provider of integrated
                   marketing, sales, and logistics services.
                 </p>
@@ -60,10 +57,8 @@ const AboutUs = () => {
                 <span className="text-lg font-semibold text-white">?</span>
               </div>
               <div className="ml-4">
-                <p className="text-xl font-semibold text-gray-900">
-                  How can you help me?
-                </p>
-                <p className="mt-4 text-base text-gray-800">
+                <p className="text-xl font-semibold">How can you help me?</p>
+                <p className="mt-4 text-base">
                   We help you overcome career burnout by creating a powerful
                   personal brand for you. Find partners, fund your brand, and
                   let us handle the rest.
@@ -83,10 +78,10 @@ const AboutUs = () => {
                 <span className="text-lg font-semibold text-white">?</span>
               </div>
               <div className="ml-4">
-                <p className="text-xl font-semibold text-gray-900">
+                <p className="text-xl font-semibold">
                   How do you provide support?
                 </p>
-                <p className="mt-4 text-base text-gray-800">
+                <p className="mt-4 text-base">
                   We assist businesses at all stages, from market entry to
                   sustaining presence and unlocking growth opportunities.
                 </p>
@@ -104,19 +99,16 @@ const AboutUs = () => {
                 <span className="text-lg font-semibold text-white">?</span>
               </div>
               <div className="ml-4">
-                <p className="text-xl font-semibold text-gray-900">
-                  What should I do now?
-                </p>
-                <p className="mt-4 text-base text-gray-800">
-                  {" "}
+                <p className="text-xl font-semibold">What should I do now?</p>
+                <p className="mt-4 text-base">
                   Just get in touch!{" "}
                   <a
                     href="#footer"
-                    className="text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out"
+                    className="text-dark-red transition duration-300 ease-in-out hover:text-bright-red"
                   >
                     Contact us
                   </a>{" "}
-                  today to learn more about how BrandMatch can help you grow.{" "}
+                  today to learn more about how BrandMatch can help you grow.
                 </p>
               </div>
             </div>

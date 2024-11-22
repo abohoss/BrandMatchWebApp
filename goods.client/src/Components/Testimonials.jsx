@@ -18,7 +18,7 @@ const Testimonials = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold leading-tight text-gray-800 sm:text-4xl lg:text-5xl">
-            Our Clients <span className="text-bright-red">Testimonials</span>
+            Our Clients <span className="text-dark-red">Testimonials</span>
           </h2>
         </div>
 
@@ -52,15 +52,13 @@ const Testimonials = () => {
                   </div>
                 </div>
                 <blockquote className="mt-7">
-                  <p className="text-lg text-black">
+                  <p className="text-lg">
                     “BrandMatch took the stress out of building my personal
                     brand. Their team handled everything, allowing me to focus
                     on my career transition.”
                   </p>
                 </blockquote>
-                <p className="mt-9 text-base font-semibold text-black">
-                  Alex R.
-                </p>
+                <p className="mt-9 text-base font-semibold">Alex R.</p>
               </div>
             </div>
           </motion.div>
@@ -91,15 +89,13 @@ const Testimonials = () => {
                   </div>
                 </div>
                 <blockquote className="mt-7">
-                  <p className="text-lg text-black">
+                  <p className="text-lg">
                     “The partnership and funding support were game-changers.
                     BrandMatch helped me turn my burnout into a successful
                     personal brand.”
                   </p>
                 </blockquote>
-                <p className="mt-9 text-base font-semibold text-black">
-                  Jamie K.
-                </p>
+                <p className="mt-9 text-base font-semibold">Jamie K.</p>
               </div>
             </div>
           </motion.div>
@@ -129,15 +125,13 @@ const Testimonials = () => {
                   </div>
                 </div>
                 <blockquote className="mt-7">
-                  <p className="text-lg text-black">
+                  <p className="text-lg">
                     “Amet minim mollit non deserunt ullam co est sit aliqua
                     dolor do amet sint. Velit officia consequat duis enim velit
                     mollit. Exercitation veniam consequat”
                   </p>
                 </blockquote>
-                <p className="mt-9 text-base font-semibold text-black">
-                  Kristin Watson
-                </p>
+                <p className="mt-9 text-base font-semibold">Kristin Watson</p>
               </div>
             </div>
           </motion.div>

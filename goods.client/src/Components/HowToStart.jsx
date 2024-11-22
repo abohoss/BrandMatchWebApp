@@ -12,10 +12,10 @@ function HowToStart() {
     visible: { opacity: 1, y: 0 },
   };
   return (
-    <section id="howTo" className="bg-white py-10 sm:py-16 lg:py-24">
+    <section id="howTo" className="py-10 sm:py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
             How does it work?
           </h2>
         </div>
@@ -39,17 +39,16 @@ function HowToStart() {
               transition={{ duration: 1, delay: 0.5 }}
             >
               <div>
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border-2 border-gray-200 bg-white shadow">
-                  <span className="text-xl font-semibold text-gray-700">
-                    {" "}
-                    1{" "}
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border-2 border-secondary-dark bg-white shadow-md shadow-secondary-dark">
+                  <span className="text-xl font-semibold text-secondary-dark">
+                    1
                   </span>
                 </div>
-                <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10">
+                <h3 className="mt-6 text-xl font-semibold leading-tight text-dark-red md:mt-10">
                   Sign Up
                 </h3>
-                <p className="mt-4 text-base text-gray-600">
-                  : Join our community and share your vision and goals.
+                <p className="mt-4 text-base">
+                  Join our community and share your vision and goals.
                 </p>
               </div>
             </motion.div>
@@ -60,16 +59,15 @@ function HowToStart() {
               transition={{ duration: 1, delay: 1 }}
             >
               <div>
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border-2 border-gray-200 bg-white shadow">
-                  <span className="text-xl font-semibold text-gray-700">
-                    {" "}
-                    2{" "}
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border-2 border-secondary-dark bg-white shadow-md shadow-secondary-dark">
+                  <span className="text-xl font-semibold text-secondary-dark">
+                    2
                   </span>
                 </div>
-                <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10">
+                <h3 className="mt-6 text-xl font-semibold leading-tight text-dark-red md:mt-10">
                   Get Matched
                 </h3>
-                <p className="mt-4 text-base text-gray-600">
+                <p className="mt-4 text-base">
                   We connect you with suitable partners and funding options.
                 </p>
               </div>
@@ -81,16 +79,15 @@ function HowToStart() {
               transition={{ duration: 1, delay: 1.5 }}
             >
               <div>
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border-2 border-gray-200 bg-white shadow">
-                  <span className="text-xl font-semibold text-gray-700">
-                    {" "}
-                    3{" "}
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border-2 border-secondary-dark bg-white shadow-md shadow-secondary-dark">
+                  <span className="text-xl font-semibold text-secondary-dark">
+                    3
                   </span>
                 </div>
-                <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10">
+                <h3 className="mt-6 text-xl font-semibold leading-tight text-dark-red md:mt-10">
                   We Create & Launch
                 </h3>
-                <p className="mt-4 text-base text-gray-600">
+                <p className="mt-4 text-base">
                   Our experts design and develop your personal brand and you
                   receive a fully-realized brand, ready to make an impact.
                 </p>

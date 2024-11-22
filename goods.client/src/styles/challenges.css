@@ -1,13 +1,13 @@
 body {
   margin-top: 20px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* Feature Box
 ---------------------*/
 .feature-box-1 {
   padding: 32px;
-  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+  @apply shadow-xl;
   margin: 15px 0;
   position: relative;
   z-index: 1;
@@ -31,8 +31,8 @@ body {
   width: 70px;
   height: 70px;
   line-height: 70px;
-  background: #fc5356;
-  color: #ffffff;
+  @apply bg-dark-red;
+  @apply text-white;
   text-align: center;
   border-radius: 50%;
   margin-bottom: 22px;
@@ -44,7 +44,7 @@ body {
 }
 
 .feature-box-1 h5 {
-  color: #20247b;
+  @apply text-secondary-dark;
   font-weight: 600;
 }
 
@@ -61,7 +61,7 @@ body {
   right: 0;
   border-radius: 10px;
   width: 0;
-  background: #20247b;
+  @apply bg-secondary-bright;
   z-index: -1;
   -moz-transition: ease all 0.35s;
   -o-transition: ease all 0.35s;
@@ -74,11 +74,11 @@ body {
 }
 
 .feature-box-1:hover h5 {
-  color: #ffffff;
+  @apply text-white;
 }
 
 .feature-box-1:hover p {
-  color: rgba(255, 255, 255, 0.8);
+  @apply text-white;
 }
 
 .feature-box-1:hover:after {
@@ -100,10 +100,9 @@ body {
 
 .section-title h2 {
   font-weight: 700;
-  color: #000000
-  ;
   font-size: 45px;
   margin: 0 0 15px;
-  border-left: 5px solid #fc5356;
+  @apply border-l-4;
+  @apply border-bright-red;
   padding-left: 15px;
 }

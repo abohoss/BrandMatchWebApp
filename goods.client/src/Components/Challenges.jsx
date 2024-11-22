@@ -40,7 +40,7 @@ function Challenges() {
         <div className="row">
           <div className="col-lg-6">
             <div className="mx-auto max-w-3xl">
-              <h2 className="border-l-4 border-bright-red pl-3.5 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl">
+              <h2 className="border-l-4 border-bright-red pl-3.5 text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
                 Challenges
               </h2>
               <p>Challenges we address at BrandMatch</p>

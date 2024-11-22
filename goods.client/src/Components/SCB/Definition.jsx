@@ -10,7 +10,7 @@ const Definition = () => {
       />
       <div className="flex basis-1/2 flex-col items-center justify-center gap-6">
         <div className="inline-flex h-10 items-center justify-center self-stretch sm:justify-start">
-          <div className="flex items-center justify-center rounded-[32px] bg-gradient-to-r from-[#614e50] to-[#610007] px-4 py-2">
+          <div className="from-secondary-bright flex items-center justify-center rounded-[32px] bg-gradient-to-r px-4 py-2">
             <span className="font-['Montserrat'] text-base font-normal leading-normal text-white">
               Startup Package
             </span>

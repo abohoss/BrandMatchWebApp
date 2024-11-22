@@ -3,12 +3,22 @@
 @tailwind utilities;
 
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
   overflow-x: hidden;
+}
 
+@layer base {
+  h1,
+  h2 {
+    @apply text-secondary-bright !important;
+  }
+
+  p {
+    @apply text-secondary-dark;
+  }
 }
 
 html.lenis,

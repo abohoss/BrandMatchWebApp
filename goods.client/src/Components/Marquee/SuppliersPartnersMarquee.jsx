@@ -55,7 +55,7 @@ const SuppliersPartnersMarquee = () => {
   return (
     <section className="py-10 sm:py-16 lg:py-24">
       <div className="mx-auto max-w-3xl text-center">
-        <h2 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl">
+        <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
           Our Success Partners & Suppliers
         </h2>
       </div>

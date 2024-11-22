@@ -18,7 +18,7 @@ const SurviveCareerBurnout = () => {
   return (
     <>
       {screenSize == "xs" || screenSize == "sm" ? (
-        <section className="inline-flex flex-col overflow-hidden rounded-[50px] bg-gradient-to-b from-[#610007] to-[#160001]">
+        <section className="from-secondary-dark to-secondary-bright inline-flex flex-col overflow-hidden rounded-[50px] bg-gradient-to-b">
           <Definition />
           <Services scrollYProgress={scrollYProgress} />
           <div className="inline-flex flex-col items-center justify-center px-4 py-10">
@@ -29,7 +29,7 @@ const SurviveCareerBurnout = () => {
         <div ref={targetRef} className="flex h-[1000vh] w-full flex-col">
           <div className="flex-1" aria-hidden="true"></div>
           <section
-            className="sticky bottom-0 left-0 overflow-hidden rounded-[50px] bg-gradient-to-b from-[#610007] to-[#160001]"
+            className="from-secondary-dark to-secondary-bright sticky bottom-0 left-0 overflow-hidden rounded-[50px] bg-gradient-to-b"
             style={{ position: "-webkit-sticky" }}
           >
             <Definition />

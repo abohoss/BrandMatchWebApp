@@ -9,18 +9,18 @@ import {
 import "../styles/footer.css";
 
 const Myfooter = () => {
-  const [faceColor, setFaceColor] = useState("secondary");
-  const [twitterColor, setTwitterColor] = useState("secondary");
-  const [googleColor, setGoogleColor] = useState("secondary");
-  const [igColor, setIgColor] = useState("secondary");
-  const [liColor, setLiColor] = useState("secondary");
+  const [faceColor, setFaceColor] = useState("#9FA6B2");
+  const [twitterColor, setTwitterColor] = useState("#9FA6B2");
+  const [googleColor, setGoogleColor] = useState("#9FA6B2");
+  const [igColor, setIgColor] = useState("#9FA6B2");
+  const [liColor, setLiColor] = useState("#9FA6B2");
 
   const enterSocial = (stateSetter) => {
-    stateSetter("primary");
+    stateSetter("#e56133");
   };
 
   const leaveSocial = (stateSetter) => {
-    stateSetter("secondary");
+    stateSetter("#9FA6B2");
   };
 
   return (
@@ -43,7 +43,9 @@ const Myfooter = () => {
                 ></img>
               </MDBCol>
               <MDBCol md="9" lg="10" xl="10" className="mx-auto mb-4 mt-1">
-                <h6 className="text-uppercase fw-bold mb-4">BrandMatch</h6>
+                <h6 className="text-uppercase fw-bold mb-4 text-secondary-dark">
+                  BrandMatch
+                </h6>
               </MDBCol>
             </MDBRow>
             <p className="text-sm">
@@ -54,7 +56,9 @@ const Myfooter = () => {
           </MDBCol>
 
           <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
-            <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
+            <h6 className="text-uppercase fw-bold mb-4 text-secondary-dark">
+              Useful links
+            </h6>
             <p>
               <a
                 href="#!"
@@ -90,7 +94,9 @@ const Myfooter = () => {
           </MDBCol>
 
           <MDBCol md="6" lg="5" xl="5" className="mb-md-0 mx-auto mb-4">
-            <h6 className="text-uppercase fw-bold mb-4">Contact Us</h6>
+            <h6 className="text-uppercase fw-bold mb-4 text-secondary-dark">
+              Contact Us
+            </h6>
             <p>
               <a
                 href="https://www.google.com/maps/search/+41+Zaker+Hussein+St.+/@30.0437078,31.3347338,19.25z?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3DE"
@@ -150,7 +156,7 @@ const Myfooter = () => {
               leaveSocial(setFaceColor);
             }}
           >
-            <MDBIcon color={faceColor} fab icon="facebook-f" />
+            <MDBIcon style={{ color: `${faceColor}` }} fab icon="facebook-f" />
           </a>
           <a
             href=""
@@ -162,7 +168,7 @@ const Myfooter = () => {
               leaveSocial(setTwitterColor);
             }}
           >
-            <MDBIcon color={twitterColor} fab icon="twitter" />
+            <MDBIcon style={{ color: `${twitterColor}` }} fab icon="twitter" />
           </a>
           <a
             href=""
@@ -174,7 +180,7 @@ const Myfooter = () => {
               leaveSocial(setGoogleColor);
             }}
           >
-            <MDBIcon color={googleColor} fab icon="google" />
+            <MDBIcon style={{ color: `${googleColor}` }} fab icon="google" />
           </a>
           <a
             href=""
@@ -186,7 +192,7 @@ const Myfooter = () => {
               leaveSocial(setIgColor);
             }}
           >
-            <MDBIcon color={igColor} fab icon="instagram" />
+            <MDBIcon style={{ color: `${igColor}` }} fab icon="instagram" />
           </a>
           <a
             href=""
@@ -198,7 +204,7 @@ const Myfooter = () => {
               leaveSocial(setLiColor);
             }}
           >
-            <MDBIcon color={liColor} fab icon="linkedin" />
+            <MDBIcon style={{ color: `${liColor}` }} fab icon="linkedin" />
           </a>
         </MDBCol>
       </MDBRow>
