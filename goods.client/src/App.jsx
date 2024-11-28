@@ -16,7 +16,6 @@ const App = () => {
   return (
     <ReactLenis root>
       <div>
-        <MyNavbar />
         <BackToTopBtn />
         <main>
           <Hero />

@@ -1,59 +1,128 @@
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-const Hero = () => {
-  const { ref, inView } = useInView({
-    triggerOnce: true, // Trigger the animation only once
-    threshold: 0.2, // Trigger when 20% of the component is visible
-  });
+// import { motion } from "framer-motion";
+// import { useInView } from "react-intersection-observer";
+import MyNavbar from "./MyNavbar";
+import { useScreenSize } from "../Hooks/useScreenSize";
+import Warehouse from "../assets/images/Hero/warehouse.webp";
 
-  const fadeInDownVariants = {
-    hidden: { opacity: 0, y: -40 },
-    visible: { opacity: 1, y: 0 },
-  };
+const Hero = () => {
+  // const { ref, inView } = useInView({
+  //   triggerOnce: true, // Trigger the animation only once
+  //   threshold: 0.2, // Trigger when 20% of the component is visible
+  // });
+
+  // const fadeInDownVariants = {
+  //   hidden: { opacity: 0, y: -40 },
+  //   visible: { opacity: 1, y: 0 },
+  // };
+  const screenSize = useScreenSize();
+  const circularText = "Your partner in m arket success .";
+
   return (
-    <section
-      ref={ref}
-      className="hero relative mb-16 flex flex-col items-center gap-2"
-    >
-      <motion.div
-        variants={fadeInDownVariants}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        transition={{ duration: 1, delay: 0.5 }}
-      >
-        <h1
-          style={{ fontSize: "12vw", lineHeight: "1" }}
-          className="self-stretch truncate px-4"
-        >
-          <span className="block text-right text-dark-red">Maximize</span>
-          <span className="block text-left">Your Brand&apos;s</span>
-          <span className="block text-right">Potential</span>
-        </h1>
-      </motion.div>
-      <motion.div
-        variants={fadeInDownVariants}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        transition={{ duration: 1, delay: 1 }}
-      >
-        <p className="max-w-md text-center">Your partner in market success</p>
-      </motion.div>
-      <motion.div
-        variants={fadeInDownVariants}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        transition={{ duration: 1, delay: 2 }}
-      >
-        <a
-          href="https://drive.google.com/uc?export=download&id=1EXGIZc1IBTgZR3lwx2UjHkGo8rXskgIL"
-          className=" items-center justify-center rounded-full border-2 border-bright-red bg-bright-red px-5 py-2.5 text-base font-semibold text-white/100 no-underline transition-all duration-200 hocus:bg-white hocus:text-bright-red lg:inline-flex"
-          role="button"
-          download
-        >
-          Learn More
-        </a>
-      </motion.div>
-    </section>
+    <div className="relative">
+      <header className="absolute inset-x-0 top-0 z-10 w-full">
+        <MyNavbar />
+      </header>
+
+      <section className="overflow-hidden">
+        <div className="flex flex-col lg:min-h-[800px] lg:flex-row lg:items-stretch">
+          <div className="relative flex w-full items-center justify-center lg:order-2 lg:w-7/12">
+            <div className="relative px-4 pb-16 pt-24 text-center sm:px-6 md:px-24 lg:py-24 lg:text-left 2xl:px-32">
+              <h1 className="text-4xl font-bold sm:text-6xl xl:text-8xl">
+                Maximize
+                <br />
+                your brand&apos;s Potential
+              </h1>
+              <p className="mt-8 text-xl">
+                A holistic solution offering comprehensive sales, marketing, and
+                logistics services tailored to your business
+              </p>
+
+              <form
+                action="#"
+                method="POST"
+                className="mx-auto mt-8 flex max-w-xl flex-col items-start rounded-xl bg-white p-2 transition-all duration-200 sm:flex-row sm:rounded-full lg:mx-0 lg:mt-12"
+              >
+                <div className="relative w-full min-w-0 flex-1">
+                  <label htmlFor="email" className="sr-only"></label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Enter email to get started"
+                    className="block w-full rounded-full p-3 text-base text-bright-red placeholder-gray-500 focus:outline-none sm:text-left"
+                    required
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="f:bg-orange-600 inline-flex w-full items-center justify-center rounded-full border bg-bright-red p-3 font-semibold text-white transition-all duration-200 sm:ml-4 sm:w-auto"
+                >
+                  Get Brandmatch Profile
+                </button>
+              </form>
+              <p className="mt-5 text-base !text-black">
+                Your partner in market success
+              </p>
+            </div>
+
+            <div className="absolute -bottom-16 right-0 z-10 m-0 flex h-32 w-32 items-center justify-center rounded-full p-0 md:h-40 md:w-40 lg:-left-20 lg:top-24">
+              <p className="m-0 h-full w-full select-none p-0 text-base font-semibold !text-black md:text-lg">
+                {circularText.split("").map((character, index) => (
+                  <span
+                    key={index}
+                    style={{
+                      transform: `rotate(${index * (360 / circularText.length)}deg)`,
+                      transformOrigin: `0px ${["xs", "sm"].includes(screenSize) ? 64 : 80}px`,
+                    }}
+                    className="absolute left-1/2"
+                  >
+                    {character}
+                  </span>
+                ))}
+              </p>
+            </div>
+          </div>
+
+          <div className="relative h-96 w-full overflow-hidden lg:order-1 lg:h-screen lg:w-5/12">
+            <div className="absolute inset-0">
+              <img
+                className="h-full w-full object-cover"
+                src={Warehouse}
+                alt=""
+              />
+            </div>
+
+            <div className="via-transparent to-transparent absolute inset-0 bg-gradient-to-t !from-black"></div>
+
+            <div className="absolute bottom-0 left-0">
+              <div className="p-4 sm:p-6 lg:p-8">
+                <div className="flex items-center">
+                  <svg
+                    className="h-10 w-10 text-bright-red"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <h2 className="ml-2.5 text-7xl font-bold !text-white">
+                    2000
+                  </h2>
+                </div>
+                <p className="mt-1.5 max-w-xs text-xl !text-white">
+                  Sales Channels are offered by Brandmatch
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 
