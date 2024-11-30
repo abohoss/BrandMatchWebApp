@@ -4,7 +4,7 @@ import Services from "./ServicesResponsive/Services";
 import { useRef } from "react";
 import { useScreenSize } from "../../Hooks/useScreenSize";
 import { useScroll } from "framer-motion";
-import CTABtn from "../CTABtn";
+import CTABtn from "../atoms/CTABtn";
 
 const SurviveCareerBurnout = () => {
   const targetRef = useRef(null);

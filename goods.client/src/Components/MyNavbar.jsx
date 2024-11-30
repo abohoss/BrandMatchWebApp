@@ -1,3 +1,5 @@
+import CTABtn from "./atoms/CTABtn";
+
 import LogoNameRed from "../assets/images/LogoName.svg";
 import LogoRed from "../assets/images/Logo.svg";
 import BurgerIcon from "../assets/icons/navbar/burger.svg";
@@ -125,7 +127,7 @@ const MyNavbar = () => {
           <a
             onClick={handleClick}
             name="services"
-            className="hover-link cursor-pointer text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
+            className="hover-link cursor-pointer text-base font-semibold !text-black no-underline transition-all duration-200 hover:text-opacity-80"
           >
             Services
           </a>
@@ -133,7 +135,7 @@ const MyNavbar = () => {
           <a
             onClick={handleClick}
             name="about"
-            className="hover-link cursor-pointer text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
+            className="hover-link cursor-pointer text-base font-semibold !text-black no-underline transition-all duration-200 hover:text-opacity-80"
           >
             About
           </a>
@@ -141,18 +143,13 @@ const MyNavbar = () => {
           <a
             onClick={handleClick}
             name="howTo"
-            className="hover-link cursor-pointer text-base text-black no-underline transition-all duration-200 hover:text-opacity-80"
+            className="hover-link cursor-pointer text-base font-semibold !text-black no-underline transition-all duration-200 hover:text-opacity-80"
           >
             How to start
           </a>
+
+          <CTABtn />
         </div>
-        <a
-          href="#"
-          className="hidden items-center justify-center rounded-full border-2 border-bright-red bg-bright-red px-5 py-2.5 text-base font-semibold text-white/100 no-underline transition-all duration-200 hocus:bg-white hocus:text-bright-red lg:inline-flex"
-          role="button"
-        >
-          Start Now
-        </a>
       </nav>
       {showNavbar && (
         <div
@@ -165,7 +162,7 @@ const MyNavbar = () => {
                 onClick={handleShowNavbar}
                 href="#services"
                 name="services"
-                className="block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
+                className="block w-full px-2 py-2 text-left !text-black no-underline transition-all duration-200 hover:text-opacity-80"
               >
                 Services
               </a>
@@ -175,7 +172,7 @@ const MyNavbar = () => {
                 onClick={handleShowNavbar}
                 href="#about"
                 name="about"
-                className="block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
+                className="block w-full px-2 py-2 text-left !text-black no-underline transition-all duration-200 hover:text-opacity-80"
               >
                 About
               </a>
@@ -185,7 +182,7 @@ const MyNavbar = () => {
                 onClick={handleShowNavbar}
                 href="#howTo"
                 name="howTo"
-                className="block w-full px-2 py-2 text-left text-black no-underline transition-all duration-200 hover:text-opacity-80"
+                className="block w-full px-2 py-2 text-left !text-black no-underline transition-all duration-200 hover:text-opacity-80"
               >
                 How to start
               </a>

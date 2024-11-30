@@ -1,4 +1,4 @@
-import StartNow from "../../StartNow";
+import CTABtn from "../../atoms/CTABtn";
 
 import PropTypes from "prop-types";
 import { useEffect } from "react";
@@ -113,7 +113,7 @@ const ServicesDesktop = ({ scrollYProgress, services }) => {
             ))}
           </div>
           <div className="flex h-11 flex-col items-start justify-center gap-2 self-stretch">
-            <StartNow />
+            <CTABtn />
           </div>
         </div>
         <div className="relative h-screen w-1/2">
