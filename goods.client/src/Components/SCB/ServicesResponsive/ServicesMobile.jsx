@@ -13,10 +13,10 @@ const ServicesMobile = ({ services }) => {
             loading="lazy"
             className="aspect-square rounded-xl object-cover"
           />
-          <div className="self-stretch font-['Montserrat'] text-3xl font-medium leading-9 text-white">
+          <div className="self-stretch font-['Montserrat'] text-3xl font-medium leading-9 !text-white">
             {service.title}
           </div>
-          <div className="self-stretch font-['Montserrat'] text-lg font-normal leading-7 text-gray-300">
+          <div className="self-stretch font-['Montserrat'] text-lg font-normal leading-7 !text-white">
             {service.description}
           </div>
         </div>

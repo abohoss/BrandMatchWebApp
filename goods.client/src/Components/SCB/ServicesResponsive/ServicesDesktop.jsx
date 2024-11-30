@@ -84,7 +84,7 @@ const ServicesDesktop = ({ scrollYProgress, services }) => {
         className="flex h-screen w-full items-center justify-between"
       >
         <div className="relative mx-6 mb-24 mt-6 flex w-1/2 flex-col items-start justify-end gap-6 self-stretch">
-          <h3 className="absolute left-0 top-0 font-['Montserrat'] text-7xl font-bold leading-[72px] text-white">
+          <h3 className="absolute left-0 top-0 font-['Montserrat'] text-7xl font-bold leading-[72px] !text-white">
             Services.
           </h3>
           <div className="relative w-full">
@@ -95,7 +95,7 @@ const ServicesDesktop = ({ scrollYProgress, services }) => {
                 className="absolute bottom-0 left-0"
               >
                 <m.h4
-                  className="w-1/2 font-['Montserrat'] text-5xl font-semibold leading-[48px] text-white"
+                  className="w-1/2 font-['Montserrat'] text-5xl font-semibold leading-[48px] !text-white"
                   initial={{
                     opacity: 0,
                     y: 40,
@@ -104,7 +104,7 @@ const ServicesDesktop = ({ scrollYProgress, services }) => {
                   {title}
                 </m.h4>
                 <m.p
-                  className="font-['Montserrat'] text-3xl font-semibold leading-9 text-white"
+                  className="font-['Montserrat'] text-3xl font-semibold leading-9 !text-white"
                   initial={{ opacity: 0 }}
                 >
                   {description}

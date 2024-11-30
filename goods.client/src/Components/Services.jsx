@@ -12,14 +12,14 @@ import Delivery from "../assets/icons/services/delivery.svg";
 const ServiceCard = ({ bgColor, category, title, description, icon }) => (
   <div className={`w-full p-3 sm:w-1/2 md:w-1/3 lg:w-1/4`}>
     <div
-      className={`h-full ${bgColor === "dark" ? "bg-secondary-dark text-white" : "bg-white text-secondary-dark"} flex flex-col justify-between rounded-xl shadow`}
+      className={`h-full ${bgColor === "dark" ? "bg-secondary-dark !text-white" : "!bg-white text-secondary-dark"} flex flex-col justify-between rounded-xl shadow`}
     >
       <div className="flex items-center justify-between p-6">
         <div className="flex w-[50px] items-center justify-center">
           <img src={icon} />
         </div>
         <div
-          className={`rounded-[32px] border px-4 py-2 ${bgColor === "dark" ? "border-white" : "border-secondary-dark"}`}
+          className={`rounded-[32px] border px-4 py-2 ${bgColor === "dark" ? "!border-white" : "border-secondary-dark"}`}
         >
           <div className="text-xs">{category}</div>
         </div>
@@ -29,7 +29,7 @@ const ServiceCard = ({ bgColor, category, title, description, icon }) => (
           {title}
         </h3>
         <p
-          className={`text-sm leading-tight ${bgColor === "dark" ? "text-white" : "text-secondary-dark"}`}
+          className={`text-sm leading-tight ${bgColor === "dark" ? "!text-white" : "text-secondary-dark"}`}
         >
           {description}
         </p>
@@ -41,7 +41,7 @@ const ServiceCard = ({ bgColor, category, title, description, icon }) => (
 const ServiceCardMobile = ({ bgColor, title, description, icon }) => (
   <div className={`w-full p-3 sm:w-1/2 md:w-1/3 lg:w-1/4`}>
     <div
-      className={`h-full ${bgColor === "dark" ? "bg-secondary-dark text-white" : "bg-white text-secondary-dark"} flex flex-col justify-between rounded-xl shadow`}
+      className={`h-full ${bgColor === "dark" ? "bg-secondary-dark !text-white" : "!bg-white text-secondary-dark"} flex flex-col justify-between rounded-xl shadow`}
     >
       <div className="flex items-center justify-between p-6">
         <div className="flex w-[50px] items-center justify-center">
@@ -53,7 +53,7 @@ const ServiceCardMobile = ({ bgColor, title, description, icon }) => (
           {title}
         </h3>
         <p
-          className={`text-sm leading-tight ${bgColor === "dark" ? "text-white" : "text-secondary-dark"}`}
+          className={`text-sm leading-tight ${bgColor === "dark" ? "!text-white" : "text-secondary-dark"}`}
         >
           {description}
         </p>
@@ -63,20 +63,6 @@ const ServiceCardMobile = ({ bgColor, title, description, icon }) => (
 );
 
 const Services = () => {
-  const customItemStyle = {
-    border: "none",
-  };
-
-  const noFocusStyle = {
-    outline: "none",
-    boxShadow: "none",
-  };
-
-  const accordionHeaderStyle = {
-    ...noFocusStyle,
-    "&:focus": noFocusStyle,
-    "&:not(.collapsed)": noFocusStyle,
-  };
   const sales = [
     {
       bgColor: "dark",
@@ -169,30 +155,24 @@ const Services = () => {
           </div>
           <div className="mt-8 block sm:hidden">
             <Accordion>
-              <Accordion.Item eventKey="0" style={customItemStyle}>
-                <Accordion.Header style={accordionHeaderStyle}>
-                  Sales
-                </Accordion.Header>
+              <Accordion.Item eventKey="0" className="!border-none !bg-white">
+                <Accordion.Header>Sales</Accordion.Header>
                 <Accordion.Body>
                   {sales.map((service, index) => (
                     <ServiceCardMobile key={index} {...service} />
                   ))}
                 </Accordion.Body>
               </Accordion.Item>
-              <Accordion.Item eventKey="1" style={customItemStyle}>
-                <Accordion.Header style={accordionHeaderStyle}>
-                  Marketing
-                </Accordion.Header>
+              <Accordion.Item eventKey="1" className="!border-none !bg-white">
+                <Accordion.Header>Marketing</Accordion.Header>
                 <Accordion.Body>
                   {marketing.map((service, index) => (
                     <ServiceCardMobile key={index} {...service} />
                   ))}
                 </Accordion.Body>
               </Accordion.Item>
-              <Accordion.Item eventKey="2" style={customItemStyle}>
-                <Accordion.Header style={accordionHeaderStyle}>
-                  Logistics
-                </Accordion.Header>
+              <Accordion.Item eventKey="2" className="!border-none !bg-white">
+                <Accordion.Header>Logistics</Accordion.Header>
                 <Accordion.Body>
                   {logisitcs.map((service, index) => (
                     <ServiceCardMobile key={index} {...service} />
