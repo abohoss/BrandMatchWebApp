@@ -11,7 +11,7 @@
   width: 0;
   height: 2px;
   /* Set the thickness of the underline */
-  background-color: red;
+  @apply bg-bright-red;
   /* Set the color of the underline */
   bottom: -2px;
   /* Adjust the position of the underline */
@@ -39,14 +39,16 @@
 }
 
 .menu-icon {
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .x-icon {
   position: absolute;
   opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
   transform: rotate(-90deg);
 }
-
-

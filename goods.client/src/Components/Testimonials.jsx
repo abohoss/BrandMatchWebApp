@@ -14,7 +14,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="bg-gray-100 py-10 sm:py-16 lg:py-24">
+    <section className="!!bg-white py-10 sm:py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold leading-tight text-gray-800 sm:text-4xl lg:text-5xl">
@@ -32,7 +32,7 @@ const Testimonials = () => {
             animate={inView ? "visible" : "hidden"}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            <div className="overflow-hidden rounded-md bg-white shadow">
+            <div className="overflow-hidden rounded-md !bg-white shadow">
               <div className="px-8 py-12">
                 <div className="relative mx-auto h-24 w-24">
                   <img
@@ -69,7 +69,7 @@ const Testimonials = () => {
             animate={inView ? "visible" : "hidden"}
             transition={{ duration: 1, delay: 1 }}
           >
-            <div className="overflow-hidden rounded-md bg-white shadow">
+            <div className="overflow-hidden rounded-md !bg-white shadow">
               <div className="px-8 py-12">
                 <div className="relative mx-auto h-24 w-24">
                   <img
@@ -105,7 +105,7 @@ const Testimonials = () => {
             animate={inView ? "visible" : "hidden"}
             transition={{ duration: 1, delay: 1.5 }}
           >
-            <div className="overflow-hidden rounded-md bg-white shadow">
+            <div className="overflow-hidden rounded-md !bg-white shadow">
               <div className="px-8 py-12">
                 <div className="relative mx-auto h-24 w-24">
                   <img

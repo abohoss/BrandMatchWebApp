@@ -1,102 +1,102 @@
 .hover-link {
-    text-decoration: none;
-    /* Remove default underline */
-    position: relative;
-    /* Required for absolute positioning of the line */
+  text-decoration: none;
+  /* Remove default underline */
+  position: relative;
+  /* Required for absolute positioning of the line */
 }
 
 .hover-link::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    /* Set the thickness of the underline */
-    background-color: red;
-    /* Set the color of the underline */
-    bottom: -2px;
-    /* Adjust the position of the underline */
-    left: 0;
-    transition: width 0.3s ease;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  /* Set the thickness of the underline */
+  @apply bg-secondary-bright;
+  /* Set the color of the underline */
+  bottom: -2px;
+  /* Adjust the position of the underline */
+  left: 0;
+  transition: width 0.3s ease;
 }
 
 .hover-link:hover::after {
-    width: 100%;
-    /* Extend the underline on hover */
+  width: 100%;
+  /* Extend the underline on hover */
 }
 
 .menu-icon {
-    display: none;
+  display: none;
 }
-.nav-elements{
-    display: none;
+.nav-elements {
+  display: none;
 }
 
 @media (max-width: 768px) {
-    .nav-elements ul li:not(:last-child) {
-        margin-right: 30px;
-    }
+  .nav-elements ul li:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
 @media (max-width: 1023px) {
-    .menu-icon {
-        display: block;
-        cursor: pointer;
-        
-    }
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
 
-    .nav-elements {
-        position: fixed;
-        display: block;
-        right: 0;
-        top: 60px;
-        background-color: #ffffff;
-        width: 0;
-        height: 100vh;
-        transition: all 0.3s ease-in;
-        overflow: hidden;
-        z-index: 50;
-        
-    }
+  .nav-elements {
+    position: fixed;
+    display: block;
+    right: 0;
+    top: 60px;
+    background-color: #ffffff;
+    width: 0;
+    height: 100vh;
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+    z-index: 50;
+  }
 
-    .nav-elements.active {
-        width: 100vw;
-    }
+  .nav-elements.active {
+    width: 100vw;
+  }
 
-    .nav-elements ul {
-        display: flex;
-        flex-direction: column;
-    }
+  .nav-elements ul {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .nav-elements ul li {
-        margin-right: unset;
-        margin-top: 22px;
-    }
+  .nav-elements ul li {
+    margin-right: unset;
+    margin-top: 22px;
+  }
 
-    #menuButton {
-        position: relative;
-       
-    }
+  #menuButton {
+    position: relative;
+  }
 
-    #menuButton.open .menu-burger {
-        transform: rotate(90deg);
-        opacity: 0;
-    }
+  #menuButton.open .menu-burger {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
 
-    #menuButton.open .x-icon {
-        transform: rotate(0deg);
-        opacity: 1;
-        
-    }
+  #menuButton.open .x-icon {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
 
-    .menu-burger {
-        transition: transform 0.3s ease, opacity 0.3s ease;
-    }
+  .menu-burger {
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+  }
 
-    .x-icon {
-        position: absolute;
-        opacity: 0;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-        transform: rotate(-90deg);
-        top: 0px;
-    }
+  .x-icon {
+    position: absolute;
+    opacity: 0;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+    transform: rotate(-90deg);
+    top: 0px;
+  }
 }

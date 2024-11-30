@@ -8,11 +8,12 @@ export default {
   theme: {
     extend: {},
     colors: {
-      white: colors.white,
+      white: "#f8f4e3",
       "bright-red": "#e56133",
       "dark-red": "#af462e",
       "secondary-bright": "#32965d",
       "secondary-dark": "#276041",
+      black: "#222a34",
       gray: colors.gray,
     },
   },

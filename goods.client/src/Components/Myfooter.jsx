@@ -26,8 +26,7 @@ const Myfooter = () => {
   return (
     <MDBFooter
       id="footer"
-      bgColor="light"
-      className="text-lg-start text-muted text-center"
+      className="text-lg-start text-muted border-t-2 border-secondary-bright !bg-white text-center"
     >
       <MDBContainer className="text-md-start mt-3 p-2 text-center">
         <MDBRow className="mt-3">

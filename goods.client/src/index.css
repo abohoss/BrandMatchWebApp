@@ -11,13 +11,16 @@ body {
 }
 
 @layer base {
+  body {
+    @apply !bg-white;
+  }
   h1,
   h2 {
-    @apply text-secondary-bright !important;
+    @apply !text-black;
   }
 
   p {
-    @apply text-secondary-dark;
+    @apply text-black;
   }
 }
 

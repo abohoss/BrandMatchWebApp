@@ -39,7 +39,7 @@ function HowToStart() {
               transition={{ duration: 1, delay: 0.5 }}
             >
               <div>
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border-2 border-secondary-dark bg-white shadow-md shadow-secondary-dark">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border-2 border-secondary-dark !bg-white shadow-md shadow-secondary-dark">
                   <span className="text-xl font-semibold text-secondary-dark">
                     1
                   </span>
@@ -59,7 +59,7 @@ function HowToStart() {
               transition={{ duration: 1, delay: 1 }}
             >
               <div>
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border-2 border-secondary-dark bg-white shadow-md shadow-secondary-dark">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border-2 border-secondary-dark !bg-white shadow-md shadow-secondary-dark">
                   <span className="text-xl font-semibold text-secondary-dark">
                     2
                   </span>
@@ -79,7 +79,7 @@ function HowToStart() {
               transition={{ duration: 1, delay: 1.5 }}
             >
               <div>
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border-2 border-secondary-dark bg-white shadow-md shadow-secondary-dark">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border-2 border-secondary-dark !bg-white shadow-md shadow-secondary-dark">
                   <span className="text-xl font-semibold text-secondary-dark">
                     3
                   </span>
@@ -105,7 +105,7 @@ function HowToStart() {
             <a href="https://example.com" className="inline-block">
               <button
                 type="button"
-                className="inline-flex items-center justify-center rounded-full border-2 border-bright-red bg-bright-red px-5 py-2.5 text-base font-semibold text-white/100 no-underline transition-all duration-200 hocus:bg-white hocus:text-bright-red"
+                className="inline-flex items-center justify-center rounded-full border-2 border-bright-red bg-bright-red px-5 py-2.5 text-base font-semibold text-white/100 no-underline transition-all duration-200 hocus:!bg-white hocus:text-bright-red"
               >
                 Start Now
               </button>
