@@ -1,20 +1,26 @@
-// import { motion } from "framer-motion";
-// import { useInView } from "react-intersection-observer";
 import MyNavbar from "./MyNavbar";
 import { useScreenSize } from "../Hooks/useScreenSize";
 import Warehouse from "../assets/images/Hero/warehouse.webp";
 import CTABtn from "./atoms/CTABtn";
 
-const Hero = () => {
-  // const { ref, inView } = useInView({
-  //   triggerOnce: true, // Trigger the animation only once
-  //   threshold: 0.2, // Trigger when 20% of the component is visible
-  // });
+import { motion, useAnimate } from "framer-motion";
+import { useEffect } from "react";
 
-  // const fadeInDownVariants = {
-  //   hidden: { opacity: 0, y: -40 },
-  //   visible: { opacity: 1, y: 0 },
-  // };
+const Hero = () => {
+  const [scope, animate] = useAnimate();
+  const fadeInDownVariant = {
+    hidden: { opacity: 0, y: -40 },
+    visible: { opacity: 1, y: 0 },
+  };
+  useEffect(() => {
+    const animations = [
+      ["#title", fadeInDownVariant.visible, { duration: 1, delay: 0.5 }],
+      ["#channelsNum", fadeInDownVariant.visible, { duration: 1 }],
+      ["#buttons", fadeInDownVariant.visible, { duration: 1 }],
+    ];
+    animate(animations);
+  }, [animate, scope, fadeInDownVariant.visible]);
+
   const screenSize = useScreenSize();
   const circularText = "Your partner in m arket success .";
 
@@ -24,36 +30,50 @@ const Hero = () => {
         <MyNavbar />
       </header>
 
-      <section className="overflow-hidden">
+      <section ref={scope} className="overflow-hidden">
         <div className="flex flex-col lg:min-h-[800px] lg:flex-row lg:items-stretch">
           <div className="relative flex w-full items-center justify-center lg:order-2 lg:w-7/12">
             <div className="relative px-4 pb-16 pt-24 text-center sm:px-6 md:px-24 lg:py-24 lg:text-left 2xl:px-32">
-              <h1 className="text-4xl font-bold sm:text-6xl xl:text-8xl">
-                Maximize
-                <br />
-                your brand&apos;s Potential
-              </h1>
-              <p className="mt-8 text-xl">
-                A holistic solution offering comprehensive sales, marketing, and
-                logistics services tailored to your business
-              </p>
-
-              <div className="mx-auto mt-8 max-w-xl p-2 lg:mx-0 lg:mt-12">
-                <CTABtn />
-              </div>
-              <a
-                href="/assets/documents/BrandmatchProfile.pdf"
-                download="Brandmatch Profile.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="hover-link mt-5 inline-block cursor-pointer text-base font-semibold text-bright-red no-underline transition-all duration-200 hover:text-bright-red"
+              <motion.div
+                id="title"
+                variants={fadeInDownVariant}
+                initial="hidden"
               >
-                <button>Download Brandmatch Profile</button>
-              </a>
+                <h1 className="text-4xl font-bold sm:text-6xl xl:text-8xl">
+                  Maximize
+                  <br />
+                  your brand&apos;s Potential
+                </h1>
+                <p className="mt-8 text-xl">
+                  A holistic solution offering comprehensive sales, marketing,
+                  and logistics services tailored to your business
+                </p>
+              </motion.div>
+              <motion.div
+                id="buttons"
+                variants={fadeInDownVariant}
+                initial="hidden"
+              >
+                <div className="mx-auto mt-8 max-w-xl p-2 lg:mx-0 lg:mt-12">
+                  <CTABtn />
+                </div>
+                <a
+                  href="/assets/documents/BrandmatchProfile.pdf"
+                  download="Brandmatch Profile.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover-link mt-[32px] inline-block cursor-pointer text-base font-semibold text-bright-red no-underline transition-all duration-200 hover:text-bright-red"
+                >
+                  <button>Download Brandmatch Profile</button>
+                </a>
+              </motion.div>
             </div>
 
             <div className="absolute -bottom-16 right-0 z-10 m-0 flex h-32 w-32 items-center justify-center rounded-full p-0 md:h-40 md:w-40 lg:-left-20 lg:top-24">
-              <p className="m-0 h-full w-full select-none p-0 text-base font-semibold !text-black md:text-lg">
+              <motion.p
+                className="m-0 h-full w-full select-none p-0 text-base font-semibold !text-black md:text-lg"
+                whileHover={{ rotate: 360, transition: { duration: 1 } }}
+              >
                 {circularText.split("").map((character, index) => (
                   <span
                     key={index}
@@ -66,7 +86,7 @@ const Hero = () => {
                     {character}
                   </span>
                 ))}
-              </p>
+              </motion.p>
             </div>
           </div>
 
@@ -81,7 +101,12 @@ const Hero = () => {
 
             <div className="via-transparent to-transparent absolute inset-0 bg-gradient-to-t !from-black"></div>
 
-            <div className="absolute bottom-0 left-0">
+            <motion.div
+              className="absolute bottom-0 left-0"
+              id="channelsNum"
+              variants={fadeInDownVariant}
+              initial="hidden"
+            >
               <div className="p-4 sm:p-6 lg:p-8">
                 <div className="flex items-center">
                   <svg
@@ -104,7 +129,7 @@ const Hero = () => {
                   Sales Channels are offered by Brandmatch
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
