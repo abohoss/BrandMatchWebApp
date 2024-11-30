@@ -94,6 +94,7 @@ const Hero = () => {
             <div className="absolute inset-0">
               <img
                 className="h-full w-full object-cover"
+                loading="lazy"
                 src={Warehouse}
                 alt=""
               />
