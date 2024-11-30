@@ -3,6 +3,7 @@
 import MyNavbar from "./MyNavbar";
 import { useScreenSize } from "../Hooks/useScreenSize";
 import Warehouse from "../assets/images/Hero/warehouse.webp";
+import CTABtn from "./atoms/CTABtn";
 
 const Hero = () => {
   // const { ref, inView } = useInView({
@@ -37,33 +38,18 @@ const Hero = () => {
                 logistics services tailored to your business
               </p>
 
-              <form
-                action="#"
-                method="POST"
-                className="mx-auto mt-8 flex max-w-xl flex-col items-start rounded-xl bg-white p-2 transition-all duration-200 sm:flex-row sm:rounded-full lg:mx-0 lg:mt-12"
+              <div className="mx-auto mt-8 max-w-xl p-2 lg:mx-0 lg:mt-12">
+                <CTABtn />
+              </div>
+              <a
+                href="/assets/documents/BrandmatchProfile.pdf"
+                download="Brandmatch Profile.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="hover-link mt-5 inline-block cursor-pointer text-base font-semibold text-bright-red no-underline transition-all duration-200 hover:text-bright-red"
               >
-                <div className="relative w-full min-w-0 flex-1">
-                  <label htmlFor="email" className="sr-only"></label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Enter email to get started"
-                    className="block w-full rounded-full p-3 text-base text-bright-red placeholder-gray-500 focus:outline-none sm:text-left"
-                    required
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="f:bg-orange-600 inline-flex w-full items-center justify-center rounded-full border bg-bright-red p-3 font-semibold text-white transition-all duration-200 sm:ml-4 sm:w-auto"
-                >
-                  Get Brandmatch Profile
-                </button>
-              </form>
-              <p className="mt-5 text-base !text-black">
-                Your partner in market success
-              </p>
+                <button>Download Brandmatch Profile</button>
+              </a>
             </div>
 
             <div className="absolute -bottom-16 right-0 z-10 m-0 flex h-32 w-32 items-center justify-center rounded-full p-0 md:h-40 md:w-40 lg:-left-20 lg:top-24">
@@ -111,7 +97,7 @@ const Hero = () => {
                     />
                   </svg>
                   <h2 className="ml-2.5 text-7xl font-bold !text-white">
-                    2000
+                    2000+
                   </h2>
                 </div>
                 <p className="mt-1.5 max-w-xs text-xl !text-white">
